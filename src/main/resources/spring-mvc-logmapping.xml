@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<description>log描述映射配置</description>
+
+    <bean id="auditLogInterceptor"  class="com.ips.bmps.module.maintenance.AuditLogInterceptor">
+        <!--审计日志映射 -->
+        <property name="logMapping" ref="logMapping"/>
+        <!--审计日志服务 -->
+        <property name="optLogService" ref="optLogService" />
+    </bean>
+
+
+    <!-- 日志描述配置 -->
+    <!--配置格式 key=操作码，value=日志类型:日志描述
+        日志类型目前有如下6类：
+        0：默认
+        1：登录系统
+        2：退出系统
+        3：进入菜单
+        4：查询操作
+        5：业务操作
+    -->
+	<bean id="logMapping"
+		class="com.ips.bmps.module.maintenance.model.LogOptMapping">
+		<property name="mappings">
+			<props>
+				<!-- 验证码 -->
+				<prop key="authenticate">1:登录系统</prop>
+                <prop key="logout!">2:退出系统</prop>
+<!--                 <prop key="drawApprove0001!">3:进入协议划款审批页面</prop> -->
+<!--                 <prop key="drawApprove0001">4:做协议划款审批查询操作</prop> -->
+                <prop key="drawApprove1001">5:协议划款出款操作</prop>
+                <prop key="draw0002">6:人工出款-出款操作</prop>
+                <prop key="draw1010">7:线上出款打印操作</prop>
+                <prop key="draw1012">8:线上出款CSV后台导出操作</prop>
+                <prop key="draw0025">9:线下出款确认操作</prop>
+                <prop key="draw0016">10:线下出款出款明细确认操作</prop>  
+                <prop key="refund0022">11:线上退款打印操作</prop>
+                <prop key="refund0015">12:线下退款确认操作</prop>
+                <prop key="refund0009">13:线下退款明细确认操作</prop>
+                <prop key="cancel0012">14:出款退票审核通过操作</prop>
+                <prop key="cancel0013">15:出款退票审核拒绝操作</prop>
+                <prop key="blend0003">16:信息流勾兑处理操作</prop>
+                <prop key="blend0040">17:信息流核销审核通过操作</prop>
+                <prop key="blend0041">18:信息流核销审核拒绝操作</prop>
+                <prop key="blend0008">19:资金流勾兑处理操作</prop>
+                <prop key="blend0046">20:资金流核销审核通过操作</prop>
+                <prop key="blend0047">21:资金流核销审核拒绝操作</prop>
+                <prop key="drawApprove1002">22:委托出款审批批次出款操作</prop>
+                <prop key="drawApprove0003">23:委托出款审批明细出款操作</prop>
+                <prop key="drawApprove1003">24:委托出款明细审批出款操作</prop>
+                <prop key="refund0017">25:退款明细确认退款成功操作</prop>
+                <prop key="refund0018">26:退款明细确认退款撤销操作</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>

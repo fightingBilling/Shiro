@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="drawOnlineService"
+		class="com.ips.bmps.module.setmain.drawonline.service.impl.DrawOnlineServiceImpl">
+		<property name="pbcsDrawRestfulHelp" ref="pbcsDrawRestfulHelp"></property>
+		<property name="jmsTemplate" ref="jmsTemplate"></property>
+		<property name="bacsDrawWriteOffQueue" ref="bacsDrawWriteOffQueue"></property>
+	</bean>
+</beans>

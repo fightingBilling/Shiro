@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="blendUploadController"
+		class="com.ips.bmps.module.blend.bankupload.web.BlendUploadController"
+		parent="baseController">
+		<property name="blendService" ref="blendService" />
+		<property name="restfulUtils" ref="restfulUtils" />
+	</bean>
+	<bean id="infoBlendQueryController"
+		class="com.ips.bmps.module.blend.informationblend.InfoBlendQueryController"
+		parent="baseController">
+		<!-- <property name="financeService" ref="financeService" /> -->
+	</bean>
+	<bean id="financeUploadController"
+		class="com.ips.bmps.module.blend.bankupload.web.FinanceUploadController"
+		parent="baseController">
+		<property name="blendService" ref="blendService" />
+		<property name="restfulUtils" ref="restfulUtils" />
+	</bean>
+
+
+	<bean id="uploadQueryController"
+		class="com.ips.bmps.module.blend.bankupload.web.UploadQueryController"
+		parent="baseController">
+		<property name="blendService" ref="blendService" />
+		<property name="restfulUtils" ref="restfulUtils" />
+	</bean>
+
+	<bean id="blendQueryController"
+		class="com.ips.bmps.module.blend.queryblend.web.BlendQueryController"
+		parent="baseController">
+		<property name="blendQueryService" ref="blendQueryService" />
+		<property name="restfulUtils" ref="restfulUtils" />
+		<!-- <property name="blendService" ref="blendService" /> -->
+	</bean>
+
+	<bean id="finaceBlendQueryController"
+		class=" com.ips.bmps.module.blend.financeblend.web.FinaceBlendQueryController"
+		parent="baseController">
+	</bean>
+	<bean id="tranCheckController"
+		class=" com.ips.bmps.module.blend.transcheck.TranCheckController"
+		parent="baseController">
+	</bean>
+	
+	
+	<bean id="reorderController"
+		class="com.ips.bmps.module.blend.reorder.web.ReorderController"
+		parent="baseController">
+		<property name="reorderService" ref="reorderService" />
+		<property name="restfulUtils" ref="restfulUtils" />
+	</bean>
+	
+	
+</beans>

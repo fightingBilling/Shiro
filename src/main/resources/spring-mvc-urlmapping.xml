@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<description>SpringMVC的URL映射配置</description>
+
+	<!-- url映射配置 -->
+	<bean id="publicUrlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="interceptors">
+            <list>
+                <ref bean="auditLogInterceptor"/>
+            </list>
+        </property>
+		<property name="mappings">
+			<props>
+				<!-- 验证码 -->
+				<prop key="/captcha.img">captchaController</prop>
+				<!-- 身份验证 -->
+				<prop key="/secure/authentication.html">authenticationController</prop>
+				<prop key="/secure/unauthorized.html">unauthorizedController</prop>
+				<!-- 登录 -->
+				<prop key="/login.html">loginController</prop>
+				<!-- 默认登录后转向页面 -->
+				<prop key="/default.html">defaultController</prop>
+				<!-- 后台管理 -->
+				<prop key="/mt/menu/menu_read.html">setFuncMenuController</prop>
+				<prop key="/mt/resource/resource_read.html">setResourceController</prop>
+				<prop key="/mt/role/role_menu_read.html">roleMenuController</prop>
+				<prop key="/mt/role/role_resource_read.html">rroleResourceController</prop>
+				<prop key="/mt/user/user_read.html">userGroupController</prop>
+				<prop key="/mt/rgroup/rgroup_read.html">roleGroupController</prop>
+				<prop key="/mt/rgroup/rgroup_read.html">roleGroupController</prop>
+				<!-- 样例 -->
+				<prop key="/sample/*.html">sampleController</prop>
+				<!-- csv导出 -->
+				<prop key="/export/csvExport.html">exportCsvController</prop>
+
+				<!-- 审核出款 -->
+				<prop key="/setmain/drawapprove/draw_approve_query.html">drawApproveQueryController</prop>
+				<prop key="/setmain/drawapprove/draw_approve.html">drawApproveController</prop>
+
+
+				<!-- 出款 查询 -->
+				<prop key="/setmain/draw/draw_query.html">drawQueryController</prop>
+				<prop key="/setmain/draw/draw.html">drawController</prop>
+				
+				<!-- 拒付 查询 -->
+				<prop key="/setmain/drawrefuse/draw_refuse_query.html">drawRefuseQueryController</prop>
+				<prop key="/setmain/drawrefuse/draw_refuse.html">drawRefuseController</prop>
+
+
+				<prop key="/setmain/drawonline/draw_online_query.html">drawOnlineQueryController</prop>
+				<prop key="/setmain/drawonline/draw_online.html">drawOnlineController</prop>
+				<!-- 退款 -->
+				<prop key="/setmain/refund/refund_query.html">refundQueryController</prop>
+				<prop key="/setmain/refund/refund.html">refundController</prop>
+				
+				<!-- 退票 -->
+				<prop key="/setmain/cancel/cancel_draw_query.html">cancelQueryController</prop>
+				<prop key="/setmain/cancel/cancel_refund_query.html">cancelQueryController</prop>
+
+				<prop key="/setmain/cancel/cancel.html">cancelController</prop>
+				
+				
+				<!--勾对 -->
+				<prop key="/blend/bankupload/information_upload.html">blendUploadController</prop>
+				
+				<prop key="/blend/bankupload/finance_upload.html">financeUploadController</prop>
+				
+				<prop key="/blend/bankupload/upload_query.html">uploadQueryController</prop>
+
+				<prop key="/blend/information/information_blend_check.html">infoBlendQueryController</prop>
+				<prop key="/blend/information/information_result_check.html">infoBlendQueryController</prop>
+				
+				<prop key="/blend/transInput.html">tranCheckController</prop>
+				<prop key="/blend/transCheck.html">tranCheckController</prop>
+				<prop key="/blend/transQuery.html">tranCheckController</prop>
+
+				<prop key="/blend/finance/finance_blend_check.html">finaceBlendQueryController</prop>
+				<prop key="/blend/finance/finance_result_check.html">finaceBlendQueryController</prop>
+				
+				<prop key="/blend/reorder/reorder.html">reorderController</prop>
+				<prop key="/blend/reorder/systemaccount_diff.html">reorderController</prop>
+
+				<!--勾对差错查询 -->
+				<prop key="/blend/check_query.html">blendQueryController</prop>
+				<!--勾对信息查询 -->
+				<prop key="/blend/information_query.html">blendQueryController</prop>
+
+				<prop key="/blend/company_query.html">blendQueryController</prop>
+
+				<!-- 付款凭证录入 -->
+				<prop key="/voucher/voucherAdd.html">voucherController</prop>
+				<prop key="/voucher/voucherCascade.html">voucherController</prop>
+			
+				<!-- 备付金报表 -->
+				<prop key="/cr/report.html">crReportController</prop>
+				
+				<!-- 账务管理-->
+				<prop key="/acount/course/innercourse_query.html">accountController</prop>
+			
+				<!-- 日志查询 -->
+				<prop key="/maintenance/setoptlog_view.html">DisplayLogController</prop>
+			</props>
+
+		</property>
+	</bean>
+
+</beans>

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!--###################### 属性定义 ###################### -->
+	<property name="USER_HOME" value="/var/bacs/logs/bmps_logs" />
+	<property name="pattern"
+		value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%X{sessionId}] %-5level [%thread] %logger{80} :%msg%n" />
+
+	<!--###################### appender定义 ###################### -->
+	<!-- 根日志Appender定义 -->
+	<appender name="ROOT_FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${USER_HOME}/ROOT_LOG.txt</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/ROOT_LOG-%i.%d{yyyy-MM-dd}.gz
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>30MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<layout>
+			<pattern>${pattern}</pattern>
+		</layout>
+	</appender>
+
+    <!-- 根日志Appender定义 -->
+    <appender name="auditLog"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${USER_HOME}/auditLog.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/auditLog.log.%i
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>30MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>5</maxHistory>
+        </rollingPolicy>
+        <layout>
+            <pattern>${pattern}</pattern>
+        </layout>
+    </appender>
+	
+
+	<!-- JDBC日志Appender定义 -->
+	<appender name="JDBC_FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${USER_HOME}/JDBC_LOG.txt</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/JDBC_LOG-%i.%d{yyyy-MM-dd}.gz
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>30MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<layout>
+			<pattern>${pattern}</pattern>
+		</layout>
+	</appender>
+	
+	<!--error -->
+	<appender name="error"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${USER_HOME}/bmps-error.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/bmps-error-%i.%d{yyyy-MM-dd}.gz
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>30MB</MaxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${pattern}</pattern>
+		</encoder>
+	</appender>
+	
+	<!--error -->
+	<appender name="shiroError"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${USER_HOME}/bmps-shiroError.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/bmps-shiroError-%i.%d{yyyy-MM-dd}.gz
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>30MB</MaxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${pattern}</pattern>
+		</encoder>
+	</appender>
+
+
+	<!--出款 -->
+	<appender name="draw"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${USER_HOME}/bmps-draw.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/bmps-draw-%i.%d{yyyy-MM-dd}.gz
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>30MB</MaxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${pattern}</pattern>
+		</encoder>
+	</appender>
+	
+	<!--出款 -->
+	<appender name="drawapprove"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${USER_HOME}/bmps-drawapprove.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/bmps-drawapprove-%i.%d{yyyy-MM-dd}.gz
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>30MB</MaxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${pattern}</pattern>
+		</encoder>
+	</appender>
+
+
+	<!--出款文件 -->
+	<appender name="drawfile"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${USER_HOME}/bmps-drawfile.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/bmps-drawfile-%i.%d{yyyy-MM-dd}.gz
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>30MB</MaxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${pattern}</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- 线上出款drawonline -->
+	<appender name="drawonline"
+			class="ch.qos.logback.core.rolling.RollingFileAppender">
+			<file>${USER_HOME}/bmps-drawonline.log</file>
+			<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+				<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/bmps-drawonline-%i.%d{yyyy-MM-dd}.gz
+				</fileNamePattern>
+				<maxHistory>30</maxHistory>
+				<timeBasedFileNamingAndTriggeringPolicy
+					class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+					<MaxFileSize>30MB</MaxFileSize>
+				</timeBasedFileNamingAndTriggeringPolicy>
+			</rollingPolicy>
+			<encoder>
+				<pattern>${pattern}</pattern>
+			</encoder>
+		</appender>
+
+	<!--退款 -->
+	<appender name="refund"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${USER_HOME}/bmps-refund.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/bmps-refund-%i.%d{yyyy-MM-dd}.gz
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>30MB</MaxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${pattern}</pattern>
+		</encoder>
+	</appender>
+
+
+	<!--退票 -->
+	<appender name="cancel"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${USER_HOME}/bmps-cancel.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/bmps-cancel-%i.%d{yyyy-MM-dd}.gz
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>30MB</MaxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${pattern}</pattern>
+		</encoder>
+	</appender>
+	
+	
+	<!--勾对 -->
+	<appender name="blend"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${USER_HOME}/bmps-blend.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/bmps-blend-%i.%d{yyyy-MM-dd}.gz
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>30MB</MaxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${pattern}</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="resource"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${USER_HOME}/bmps-resource.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/bmps-resource-%i.%d{yyyy-MM-dd}.gz
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>30MB</MaxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${pattern}</pattern>
+		</encoder>
+	</appender>
+
+	
+	<appender name="restful"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${USER_HOME}/bmps-restful.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/bmps-restful-%i.%d{yyyy-MM-dd}.gz
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>30MB</MaxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${pattern}</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="blendRestful"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${USER_HOME}/bmps-blend-restful.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/bmps-blend-restful-%i.%d{yyyy-MM-dd}.gz
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>30MB</MaxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${pattern}</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- 应用 Logger节点定义 -->
+	<logger name="org.apache.shiro.realm.AuthorizingRealm" level="info" additivity="false">
+		<appender-ref ref="shiroError" />
+	</logger>
+
+    <!-- 审计 Logger定义 -->
+    <logger name="auditLog" level="info" additivity="false">
+        <appender-ref ref="auditLog" />
+    </logger>
+
+	
+	<!-- 应用 Logger节点定义 -->
+	<logger name="com.ips.bmps.support.util.ExceptionUtil" level="info" additivity="false">
+		<appender-ref ref="error" />
+	</logger>
+
+	<!-- JDBC Logger节点定义 -->
+	<logger name="org.jdbcdslog.ConnectionLogger" level="info"
+		additivity="false">
+		<appender-ref ref="JDBC_FILE" />
+	</logger>
+
+	<logger name="org.jdbcdslog.StatementLogger" level="info"
+		additivity="false">
+		<appender-ref ref="JDBC_FILE" />
+	</logger>
+
+	<logger name="org.jdbcdslog.SlowQueryLogger" level="ERROR"
+		additivity="false">
+		<appender-ref ref="JDBC_FILE" />
+	</logger>
+
+	<logger name="org.jdbcdslog.ResultSetLogger" level="ERROR"
+		additivity="false">
+		<appender-ref ref="JDBC_FILE" />
+	</logger>
+
+	<logger name="com.ips.bmps.module.setmain.draw" 
+	    additivity="false">
+		<level value="info" />
+		<appender-ref ref="draw" />
+	</logger>
+	
+	<logger name="com.ips.bmps.module.setmain.drawapprove" 
+	    additivity="false">
+		<level value="info" />
+		<appender-ref ref="drawapprove" />
+	</logger>
+
+	<logger name="com.ips.bmps.module.setmain.drawfile"
+		additivity="false">
+		<level value="info" />
+		<appender-ref ref="drawfile" />
+	</logger>
+	
+	<logger name="com.ips.bmps.module.setmain.drawonline" 
+	    additivity="false">
+		<level value="info" />
+		<appender-ref ref="drawonline" />
+	</logger>
+
+	<logger name="com.ips.bmps.module.setmain.refund"
+		additivity="false">
+		<level value="info" />
+		<appender-ref ref="refund" />
+	</logger>
+
+	<logger name="com.ips.bmps.module.setmain.cancel"
+		additivity="false">
+		<level value="info" />
+		<appender-ref ref="cancel" />
+	</logger>
+	
+	<logger name="com.ips.bmps.module.setmain.resource"
+		additivity="false">
+		<level value="info" />
+		<appender-ref ref="resource" />
+	</logger>
+	
+	<logger name="com.ips.bmps.module.setmain.restful"
+		additivity="false">
+		<level value="info" />
+		<appender-ref ref="restful" />
+	</logger>
+	
+	<logger name="com.ips.bmps.module.blend.restful"
+		additivity="false">
+		<level value="info" />
+		<appender-ref ref="blendRestful" />
+	</logger>
+
+	<!-- 根 Logger节点定义 -->
+	<root level="info">
+		<appender-ref ref="ROOT_FILE" />
+	</root>
+
+</configuration>

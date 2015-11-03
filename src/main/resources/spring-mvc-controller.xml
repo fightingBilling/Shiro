@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd ">
+
+	<description>控制器配置</description>
+
+	<!-- Controller抽象基类 -->
+    <bean id="baseController" class="com.ips.bmps.support.web.controller.BaseController" abstract="true">
+       	<!-- 方法名称解析器 -->
+        <property name="methodNameResolver" ref="parameterMethodNameResolver"/>
+        <!-- 候选日期模式 -->
+        <property name="candidateDatePatterns">
+        	<list>
+        		<value>yyyyMMdd</value>
+        		<value>yyyy/MM/dd</value>
+        		<value>yyyy-MM-dd</value>
+        		<value>yyyy.MM.dd</value>
+        	</list>
+        </property>
+         <!-- 消息资源访问器 -->
+        <property name="msa" ref="msa"/>
+    </bean>
+    
+    <!-- 登录页面 -->
+    <bean id="loginController" class="com.ips.bmps.module.defaults.web.LoginController">
+    	<property name="viewName" value="login"/>
+    </bean>
+    
+    <import resource="classpath*:/controller/*-controller.xml"/>
+    
+</beans>

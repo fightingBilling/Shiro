@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 启动不检查更新 -->
+<ehcache updateCheck="false">
+		
+	<!-- 全局默认cache配置 -->
+	<defaultCache overflowToDisk="true" eternal="false"
+		maxElementsInMemory="1000" timeToIdleSeconds="120" timeToLiveSeconds="120" />
+		
+	<!--  com.ips.channel.support.message.Message类映射缓存 -->
+	<cache name="cache.messageclassmapping"
+		maxEntriesLocalHeap="10000"
+     	eternal="true"
+      	overflowToDisk="false"
+      	memoryStoreEvictionPolicy="LRU"
+	/>
+	
+	<!-- XSTREAM对象缓存 -->
+	<cache name="cache.xstreammapping"
+		maxEntriesLocalHeap="10000"
+     	eternal="true"
+      	overflowToDisk="false"
+      	memoryStoreEvictionPolicy="LRU"
+	/>
+	
+	<!-- Key Service对象缓存 -->
+	<cache name="cache.keyServicemapping"
+		maxEntriesLocalHeap="10000"
+     	eternal="true"
+      	overflowToDisk="false"
+      	memoryStoreEvictionPolicy="LRU"
+	/>
+</ehcache>

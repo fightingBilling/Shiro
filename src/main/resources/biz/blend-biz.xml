@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="blendService"
+		class="com.ips.bmps.module.blend.bankupload.service.impl.BlendServiceImpl">
+		<property name="bankFileUtil" ref="bankFileUtil" ></property>
+	</bean>
+	
+    <bean id="reorderService"
+        class="com.ips.bmps.module.blend.reorder.service.impl.ReorderServiceImpl">
+        <property name="restfulUtils" ref="restfulUtils"></property>
+        <property name="bankFileUtil" ref="recordFileUtil"></property>
+    </bean> 
+	
+	<bean id="bankFileUtil" class="com.ips.bmps.module.blend.bankupload.util.BankFileUtil">
+	   <property name="methodType" value="blend"></property>
+	</bean>
+	
+	<bean id="recordFileUtil" class="com.ips.bmps.module.blend.bankupload.util.BankFileUtil">
+       <property name="methodType" value="record"></property>
+    </bean>
+	
+	<bean id="FieldProcessUtil" class="com.ips.bmps.module.blend.bankupload.util.FieldProcessUtil">
+    </bean>
+	
+	<bean id="financeService"
+		class="com.ips.bmps.module.blend.financeblend.service.impl.FinanceServiceImpl" />
+	<bean id="blendQueryService"
+		class="com.ips.bmps.module.blend.queryblend.service.impl.BlendQueryServiceImpl" />
+
+	<bean id="infoBlendQueryService"
+		class="com.ips.bmps.module.blend.informationblend.service.impl.InfoBlendQueryServiceImpl" />
+	<bean id="infoBlendService"
+		class="com.ips.bmps.module.blend.informationblend.service.impl.InfoBlendServiceImpl" />
+	<bean id="infoCsvService"
+		class="com.ips.bmps.module.blend.informationblend.service.impl.InfoCsvServiceImpl" />
+	<bean id="tranCheckService"
+		class="com.ips.bmps.module.blend.transcheck.service.impl.TranCheckServiceImpl" />
+
+</beans>

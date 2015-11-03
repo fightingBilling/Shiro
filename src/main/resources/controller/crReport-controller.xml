@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="crReportController"
+		class="com.ips.bmps.module.report.web.CrReportController"
+		parent="baseController">
+		<property name="cr1_1_ReportTemplate" ref="CRX1_1_ReportTemplate"/>
+	</bean>
+	
+	<bean id="CRX1_1_ReportTemplate" class="com.ips.commons.support.report.impl.CRX1_1_ReportTemplate"/>
+	
+</beans>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry
+		location="C:/Documents and Settings/Administrator/.m2/repository/com/oracle/ojdbc14/10.2.0.4.0/ojdbc14-10.2.0.4.0.jar" />
+	<context id="context1">
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" /><!-- 取消生成的注释信息 -->
+		</commentGenerator>
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@192.168.12.214:1521:pbcs" userId="bacs"
+			password="bacs" />
+
+		<javaModelGenerator targetPackage="com.ips.bmps.module.blend.reorder.model"
+			targetProject="bmps-web/src/main/java" />
+
+		<sqlMapGenerator targetPackage="mybatis.sqlMap"
+			targetProject="bmps-web/src/main/resources" />
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.ips.bmps.module.blend.reorder.dao" targetProject="bmps-web/src/main/java">
+		</javaClientGenerator>
+
+		<!-- <table tableName="TCOR_DRAW_TRN" enableCountByExample="false" enableUpdateByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"> 
+			</table> <table tableName="TCOR_DRAW_FILE" enableCountByExample="false" enableUpdateByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"> 
+			</table> <table tableName="TCOR_DRAW_FILE_CFG" enableCountByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" 
+			selectByExampleQueryId="false"> </table> <table tableName="TCOR_DRAW_FILETYPE_CHOICE" 
+			enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" 
+			enableSelectByExample="false" selectByExampleQueryId="false"> </table> <table 
+			tableName="TCOR_DRAW_FILETYPE_CFG" enableCountByExample="false" enableUpdateByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"> 
+			</table> <table tableName="TCOR_DRAW_ONLINE" enableCountByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" 
+			selectByExampleQueryId="false"> </table> -->
+
+		<!--<table tableName="TCOR_REFUND_TRN" enableCountByExample="false" enableUpdateByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" 
+			> </table> -->
+
+		<table tableName="TCOR_RESUBMIT_BANKFILE" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false">
+		</table>
+		
+		
+
+	</context>
+</generatorConfiguration>

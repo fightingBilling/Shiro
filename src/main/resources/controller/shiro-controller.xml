@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd ">
+
+    <!-- 身份验证 -->
+	<bean id="authenticationController" class="com.ips.bmps.module.maintenance.web.AuthenticationController" parent="baseController">
+		<property name="usernameParamName" value="${login.username}"/>
+		<property name="passwordnameParamName" value="${login.password}"/>
+		<property name="captchaParamName" value="${login.captcha}"/>
+	</bean>
+	
+	<!-- 未授权 -->
+	<bean id="unauthorizedController"  class="com.ips.bmps.module.maintenance.web.UnauthorizedController" parent="baseController"/>
+    
+    <!-- 验证码 -->
+	<bean id="captchaController" class="com.ips.bmps.module.maintenance.web.CaptchaController" parent="baseController">
+		<property name="captchaService" ref="captchaService"/>
+	</bean>
+</beans>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="bacsDrawRestfulHelp" class="com.ips.bmps.module.setmain.restful.BacsDrawRestfulHelp">
+		<property name="drawWriteOffResource" ref="drawWriteOffResource" />
+		<property name="accQueryResource" ref="accQueryResource" />
+		<property name="issuedConfirmResource" ref="issuedConfirmResource" />
+		<property name="protocolDrawResource" ref="protocolDrawResource" />
+		<property name="protocolDrawQueryResource" ref="protocolDrawQueryResource" />
+		<property name="reticketResource" ref="reticketResource" />
+	</bean>
+
+	<bean id="bacsRefundRestfulHelp"
+		class="com.ips.bmps.module.setmain.restful.BacsRefundRestfulHelp">
+		<property name="refundWriteOffResource" ref="refundWriteOffResource" />
+	</bean>
+
+	<bean id="drawWriteOffResource" class="com.ips.rest.core.spring.RestfulJsonFactoryBean">
+		<property name="serviceInterface"
+			value="com.ips.bacs.biz.draw.resource.DrawWriteOffResource" />
+		<property name="serviceUrl" value="${restful.bacs}" />
+	</bean>
+
+	<bean id="refundWriteOffResource" class="com.ips.rest.core.spring.RestfulJsonFactoryBean">
+		<property name="serviceInterface"
+			value="com.ips.bacs.biz.refund.resource.RefundWriteOffResource" />
+		<property name="serviceUrl" value="${restful.bacs}" />
+	</bean>
+
+	<bean id="accQueryResource" class="com.ips.rest.core.spring.RestfulJsonFactoryBean">
+		<property name="serviceInterface"
+			value="com.ips.bacs.biz.accquery.resource.AccQueryResource" />
+		<property name="serviceUrl" value="${restful.bacs}" />
+	</bean>
+
+	<bean id="issuedConfirmResource" class="com.ips.rest.core.spring.RestfulJsonFactoryBean">
+		<property name="serviceInterface"
+			value="com.ips.bacs.biz.draw.resource.IssuedConfirmResource" />
+		<property name="serviceUrl" value="${restful.bacs}" />
+	</bean>
+
+	<bean id="protocolDrawResource" class="com.ips.rest.core.spring.RestfulJsonFactoryBean">
+		<property name="serviceInterface"
+			value="com.ips.bacs.biz.draw.resource.ProtocolDrawResource" />
+		<property name="serviceUrl" value="${restful.bacs}" />
+	</bean>
+
+	<bean id="protocolDrawQueryResource" class="com.ips.rest.core.spring.RestfulJsonFactoryBean">
+		<property name="serviceInterface"
+			value="com.ips.bacs.biz.accquery.resource.ProtocolDrawQueryResource" />
+		<property name="serviceUrl" value="${restful.bacs}" />
+	</bean>
+
+	<bean id="reticketResource" class="com.ips.rest.core.spring.RestfulJsonFactoryBean">
+		<property name="serviceInterface"
+			value="com.ips.bacs.biz.custom.resource.ReticketResource" />
+		<property name="serviceUrl" value="${restful.bacs}" />
+	</bean>
+
+	<bean id="appDrawRestfulHelp" class="com.ips.bmps.module.setmain.restful.AppDrawRestfulHelp">
+		<!-- <property name="issuedCallBackResource" ref="issuedCallBackResource" /> -->
+		<property name="paymentResource" ref="paymentResource" />
+	</bean>
+
+	<bean id="appRefundRestfulHelp"
+		class="com.ips.bmps.module.setmain.restful.AppRefundRestfulHelp">
+		<!-- <property name="refundResource" ref="refundResource" /> -->
+		<property name="paymentResource" ref="paymentResource" />
+	</bean>
+
+
+	<!-- 基础应用平台-退款服务 
+	<bean id="refundResource" class="com.ips.rest.core.spring.RestfulFactoryBean">
+		<property name="serviceInterface"
+			value="com.ips.core.psfp.refund.biz.refund.resource.RefundResource" />
+		<property name="serviceUrl" value="${restful.psfp-manage}" />
+	</bean>-->
+
+	<!-- 基础应用平台-出款服务
+	<bean id="issuedCallBackResource" class="com.ips.rest.core.spring.RestfulFactoryBean">
+		<property name="serviceInterface"
+			value="com.ips.core.psfp.issued.biz.issued.resource.IssuedCallBackResource" />
+		<property name="serviceUrl" value="${issued.interface.url}" />
+	</bean> -->
+	
+	<!--出款（退款）统一接口 -->
+	<bean id="paymentResource" class="com.ips.rest.core.spring.RestfulJsonFactoryBean">
+		<property name="serviceInterface"
+			value="com.ips.core.psfp.manage.biz.trade.resource.PaymentResource" />
+		<property name="serviceUrl" value="${restful.psfp-manage}" />
+	</bean>
+
+	<bean id="pbcsDrawRestfulHelp" class="com.ips.bmps.module.setmain.restful.PbcsDrawRestfulHelp">
+		<property name="drawResource" ref="pbcsDrawResource" />
+		<property name="jmsTemplate" ref="jmsTemplate"></property>
+		<property name="bacsDrawWriteOffQueue" ref="bacsDrawWriteOffQueue"></property>
+	</bean>
+
+	<bean id="pbcsDrawResource" class="com.ips.rest.core.spring.RestfulJsonFactoryBean">
+		<property name="serviceInterface" value="com.ips.pbcs.biz.outgo.resource.DrawResource" />
+		<property name="serviceUrl" value="${restful.pbcs}" />
+	</bean>
+	
+	<bean id="pbcsRefundRestfulHelp" class="com.ips.bmps.module.setmain.restful.PbcsRefundRestfulHelp">
+		<property name="refundResource" ref="pbcsRefundResource" />
+	</bean>
+
+	<bean id="pbcsRefundResource" class="com.ips.rest.core.spring.RestfulJsonFactoryBean">
+		<property name="serviceInterface"
+			value="com.ips.pbcs.biz.refund.resource.RefundResource" />
+		<property name="serviceUrl" value="${restful.pbcs}" />
+	</bean>
+	
+	
+	<bean id="restfulUtils" class="com.ips.bmps.module.blend.restful.RestfulUtils">
+		<property name="basicInfoResource" ref="basicInfoResource" />
+		<property name="manualTradResource" ref="manualTradResource"/>
+	</bean>
+
+	<bean id="basicInfoResource" class="com.ips.rest.core.spring.RestfulJsonFactoryBean">
+		<property name="serviceInterface"
+			value="com.ips.pbcs.maintain.resource.BasicInfoResource" />
+		<property name="serviceUrl" value="${restful.pbcs}" />
+	</bean>
+	
+	<bean id="manualTradResource" class="com.ips.rest.core.spring.RestfulJsonFactoryBean">
+		<property name="serviceInterface"
+			value="com.ips.pbcs.biz.custom.resource.ManualTradResource" />
+		<property name="serviceUrl" value="${restful.pbcs}" />
+	</bean>
+
+
+	<bean id="subManageResource" class="com.ips.rest.core.spring.RestfulJsonFactoryBean">
+		<property name="serviceInterface"
+			value="com.ips.bacs.master.resource.SubManageResource" />
+		<property name="serviceUrl" value="${restful.bacs}" />
+	</bean>
+	
+	<bean id="pbcsBankFileRestfulHelp" class="com.ips.bmps.module.setmain.restful.PbcsBankFileRestfulHelp">
+	</bean>
+	
+</beans>

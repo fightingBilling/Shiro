@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!--###################### 属性定义 ###################### -->
+	<property name="USER_HOME" value="/var/bacs/logs/bmps_logs" />
+	<property name="pattern"
+		value="%d{yyyyMMdd:HH:mm:ss.SSS} [%thread] [%X{traceNo}] [%class] %-5level  %msg%n" />
+
+	<appender name="ROOT_CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<layout name="StandardFormat" class="ch.qos.logback.classic.PatternLayout">
+			<pattern>${pattern}</pattern>
+		</layout>
+	</appender>
+	
+	
+
+
+	<!-- 应用 Logger节点定义 -->
+	<logger name="com.ips" level="debug" additivity="false">
+		<appender-ref ref="ROOT_CONSOLE" />
+	</logger>
+
+	<!-- JDBC Logger节点定义 -->
+	<logger name="org.jdbcdslog.ConnectionLogger" level="info"
+		additivity="false">
+		<appender-ref ref="ROOT_CONSOLE" />
+	</logger>
+
+	<logger name="org.jdbcdslog.StatementLogger" level="info"
+		additivity="false">
+		<appender-ref ref="ROOT_CONSOLE" />
+	</logger>
+
+	<logger name="org.jdbcdslog.SlowQueryLogger" level="ERROR"
+		additivity="false">
+		<appender-ref ref="ROOT_CONSOLE" />
+	</logger>
+
+	<logger name="org.jdbcdslog.ResultSetLogger" level="ERROR"
+		additivity="false">
+		<appender-ref ref="ROOT_CONSOLE" />
+	</logger>
+	
+	<logger name="org.apache.ibatis.logging.slf4j" level="trace" additivity="false">
+		<appender-ref ref="ROOT_CONSOLE"/>
+	</logger>
+	
+	<logger name="org.springframework.jdbc.datasource" level="trace" additivity="false">
+		<appender-ref ref="ROOT_CONSOLE"/>
+	</logger>
+
+	<logger name="org.mybatis.spring.transaction" level="trace" additivity="false">
+		<appender-ref ref="ROOT_CONSOLE"/>
+	</logger>
+
+	<logger name="com.ips.bmps.module.setmain.draw" additivity="false">
+		<level value="info" />
+		<appender-ref ref="ROOT_CONSOLE" />
+	</logger>
+
+	<logger name="com.ips.bmps.module.setmain.drawfile"
+		additivity="false">
+		<level value="info" />
+		<appender-ref ref="ROOT_CONSOLE" />
+	</logger>
+
+	<logger name="com.ips.bmps.module.setmain.refund"
+		additivity="false">
+		<level value="info" />
+		<appender-ref ref="ROOT_CONSOLE" />
+	</logger>
+
+	<logger name="com.ips.bmps.module.setmain.reticket"
+		additivity="false">
+		<level value="info" />
+		<appender-ref ref="ROOT_CONSOLE" />
+	</logger>
+	
+	<logger name="org.springframework.jms.listener"
+		additivity="false">
+		<level value="error" />
+		<appender-ref ref="ROOT_CONSOLE" />
+	</logger>
+	
+
+	<!-- 根 Logger节点定义 -->
+	<root level="info">
+		<appender-ref ref="ROOT_CONSOLE" />
+	</root>
+
+</configuration>

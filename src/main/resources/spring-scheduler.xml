@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.1.xsd 
+	"
+	default-lazy-init="true">
+
+	<description>Spring  Scheduled</description>
+	
+	<task:scheduler id="scheduler" pool-size="2"/>
+	
+	<!-- 
+	
+		每天上午10:00的cron： 0 0 10 * * ?
+		每天下午16:00的cron： 0 0 16 * * ?
+	
+	 -->
+	
+	
+	<task:scheduled-tasks scheduler="scheduler">
+	    <!-- cron:每分钟一次 -->
+	    <task:scheduled ref="abcQueryBankfileAction" method="execute" cron="0 0 15 * * ?"/>
+	    <task:scheduled ref="icbcQueryBankfileAction" method="execute" cron="0 0 15 * * ?"/>
+	    <task:scheduled ref="noticePsfpAction" method="execute" cron="0 0/10 * * * ?"/>
+	    <task:scheduled ref="glUploadBankFileAction" method="execute" cron="0 0 17 * * ?"/>
+	    <task:scheduled ref="jtB2BUploadBankFileAction" method="execute" cron="0 0 17 * * ?"/>
+	   	<task:scheduled ref="jtQueryBankfileAction" method="execute" cron="0 0 9 * * ?"/> 
+	    <task:scheduled ref="noticeDrawCancelAction" method="execute" cron="0 0/30 * * * ?"/> 
+	    <task:scheduled ref="citicB2BUploadBankFileAction" method="execute" cron="0 0/30 12 * * ?"/> 
+	</task:scheduled-tasks>
+
+	<bean id="abcQueryBankfileAction" class="com.ips.bmps.module.scheduled.AbcQueryBankfileAction"/>
+	
+	<bean id="icbcQueryBankfileAction" class="com.ips.bmps.module.scheduled.IcbcQueryBankfileAction"/>
+	
+	<bean id="noticePsfpAction" class="com.ips.bmps.module.scheduled.NoticePsfpAction"/>
+	
+	<bean id="glUploadBankFileAction" class="com.ips.bmps.module.scheduled.GlUploadBankFileAction">
+	</bean>
+	<bean id="jtB2BUploadBankFileAction" class="com.ips.bmps.module.scheduled.JtB2BUploadBankFileAction">
+    </bean>
+    <bean id="citicB2BUploadBankFileAction" class="com.ips.bmps.module.scheduled.CiticB2BUploadBankFileAction">
+    </bean>
+	<bean id="jtQueryBankfileAction" class="com.ips.bmps.module.scheduled.JtQueryBankfileAction">
+	</bean>
+	<bean id="noticeDrawCancelAction" class="com.ips.bmps.module.scheduled.NoticeDrawCancelAction">
+	</bean>
+	<bean id="tranchkCallableStatementCallback" class="com.ips.bmps.module.blend.bankupload.web.DefaultCallableStatementCallback" />
+</beans>
