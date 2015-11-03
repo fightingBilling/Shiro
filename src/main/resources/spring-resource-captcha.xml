@@ -115,7 +115,7 @@
     </bean>
     
     <!-- 双色渐变 -->
-    <bean id="gradientBackgroundGenerator" class="com.ips.bmps.support.captcha.backgroundGenerator.CustomGradientBackGroundGenerator">
+    <bean id="gradientBackgroundGenerator" class="com.somnus.support.captcha.backgroundGenerator.CustomGradientBackGroundGenerator">
     	<constructor-arg index="0" ref="backgroundWidth"/><!-- width -->
     	<constructor-arg index="1" ref="backgroundHeight"/><!-- height -->
     	<constructor-arg index="2"><!-- first color -->

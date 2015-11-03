@@ -7,7 +7,7 @@
 	<defaultCache overflowToDisk="true" eternal="false"
 		maxElementsInMemory="1000" timeToIdleSeconds="120" timeToLiveSeconds="120" />
 		
-	<!--  com.ips.channel.support.message.Message类映射缓存 -->
+	<!--  com.somnus.channel.support.message.Message类映射缓存 -->
 	<cache name="cache.messageclassmapping"
 		maxEntriesLocalHeap="10000"
      	eternal="true"
