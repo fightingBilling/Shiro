@@ -9,8 +9,6 @@ import org.springframework.util.Assert;
 
 import com.somnus.module.maintenance.web.filter.CaptchaFormAuthenticationFilter;
 import com.somnus.module.maintenance.web.filter.CustomRolesAuthorizationFilter;
-
-
 /**
  * @Description 
  * @author Somnus

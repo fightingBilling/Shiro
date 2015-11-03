@@ -21,7 +21,6 @@ import com.octo.captcha.image.ImageCaptcha;
 import com.octo.captcha.image.ImageCaptchaFactory;
 import com.somnus.support.captcha.gimpy.CustomGimpyFactory;
 
-
 /**
  * @Description 自定义图片验证码引擎
  * (由于继承ListImageCaptchaEngine，会导致在注入前就buildInitialFactories，所以此类基于ListImageCaptchaEngine重写)

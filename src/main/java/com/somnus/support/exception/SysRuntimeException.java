@@ -1,4 +1,5 @@
 package com.somnus.support.exception;
+
 /**
  * @Description 系统(运行时)异常
  * @author Somnus

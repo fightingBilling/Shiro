@@ -1,6 +1,5 @@
 package com.somnus.module.maintenance.model;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 /**

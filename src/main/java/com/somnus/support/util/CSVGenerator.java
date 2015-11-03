@@ -26,8 +26,6 @@ import com.csvreader.CsvReader;
  */
 public class CSVGenerator {
 	
-	private static Logger log = LoggerFactory.getLogger(CSVGenerator.class);
-	
 	public static final char DELIMITER_COMMA_SEPERATED = ',';
 
 	/**

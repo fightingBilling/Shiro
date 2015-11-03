@@ -17,12 +17,9 @@ import org.codehaus.jackson.type.JavaType;
 
 import com.somnus.support.exception.SysRuntimeException;
 
-
-
 /**
  * JSON处理工具类
  * @author Somnus
- *
  */
 public class JsonUtils {
 

@@ -4,7 +4,6 @@ import org.apache.shiro.SecurityUtils;
 
 import com.somnus.module.maintenance.ShiroDbRealm.ShiroUser;
 
-
 /**
  * @Description shiro框架帮助类
  * @author Somnus
