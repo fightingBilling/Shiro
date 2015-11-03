@@ -5,6 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import com.somnus.support.constant.Constants;
+import com.somnus.support.security.DESUtil;
 
 public class BusinessUtil {
 	
@@ -25,7 +26,7 @@ public class BusinessUtil {
 	}
 	
 	public static String decryByKey(String pwResult, String mcrypt_key) {
-		String password = AESWithJCE.getResult(mcrypt_key, pwResult);
+		String password = DESUtil.decrypt(mcrypt_key, pwResult);
 		return password;
 	}
 

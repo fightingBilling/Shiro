@@ -2,7 +2,7 @@ package com.somnus.support.message;
 
 /**
  * @Description: 错误码(Generated via template)
- * @author: caobin
+ * @author: Somnus
  * @date: 2013-04-18
  * @version: 1.0
  */

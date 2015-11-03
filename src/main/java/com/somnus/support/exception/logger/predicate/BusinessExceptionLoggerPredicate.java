@@ -6,7 +6,7 @@ import com.somnus.support.exception.logger.context.ExceptionLoggerContext;
 
 /**
  * @Description 业务异常日志处理分支条件
- * @author caobin
+ * @author Somnus
  * @date 2012-11-19
  * @version 1.0
  */

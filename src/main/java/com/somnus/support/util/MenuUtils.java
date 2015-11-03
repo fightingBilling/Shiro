@@ -7,7 +7,7 @@ import com.somnus.module.maintenance.model.SetFuncMenu;
 
 /**
  * @Description 菜单生成工具
- * @author caobin
+ * @author Somnus
  * @date 2013-2-27
  * @version 1.0
  */
@@ -33,7 +33,7 @@ public class MenuUtils {
 	 * @param list
 	 * @param pNode
 	 * @return
-	 * @author caobin
+	 * @author Somnus
 	 */
 	private static String generateChildren(List<SetFuncMenu> list, SetFuncMenu pNode) {
 		StringBuilder result = new StringBuilder();

@@ -6,7 +6,7 @@
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd ">
 
 
-    <bean id="userGroupController" class="com.ips.bmps.module.maintenance.web.UserGroupController" parent="baseController">
+    <bean id="userGroupController" class="com.somnus.module.maintenance.web.UserGroupController" parent="baseController">
     	<property name="userGroupService" ref="userGroupService"/>
     </bean>
     

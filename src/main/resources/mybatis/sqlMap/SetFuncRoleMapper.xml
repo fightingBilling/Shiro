@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.ips.bmps.module.maintenance.dao.SetFuncRoleDao" >
-  <resultMap id="BaseResultMap" type="com.ips.bmps.module.maintenance.model.SetFuncRole" >
+<mapper namespace="com.somnus.module.maintenance.dao.SetFuncRoleDao" >
+  <resultMap id="BaseResultMap" type="com.somnus.module.maintenance.model.SetFuncRole" >
     <id column="FUNC_ROLE_ID" property="funcRoleId" jdbcType="DECIMAL" />
     <result column="FUNC_ROLE_CODE" property="funcRoleCode" jdbcType="VARCHAR" />
     <result column="FUNC_ROLE_NAME" property="funcRoleName" jdbcType="VARCHAR" />
@@ -77,7 +77,7 @@
     delete from SET_FUNC_ROLE
     where FUNC_ROLE_ID = #{funcRoleId,jdbcType=DECIMAL}
   </delete>
-  <insert id="insert" parameterType="com.ips.bmps.module.maintenance.model.SetFuncRole" >
+  <insert id="insert" parameterType="com.somnus.module.maintenance.model.SetFuncRole" >
     insert into SET_FUNC_ROLE (FUNC_ROLE_ID, FUNC_ROLE_CODE, FUNC_ROLE_NAME, 
       FUNC_ROLE_TYPE, FUNC_ROLE_DESC, STATUS, 
       LAST_UPDATOR, LAST_UPDATE_TIME)
@@ -85,7 +85,7 @@
       #{funcRoleType,jdbcType=VARCHAR}, #{funcRoleDesc,jdbcType=VARCHAR}, #{status,jdbcType=CHAR}, 
       #{lastUpdator,jdbcType=VARCHAR}, #{lastUpdateTime,jdbcType=TIMESTAMP})
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ips.bmps.module.maintenance.model.SetFuncRole" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.somnus.module.maintenance.model.SetFuncRole" >
     update SET_FUNC_ROLE
     <set >
       <if test="funcRoleCode != null" >

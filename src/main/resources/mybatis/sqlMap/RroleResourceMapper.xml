@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.ips.bmps.module.maintenance.dao.RroleResourceDao" >
-  <resultMap id="BaseResultMap" type="com.ips.bmps.module.maintenance.model.RroleResource" >
+<mapper namespace="com.somnus.module.maintenance.dao.RroleResourceDao" >
+  <resultMap id="BaseResultMap" type="com.somnus.module.maintenance.model.RroleResource" >
     <result column="RESOURCE_ROLE_ID" property="resourceRoleId" jdbcType="DECIMAL" />
     <result column="RESOURCE_ID" property="resourceId" jdbcType="DECIMAL" />
     <result column="RESOURCE_ROLE_NAME" property="resourceRoleName" jdbcType="VARCHAR" />

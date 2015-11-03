@@ -13,7 +13,7 @@ import com.somnus.support.util.JsonUtils;
 
 /**
  * @Description csv导出
- * @author caobin
+ * @author Somnus
  * @date 2013-3-14
  * @version 1.0
  */
@@ -24,7 +24,7 @@ public class CsvExportController extends BaseController {
 	 * @param request
 	 * @param response
 	 * @throws Exception
-	 * @author caobin
+	 * @author Somnus
 	 */
 	public void csvExport(HttpServletRequest request,
 		HttpServletResponse response) throws Exception{

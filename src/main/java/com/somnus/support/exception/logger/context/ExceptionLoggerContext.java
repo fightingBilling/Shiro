@@ -2,7 +2,7 @@ package com.somnus.support.exception.logger.context;
 
 /**
  * @Description 异常日志上下文
- * @author caobin
+ * @author Somnus
  * @date 2012-11-19
  * @version 1.0
  */

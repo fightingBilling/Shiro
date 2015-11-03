@@ -1,7 +1,7 @@
 package com.somnus.support.exception;
 /**
  * @Description 系统(运行时)异常
- * @author caobin
+ * @author Somnus
  * @date 2012-11-19
  * @version 1.0
  */

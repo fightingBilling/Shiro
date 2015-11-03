@@ -28,7 +28,7 @@ import com.somnus.support.web.controller.BaseController;
 /**
  * 身份验证
  * 
- * @author caobin 2013-2-5
+ * @author Somnus 2013-2-5
  * @version 1.0
  */
 public class AuthenticationController extends BaseController {

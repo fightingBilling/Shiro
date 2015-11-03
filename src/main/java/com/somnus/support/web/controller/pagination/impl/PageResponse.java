@@ -6,7 +6,7 @@ import com.somnus.support.web.controller.pagination.Pageable;
 
 /**
  * @Description 分页实现-响应
- * @author caobin
+ * @author Somnus
  * @date 2012-11-15
  * @version 1.0
  */

@@ -13,7 +13,7 @@ import com.somnus.module.maintenance.web.filter.CustomRolesAuthorizationFilter;
 
 /**
  * @Description 
- * @author caobin
+ * @author Somnus
  * @date 2013-2-27
  * @version 1.0
  */

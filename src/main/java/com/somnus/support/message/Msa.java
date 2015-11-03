@@ -14,7 +14,7 @@ import org.springframework.context.i18n.LocaleContextHolder;
  * <p>Available from ApplicationObjectSupport, but also reusable
  * as a standalone helper to delegate to in application objects.
  *
- * @author Juergen Hoeller modify by caobin
+ * @author Juergen Hoeller modify by Somnus
  * @since 23.10.2003
  * @see ApplicationObjectSupport#getMessageSourceAccessor
  */
@@ -26,7 +26,7 @@ public class Msa {
 	
 	/**
 	 * CGLIB代理使用
-	 * add by caobin
+	 * add by Somnus
 	 */
 	public Msa(){
 		this.messageSource = null;

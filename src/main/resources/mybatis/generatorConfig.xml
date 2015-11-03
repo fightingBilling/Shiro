@@ -11,14 +11,14 @@
 			connectionURL="jdbc:oracle:thin:@192.168.12.214:1521:pbcs" userId="bacs"
 			password="bacs" />
 
-		<javaModelGenerator targetPackage="com.ips.bmps.module.blend.reorder.model"
+		<javaModelGenerator targetPackage="com.somnus.module.blend.reorder.model"
 			targetProject="bmps-web/src/main/java" />
 
 		<sqlMapGenerator targetPackage="mybatis.sqlMap"
 			targetProject="bmps-web/src/main/resources" />
 
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="com.ips.bmps.module.blend.reorder.dao" targetProject="bmps-web/src/main/java">
+			targetPackage="com.somnus.module.blend.reorder.dao" targetProject="bmps-web/src/main/java">
 		</javaClientGenerator>
 
 		<!-- <table tableName="TCOR_DRAW_TRN" enableCountByExample="false" enableUpdateByExample="false" 

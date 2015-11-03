@@ -2,9 +2,8 @@ package com.somnus.module.maintenance.service.impl;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.somnus.module.maintenance.dao.ShiroDbDao;
@@ -14,10 +13,9 @@ import com.somnus.module.maintenance.model.SetUser;
 import com.somnus.module.maintenance.service.ShiroDbService;
 
 @Transactional(readOnly = true)
+@Service
 public class ShiroDbServiceImpl implements ShiroDbService {
 
-	private transient Logger log = LoggerFactory.getLogger(ShiroDbServiceImpl.class);
-	
 	@Autowired
 	private ShiroDbDao shiroDbDao;
 

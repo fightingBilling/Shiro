@@ -10,12 +10,9 @@
 			<pattern>${pattern}</pattern>
 		</layout>
 	</appender>
-	
-	
-
 
 	<!-- 应用 Logger节点定义 -->
-	<logger name="com.ips" level="debug" additivity="false">
+	<logger name="com.somnus" level="debug" additivity="false">
 		<appender-ref ref="ROOT_CONSOLE" />
 	</logger>
 
@@ -51,36 +48,6 @@
 	<logger name="org.mybatis.spring.transaction" level="trace" additivity="false">
 		<appender-ref ref="ROOT_CONSOLE"/>
 	</logger>
-
-	<logger name="com.ips.bmps.module.setmain.draw" additivity="false">
-		<level value="info" />
-		<appender-ref ref="ROOT_CONSOLE" />
-	</logger>
-
-	<logger name="com.ips.bmps.module.setmain.drawfile"
-		additivity="false">
-		<level value="info" />
-		<appender-ref ref="ROOT_CONSOLE" />
-	</logger>
-
-	<logger name="com.ips.bmps.module.setmain.refund"
-		additivity="false">
-		<level value="info" />
-		<appender-ref ref="ROOT_CONSOLE" />
-	</logger>
-
-	<logger name="com.ips.bmps.module.setmain.reticket"
-		additivity="false">
-		<level value="info" />
-		<appender-ref ref="ROOT_CONSOLE" />
-	</logger>
-	
-	<logger name="org.springframework.jms.listener"
-		additivity="false">
-		<level value="error" />
-		<appender-ref ref="ROOT_CONSOLE" />
-	</logger>
-	
 
 	<!-- 根 Logger节点定义 -->
 	<root level="info">

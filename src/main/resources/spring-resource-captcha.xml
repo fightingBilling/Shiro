@@ -17,7 +17,7 @@
     
     
     <!-- 自定义图片验证码引擎 -->
-    <bean id="customImageCaptchaEngine" class="com.ips.bmps.support.captcha.CustomImageCaptchaEngine">
+    <bean id="customImageCaptchaEngine" class="com.somnus.support.captcha.CustomImageCaptchaEngine">
     	<property name="backgroundGenerator" ref="gradientBackgroundGenerator"/>
     	<property name="wordGenerator" ref="wordGenerator"/>
     	<property name="textPaster" ref="randomTextPaster"/>
@@ -31,6 +31,7 @@
     		<value>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</value>
     	</constructor-arg>
     </bean>  
+    
     
     <!-- 字符颜色及个数生成器 -->
     <bean id="randomTextPaster" class="com.octo.captcha.component.image.textpaster.RandomTextPaster">
@@ -77,7 +78,8 @@
     
     
     <!-- 字符颜色范围生成器 -->
-    <bean id="randomRangeColorGenerator" class="com.octo.captcha.component.image.color.RandomRangeColorGenerator">
+    <bean id="randomRangeColorGenerator" 
+    	class="com.octo.captcha.component.image.color.RandomRangeColorGenerator">
     	<constructor-arg index="0">
     		<array>
     			<value>0</value>

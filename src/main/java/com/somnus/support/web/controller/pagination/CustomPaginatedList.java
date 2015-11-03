@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * @Description Displaytag 数据库级分页扩展
- * @author caobin
+ * @author Somnus
  * @date 2012-12-10
  * @version 1.0
  */

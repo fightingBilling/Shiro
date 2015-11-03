@@ -9,7 +9,6 @@
 		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-
 	<description>数据源及事务配置</description>
 
 	<!-- ************************************************************************************************* -->
@@ -29,11 +28,11 @@
 	
 	<!-- 扫描basePackage下所有以@MyBatisRepository标识的 接口或继承MyBatisRepository的接口-->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.ips.bmps" />
+		<property name="basePackage" value="com.somnus" />
 		<!-- 扫描annotation -->
-		<property name="annotationClass" value="com.ips.bmps.support.repository.mybatis._annotation.MyBatisRepository"/>
+		<property name="annotationClass" value="com.somnus.support.repository.mybatis._annotation.MyBatisRepository"/>
 		<!-- 扫描接口 -->
-		<property name="markerInterface" value="com.ips.bmps.support.repository.mybatis._interface.MyBatisRepository"/>
+		<property name="markerInterface" value="com.somnus.support.repository.mybatis._interface.MyBatisRepository"/>
 	</bean>
 	
 	

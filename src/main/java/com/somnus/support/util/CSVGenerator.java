@@ -20,7 +20,7 @@ import com.csvreader.CsvReader;
 
 /**
  * @Description CSV生成
- * @author caobin
+ * @author Somnus
  * @date 2013-3-14
  * @version 1.0
  */
@@ -37,7 +37,7 @@ public class CSVGenerator {
 	 * @param list
 	 * @param delimiter
 	 * @throws Exception
-	 * @author caobin
+	 * @author Somnus
 	 */
 	public static void generateCsvFile(HttpServletResponse response, String charset, List<String[]> list, char delimiter)
 			throws Exception {
@@ -68,7 +68,7 @@ public class CSVGenerator {
 	 * @Description 把list转换成可以生成csv的数据格式
 	 * @param list
 	 * @return
-	 * @author caobin
+	 * @author Somnus
 	 */
 	public static List<String[]> list2StringArray(List<Object> list){
 		if(list != null && !list.isEmpty()){

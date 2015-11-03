@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd ">
 
-   <bean id="roleMenuController" class="com.ips.bmps.module.maintenance.web.RoleMenuController" parent="baseController">
+   <bean id="roleMenuController" class="com.somnus.module.maintenance.web.RoleMenuController" parent="baseController">
    		<property name="roleMenuService" ref="roleMenuService"/>
    		<property name="setFuncMenuService" ref="setFuncMenuService"/>
    </bean>

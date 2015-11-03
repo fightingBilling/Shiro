@@ -4,7 +4,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 
 /**
  * @Description  用户名,密码,验证码令牌
- * @author caobin
+ * @author Somnus
  * @date 2013-2-26
  * @version 1.0
  */

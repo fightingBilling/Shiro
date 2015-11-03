@@ -2,7 +2,7 @@ package com.somnus.module.maintenance.model;
 
 /**
  * @Description 用户状态
- * @author caobin
+ * @author Somnus
  * @date 2013-2-5
  * @version 1.0
  */

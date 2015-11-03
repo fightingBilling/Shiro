@@ -9,7 +9,7 @@ import com.somnus.support.web.controller.BaseController;
 
 /**
  * @Description 未授权跳转
- * @author caobin
+ * @author Somnus
  * @date 2013-2-5
  * @version 1.0
  */

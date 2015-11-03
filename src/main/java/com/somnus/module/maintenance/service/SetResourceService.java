@@ -71,7 +71,7 @@ public interface SetResourceService {
 	 * @Description 通过资源角色ID查询候选资源
 	 * @param resourceRoleId
 	 * @return
-	 * @author caobin
+	 * @author Somnus
 	 */
     List<SetResource> queryCandidateResource(Map<String, Object> params);
 	
@@ -79,7 +79,7 @@ public interface SetResourceService {
 	 * @Description 通过资源角色ID查询已选资源
 	 * @param resourceRoleId
 	 * @return
-	 * @author caobin
+	 * @author Somnus
 	 */
 	List<SetResource> querySelectedResource(BigDecimal resourceRoleId);
 

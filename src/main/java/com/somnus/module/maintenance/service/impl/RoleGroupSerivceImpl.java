@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.somnus.module.maintenance.dao.RoleGroupDao;
@@ -26,6 +27,7 @@ import com.somnus.support.web.controller.pagination.impl.PageResponse;
 
 
 @Transactional(readOnly=true)
+@Service
 public class RoleGroupSerivceImpl implements RoleGroupSerivce {
 
 	@Override

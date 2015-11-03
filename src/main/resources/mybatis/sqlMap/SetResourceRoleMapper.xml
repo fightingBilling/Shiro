@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.ips.bmps.module.maintenance.dao.SetResourceRoleDao" >
-  <resultMap id="BaseResultMap" type="com.ips.bmps.module.maintenance.model.SetResourceRole" >
+<mapper namespace="com.somnus.module.maintenance.dao.SetResourceRoleDao" >
+  <resultMap id="BaseResultMap" type="com.somnus.module.maintenance.model.SetResourceRole" >
     <id column="RESOURCE_ROLE_ID" property="resourceRoleId" jdbcType="DECIMAL" />
     <result column="RESOURCE_ROLE_CODE" property="resourceRoleCode" jdbcType="VARCHAR" />
     <result column="RESOURCE_ROLE_NAME" property="resourceRoleName" jdbcType="VARCHAR" />
@@ -75,7 +75,7 @@
     delete from SET_RESOURCE_ROLE
     where RESOURCE_ROLE_ID = #{resourceRoleId,jdbcType=DECIMAL}
   </delete>
-  <insert id="insert" parameterType="com.ips.bmps.module.maintenance.model.SetResourceRole" >
+  <insert id="insert" parameterType="com.somnus.module.maintenance.model.SetResourceRole" >
     insert into SET_RESOURCE_ROLE (RESOURCE_ROLE_ID, RESOURCE_ROLE_CODE, 
       RESOURCE_ROLE_NAME, RESOURCE_ROLE_TYPE, RESOURCE_ROLE_DESC, 
       STATUS, LAST_UPDATOR, LAST_UPDATE_TIME
@@ -85,7 +85,7 @@
       #{status,jdbcType=CHAR}, #{lastUpdator,jdbcType=VARCHAR}, #{lastUpdateTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ips.bmps.module.maintenance.model.SetResourceRole" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.somnus.module.maintenance.model.SetResourceRole" >
     update SET_RESOURCE_ROLE
     <set >
       <if test="resourceRoleCode != null" >

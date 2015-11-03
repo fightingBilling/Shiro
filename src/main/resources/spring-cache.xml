@@ -6,15 +6,4 @@
      http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	
-     <!-- <bean id="cacheManager"
-		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
-		<property name="configLocation" value="classpath:cache/ehcache.xml" />
-	 </bean> -->
-	 
-	 <!-- 缓存工具Bean(基于EHCACHE) 
-	 <bean id="cacheManagerHelper" class="com.ips.commons.support.cache.CacheManagerHelper">
-		 <property name="cacheManager">
-            <ref local="cacheManager" />
-        </property>
-	</bean>-->
 </beans>

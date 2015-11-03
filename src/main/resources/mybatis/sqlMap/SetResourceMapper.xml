@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.ips.bmps.module.maintenance.dao.SetResourceDao" >
-  <resultMap id="BaseResultMap" type="com.ips.bmps.module.maintenance.model.SetResource" >
+<mapper namespace="com.somnus.module.maintenance.dao.SetResourceDao" >
+  <resultMap id="BaseResultMap" type="com.somnus.module.maintenance.model.SetResource" >
     <id column="RESOURCE_ID" property="resourceId" jdbcType="DECIMAL" />
     <result column="SECURITY_FILTER" property="securityFilter" jdbcType="VARCHAR" />
     <result column="URL_PATTERN" property="urlPattern" jdbcType="VARCHAR" />
@@ -65,7 +65,7 @@
     delete from SET_RESOURCE
     where RESOURCE_ID = #{resourceId,jdbcType=DECIMAL}
   </delete>
-  <insert id="insert" parameterType="com.ips.bmps.module.maintenance.model.SetResource" >
+  <insert id="insert" parameterType="com.somnus.module.maintenance.model.SetResource" >
     insert into SET_RESOURCE (RESOURCE_ID, SECURITY_FILTER, URL_PATTERN, 
       STATUS, LAST_UPDATOR, LAST_UPDATE_TIME
       )
@@ -73,7 +73,7 @@
       #{status,jdbcType=CHAR}, #{lastUpdator,jdbcType=VARCHAR}, #{lastUpdateTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ips.bmps.module.maintenance.model.SetResource" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.somnus.module.maintenance.model.SetResource" >
     update SET_RESOURCE
     <set >
       <if test="securityFilter != null" >

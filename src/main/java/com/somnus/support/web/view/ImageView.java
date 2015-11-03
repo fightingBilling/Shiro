@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.AbstractView;
 
 /**
  * @Description 图片视图
- * @author caobin
+ * @author Somnus
  * @date 2013-2-26
  * @version 1.0
  */

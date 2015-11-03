@@ -53,7 +53,6 @@ public class SetFuncMenuController extends BaseController {
 		
 		Pageable pageable = null;
 		
-		
 		if(request.getParameter("pageSize") == null){
 			Integer start = findIntegerParameterValue(request, Constants._page);
 			pageable = new PageRequest(start == null ? 1 : start,Constants.DEFAULT_LIMIT);

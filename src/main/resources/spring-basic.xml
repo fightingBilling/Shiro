@@ -16,30 +16,14 @@
 
 	<context:annotation-config />
 	<task:annotation-driven/> 
-	<context:component-scan base-package="com.ips.bmps"/>
+	<context:component-scan base-package="com.somnus"/>
 
 	<import resource="classpath:/spring-env.xml" />
-	<import resource="classpath*:/spring-biz-*.xml" />
 	<import resource="classpath*:/spring-resource-*.xml" />
-	<import resource="classpath*:/jms/spring-jms*.xml" />
-	<!-- <import resource="classpath:/spring-cache.xml" />
-	<import resource="classpath:/webservice/spring-ws.xml" /> -->
 	<import resource="classpath:/security-shiro.xml" />
 	<import resource="classpath:/spring-scheduler.xml" />
-	<bean class="com.ips.commons.support.util.ApplicationContextUtil"></bean>
-	<bean class="com.ips.bmps.support.util.BeanUtilsHelper"></bean>
-
-
-	<!-- 初始化对象校验器 -->
-	<bean id="ovalHelper" class="com.ips.oval.support.OvalHelper">
-		<property name="messageBundle" value="msg/oval_message" />
-	</bean>
-
-	<!-- 消息元素别名 -->
-	<bean id="alias" class="com.ips.channel.support.message.MessageElementAlias">
-		<property name="body" value="body" />
-		<property name="message" value="message" />
-	</bean>
+	<bean class="com.somnus.support.holder.ApplicationContextHolder"></bean>
+	<bean class="com.somnus.support.util.BeanUtilsHelper"></bean>
 
 	<!-- ************************************************************************************************* -->
 	<!-- * 消息资源加载/访问 * -->
@@ -58,64 +42,26 @@
 	</bean>
 
 	<!-- 资源访问 -->
-	<bean id="msa" class="com.ips.bmps.support.message.Msa">
+	<bean id="msa" class="com.somnus.support.message.Msa">
 		<constructor-arg>
 			<ref bean="messageSource" />
 		</constructor-arg>
 	</bean>
 
-	<!-- 消息元素扫描 
-	<bean id="messageElementScannerConfigurer"
-		class="com.ips.channel.support.message.MessageElementScannerConfigurer">
-		<property name="basepackage" value="com.ips" />
-		<property name="cacheManagerHelper" ref="cacheManagerHelper" />
-	</bean>-->
-
-	<!-- 消息加解密 
-	<bean id="messageCryptoHelper" class="com.ips.channel.support.security.MessageCryptoHelper">
-		<property name="messageSecurity" value="${message.security}" />
-		<property name="md5Encoding" value="${message.md5Encoding}" />
-		<property name="cacheManagerHelper" ref="cacheManagerHelper" />
-		<property name="wsTransport" ref="wsTransport" />
-	</bean>-->
-
-	<!-- 报文异常解析器 
-	<bean id="messageErrorResolver" class="com.ips.channel.support.message.MessageErrorResolver" />-->
-
-	<bean class="com.ips.commons.support.util.FileGenerator">
-		<property name="encoding" value="${system.charset}"/>
-	</bean>
-	
-	<bean class="com.ips.commons.support.util.FileTmplate">
-		<property name="encoding" value="${system.charset}"/>
-		<property name="uploadPath" value="${upload.path}"/>
-	</bean>
-	
-
 	<!-- 异常条件 -->
 	<bean id="businessExPredicate"
-		class="com.ips.bmps.support.exception.logger.predicate.BusinessExceptionLoggerPredicate" />
+		class="com.somnus.support.exception.logger.predicate.BusinessExceptionLoggerPredicate" />
 	<bean id="systemExPredicate"
-		class="com.ips.bmps.support.exception.logger.predicate.SystemExceptionLoggerPredicate" />
+		class="com.somnus.support.exception.logger.predicate.SystemExceptionLoggerPredicate" />
 
 	<!-- 异常执行体 -->
 	<bean id="businessExClosure"
-		class="com.ips.bmps.support.exception.logger.closure.BusinessExceptionLoggerClosure" />
+		class="com.somnus.support.exception.logger.closure.BusinessExceptionLoggerClosure" />
 	<bean id="systemExClosure"
-		class="com.ips.bmps.support.exception.logger.closure.SystemExceptionLoggerClosure" />
+		class="com.somnus.support.exception.logger.closure.SystemExceptionLoggerClosure" />
 
 	<!-- 默认异常执行体 -->
 	<bean id="defaultExClosure"
-		class="com.ips.bmps.support.exception.logger.closure.DefaultExceptionLoggerClosure" />
+		class="com.somnus.support.exception.logger.closure.DefaultExceptionLoggerClosure" />
 
-	<!-- 打印模板定义 -->
-	<!-- 出款文件 -->
-	<bean id="drawFileTemplate"
-		class="com.ips.commons.support.print.impl.DefaultDrawFileTemplate" />
-	<!-- 退款 -->
-	<bean id="refundTemplate"
-		class="com.ips.commons.support.print.impl.DefaultRefundTemplate" />
-	<!-- 线上出款 -->
-	<bean id="drawOnlineTemplate"
-		class="com.ips.commons.support.print.impl.DefaultDrawOnlineTemplate" />
 </beans>

@@ -19,7 +19,7 @@ import com.sun.image.codec.jpeg.JPEGImageEncoder;
 
 /**
  * @Description 验证码控制器
- * @author caobin
+ * @author Somnus
  * @date 2013-2-26
  * @version 1.0
  */

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.ips.bmps.module.maintenance.dao.SetOptLogDao" >
-  <resultMap id="BaseResultMap" type="com.ips.bmps.module.maintenance.model.SetOptLog" >
+<mapper namespace="com.somnus.module.maintenance.dao.SetOptLogDao" >
+  <resultMap id="BaseResultMap" type="com.somnus.module.maintenance.model.SetOptLog" >
     <id column="LOG_ID" property="logId" jdbcType="VARCHAR" />
     <result column="OPT_USER_NAME" property="optUserName" jdbcType="VARCHAR" />
     <result column="LOG_TYPE" property="logType" jdbcType="VARCHAR" />
@@ -18,7 +18,7 @@
     LOG_ID, OPT_USER_NAME, LOG_TYPE, OPT_NAME, OPT_IP,OPT_DATE, STATUS,LAST_UPDATOR, LAST_UPDATE_TIME
   </sql>
 
-  <insert id="insert" parameterType="com.ips.bmps.module.maintenance.model.SetOptLog" >
+  <insert id="insert" parameterType="com.somnus.module.maintenance.model.SetOptLog" >
 
       <selectKey order="BEFORE" keyProperty="logId" resultType="string">
           select SEQ_SET_OPT_LOG.nextVal from dual
@@ -33,7 +33,7 @@
 
   </insert>
 	<select id="getLogByCondition" resultMap="BaseResultMap"
-		parameterType="com.ips.bmps.module.maintenance.model.SetOptLog">
+		parameterType="com.somnus.module.maintenance.model.SetOptLog">
 		<include refid="headPageSql" />	
 			SELECT 
 			<include refid="Base_Column_List"/>
@@ -47,7 +47,7 @@
 	</select>
 	
 	<select id="getLogByCond" resultMap="BaseResultMap"
-		parameterType="com.ips.bmps.module.maintenance.model.SetOptLog">
+		parameterType="com.somnus.module.maintenance.model.SetOptLog">
 			SELECT 
 			<include refid="Base_Column_List"/>
 		    FROM SET_OPT_LOG
@@ -90,7 +90,7 @@
 	</sql>
 	
 	<select id="getLogCount" resultType="int"
-		parameterType="com.ips.bmps.module.maintenance.model.SetOptLog">
+		parameterType="com.somnus.module.maintenance.model.SetOptLog">
 		SELECT COUNT(1) FROM SET_OPT_LOG
 		<where>
 			1=1

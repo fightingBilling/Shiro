@@ -8,7 +8,7 @@
 	<description>控制器配置</description>
 
 	<!-- Controller抽象基类 -->
-    <bean id="baseController" class="com.ips.bmps.support.web.controller.BaseController" abstract="true">
+    <bean id="baseController" class="com.somnus.support.web.controller.BaseController" abstract="true">
        	<!-- 方法名称解析器 -->
         <property name="methodNameResolver" ref="parameterMethodNameResolver"/>
         <!-- 候选日期模式 -->
@@ -25,7 +25,7 @@
     </bean>
     
     <!-- 登录页面 -->
-    <bean id="loginController" class="com.ips.bmps.module.defaults.web.LoginController">
+    <bean id="loginController" class="com.somnus.module.defaults.web.LoginController">
     	<property name="viewName" value="login"/>
     </bean>
     

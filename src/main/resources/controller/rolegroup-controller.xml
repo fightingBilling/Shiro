@@ -6,7 +6,7 @@
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd ">
 
 
-    <bean id="roleGroupController" class="com.ips.bmps.module.maintenance.web.RoleGroupController" parent="baseController">
+    <bean id="roleGroupController" class="com.somnus.module.maintenance.web.RoleGroupController" parent="baseController">
     	<property name="roleGroupSerivce" ref="roleGroupSerivce"/>
     </bean>
     

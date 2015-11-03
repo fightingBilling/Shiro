@@ -16,7 +16,7 @@ import com.somnus.support.exception.logger.context.ExceptionLoggerContext;
 
 /**
  * @Description 自定义映射异常解析器
- * @author caobin
+ * @author Somnus
  * @date 2012-11-19
  * @version 1.0
  */
@@ -36,7 +36,7 @@ public class CustomMappingExceptionResolver extends
 				applyStatusCodeIfPossible(request, response, statusCode);
 			}
 			
-			//add by caobin
+			//add by Somnus
 			log.error("====Error Type====: {}", new Object[]{ex.getClass()});
 			
 			//日志分类处理

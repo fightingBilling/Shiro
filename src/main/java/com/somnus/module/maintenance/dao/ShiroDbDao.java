@@ -9,7 +9,7 @@ import com.somnus.support.repository.mybatis._annotation.MyBatisRepository;
 
 /**
  * @Description Shiro用户数据访问
- * @author caobin
+ * @author Somnus
  * @date 2013-2-5
  * @version 1.0
  */
@@ -20,7 +20,7 @@ public interface ShiroDbDao {
 	 * @Description 通过用户名称查询用户信息
 	 * @param username 用户名称
 	 * @return
-	 * @author caobin
+	 * @author Somnus
 	 */
 	SetUser findByUserName(String username);
 	
@@ -28,7 +28,7 @@ public interface ShiroDbDao {
 	 * @Description 通过用户名称查询用户资源权限
 	 * @param username 用户名称
 	 * @return
-	 * @author caobin
+	 * @author Somnus
 	 */
 	List<SetResource> findResourceRolesByUserName(String username);
 	
@@ -36,7 +36,7 @@ public interface ShiroDbDao {
 	/**
 	 * @Description 查询所有过滤器
 	 * @return
-	 * @author caobin
+	 * @author Somnus
 	 */
 	List<SFilter> findAllFilters();
 

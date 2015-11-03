@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.ips.bmps.module.maintenance.dao.SetUserDao" >
-  <resultMap id="BaseResultMap" type="com.ips.bmps.module.maintenance.model.SetUser" >
+<mapper namespace="com.somnus.module.maintenance.dao.SetUserDao" >
+  <resultMap id="BaseResultMap" type="com.somnus.module.maintenance.model.SetUser" >
     <id column="USER_ID" property="userId" jdbcType="DECIMAL" />
     <result column="USERNAME" property="username" jdbcType="VARCHAR" />
     <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
@@ -36,7 +36,7 @@
     delete from SET_USER
     where USER_ID = #{userId,jdbcType=DECIMAL}
   </delete>
-  <insert id="insert" parameterType="com.ips.bmps.module.maintenance.model.SetUser" >
+  <insert id="insert" parameterType="com.somnus.module.maintenance.model.SetUser" >
     insert into SET_USER (USER_ID, USERNAME, PASSWORD, 
       DESCRIPTION, STATUS, LAST_UPDATOR, 
       LAST_UPDATE_TIME)
@@ -44,7 +44,7 @@
       #{description,jdbcType=VARCHAR}, #{status,jdbcType=CHAR}, #{lastUpdator,jdbcType=VARCHAR}, 
       #{lastUpdateTime,jdbcType=TIMESTAMP})
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ips.bmps.module.maintenance.model.SetUser" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.somnus.module.maintenance.model.SetUser" >
     update SET_USER
     <set >
       <if test="username != null" >

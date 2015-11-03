@@ -13,7 +13,7 @@
 	</bean>
 
 	<!-- 自定义基于JDBC的Realm -->
-	<bean id="shiroDbRealm" class="com.ips.bmps.module.maintenance.ShiroDbRealm">
+	<bean id="shiroDbRealm" class="com.somnus.module.maintenance.ShiroDbRealm">
 		<property name="shiroDbService" ref="shiroDbService"/>
 		<property name="credentialsMatcher">
 			<bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
@@ -27,16 +27,16 @@
 		<property name="defaultService" ref="defaultService"/>
 	</bean>
 	
-	<bean id="shiroDbService" class="com.ips.bmps.module.maintenance.service.impl.ShiroDbServiceImpl"/>
+	<bean id="shiroDbService" class="com.somnus.module.maintenance.service.impl.ShiroDbServiceImpl"/>
 	
 	<!-- 动态资源扩展服务 -->
-	<bean id="shiroService" class="com.ips.bmps.support.shiro.DefaultShiroService">
+	<bean id="shiroService" class="com.somnus.support.shiro.DefaultShiroService">
 		<property name="captchaFormAuthenticationFilter" ref="captchaFormAuthc"/>
 		<property name="customRolesAuthorizationFilter" ref="customRolesAuthorization"/>
 	</bean>
 	
 	<!-- Shiro Filter -->
-	<bean id="shiroFilter" class="com.ips.bmps.module.maintenance.web.filter.ShiroDbFilterFactoryBean">
+	<bean id="shiroFilter" class="com.somnus.module.maintenance.web.filter.ShiroDbFilterFactoryBean">
 		<property name="securityManager" ref="securityManager" />
 		<property name="loginUrl" value="/login.html" />
 		<property name="unauthorizedUrl" value="/secure/unauthorized.html"/>
@@ -61,14 +61,14 @@
 	</bean>
 
 	<!-- 附带验证码校验的身份验证过滤器 -->
-	<bean id="captchaFormAuthc" class="com.ips.bmps.module.maintenance.web.filter.CaptchaFormAuthenticationFilter">
+	<bean id="captchaFormAuthc" class="com.somnus.module.maintenance.web.filter.CaptchaFormAuthenticationFilter">
 		<property name="usernameParamName" value="${login.username}"/>
 		<property name="passwordnameParamName" value="${login.password}"/>
 		<property name="captchaParamName" value="${login.captcha}"/>
 	</bean>
 	
 	<!-- 自定义鉴权过滤器 -->
-	<bean id="customRolesAuthorization" class="com.ips.bmps.module.maintenance.web.filter.CustomRolesAuthorizationFilter"/>
+	<bean id="customRolesAuthorization" class="com.somnus.module.maintenance.web.filter.CustomRolesAuthorizationFilter"/>
 
 	
 	<!-- 保证实现了Shiro内部lifecycle方法的bean执行 -->

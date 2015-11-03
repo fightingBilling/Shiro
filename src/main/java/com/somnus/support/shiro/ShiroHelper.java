@@ -7,7 +7,7 @@ import com.somnus.module.maintenance.ShiroDbRealm.ShiroUser;
 
 /**
  * @Description shiro框架帮助类
- * @author caobin
+ * @author Somnus
  * @date 2013-3-21
  * @version 1.0
  */
@@ -16,7 +16,7 @@ public class ShiroHelper {
 	/**
 	 * @Description 获取当前登录用户名称
 	 * @return
-	 * @author caobin
+	 * @author Somnus
 	 */
 	public static String getUsername(){
 		ShiroUser su = ShiroUser.class.cast(SecurityUtils.getSubject().getPrincipal());

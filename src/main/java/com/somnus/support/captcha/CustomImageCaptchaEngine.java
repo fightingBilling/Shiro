@@ -25,7 +25,7 @@ import com.somnus.support.captcha.gimpy.CustomGimpyFactory;
 /**
  * @Description 自定义图片验证码引擎
  * (由于继承ListImageCaptchaEngine，会导致在注入前就buildInitialFactories，所以此类基于ListImageCaptchaEngine重写)
- * @author caobin
+ * @author Somnus
  * @date 2013-2-26
  * @version 1.0
  */

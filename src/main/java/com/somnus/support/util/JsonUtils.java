@@ -21,7 +21,7 @@ import com.somnus.support.exception.SysRuntimeException;
 
 /**
  * JSON处理工具类
- * @author caobin
+ * @author Somnus
  *
  */
 public class JsonUtils {
@@ -55,7 +55,7 @@ public class JsonUtils {
 	 * @Description
 	 * @param list
 	 * @return
-	 * @author caobin
+	 * @author Somnus
 	 */
 	public static<E> String list2JsonString(List<E> list){	
 		try{
@@ -79,7 +79,7 @@ public class JsonUtils {
 	 * @Description
 	 * @param obj
 	 * @return
-	 * @author caobin
+	 * @author Somnus
 	 */
 	public static String obj2JsonString(Object obj){	
 		try{

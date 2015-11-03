@@ -25,6 +25,7 @@ import com.somnus.module.maintenance.model.SetUser;
 import com.somnus.module.maintenance.model.SetUserRgroup;
 import com.somnus.module.maintenance.service.UserGroupService;
 import com.somnus.support.constant.Constants;
+import com.somnus.support.security.MD5Util;
 import com.somnus.support.shiro.ShiroHelper;
 import com.somnus.support.util.BusinessUtil;
 import com.somnus.support.web.controller.BaseController;
@@ -112,7 +113,7 @@ public class UserGroupController extends BaseController {
 	private ModelAndView userAddDisPlay(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		List<SetRoleGroup> groups = userGroupService.queryAll();
 		HttpSession session = request.getSession();
-		String mcrypt_key = IpsVerify.generatorMD5Key(32);
+		String mcrypt_key = MD5Util.init32Key();
         session.setAttribute("mcrypt_key",mcrypt_key);
 		return createMAV("/mt/user/user_create").addObject("groups", groups).addObject("mcrypt_key",mcrypt_key);
 	}
@@ -123,7 +124,7 @@ public class UserGroupController extends BaseController {
 		List<SetRoleGroup> candidateResources = userGroupService.queryCandidateResource(userId);
 		List<SetRoleGroup> selectedResources = userGroupService.querySelectedResource(userId);
 		HttpSession session = request.getSession();
-		String mcrypt_key = IpsVerify.generatorMD5Key(32);
+		String mcrypt_key = MD5Util.init32Key();
         session.setAttribute("mcrypt_key",mcrypt_key);
 		return createMAV("/mt/user/user_update")
 					.addObject("candidate_resources", candidateResources)
@@ -223,7 +224,6 @@ public class UserGroupController extends BaseController {
 			log.error(Constants.EXECUTE_ERROR + e.getMessage(), e);
 			return userAddDisPlay(request, response).addObject(Constants._message, "用户创建失败！");
 		}
-		
 		
 		return userAddDisPlay(request, response).addObject(Constants._message, "创建成功");
 	}
@@ -337,7 +337,7 @@ public class UserGroupController extends BaseController {
     public ModelAndView updatePwdView(HttpServletRequest request,
             HttpServletResponse response) throws Exception {
     	HttpSession session = request.getSession();
-		String mcrypt_key = IpsVerify.generatorMD5Key(32);
+		String mcrypt_key = MD5Util.init32Key();
         session.setAttribute("mcrypt_key",mcrypt_key);
         return createMAV("mt/user/updatepwd").addObject("flag", this.findStringParameterValue(request,"flag"))
         		.addObject("mcrypt_key",mcrypt_key);

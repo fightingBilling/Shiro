@@ -19,7 +19,7 @@ import com.somnus.module.maintenance.ShiroDbRealm.ShiroUser;
 
 /**
  * @Description 日志处理过滤器
- * @author caobin
+ * @author Somnus
  * @date 2012-11-15
  * @version 1.0
  */

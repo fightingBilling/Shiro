@@ -7,7 +7,7 @@ import org.slf4j.MDC;
 
 /**
  * @Description log上下文监听器
- * @author caobin
+ * @author Somnus
  * @date 2012-11-15
  * @version 1.0
  */

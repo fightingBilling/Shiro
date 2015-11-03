@@ -9,7 +9,7 @@ import com.somnus.module.maintenance.web.token.CaptchaUsernamePasswordToken;
 
 /**
  * @Description 在CustomFormAuthenticationFilter基础上整合验证码
- * @author caobin
+ * @author Somnus
  * @date 2013-2-26
  * @version 1.0
  */

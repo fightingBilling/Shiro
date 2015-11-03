@@ -37,24 +37,24 @@
 				<bean
 					class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
 				<bean 
-					class="com.ips.bmps.support.web.view.ImageView" />
+					class="com.somnus.support.web.view.ImageView" />
 			</list>
 		</property>
 	</bean>
 
 	<!-- json对象转换器 -->
-	<bean id="jsonConvert"
+	<bean id="jsonConvert" 
 		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
 
 	<!-- 文件上传解析器 -->
-	<bean id="multipartResolver"
+	<bean id="multipartResolver" 
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="maxUploadSize" value="-1" />
 	</bean>
 
 	<!-- 异常解析器 -->
-	<bean id="exceptionResolver"
-		class="com.ips.bmps.support.web.resolver.CustomMappingExceptionResolver">
+	<bean id="exceptionResolver" 
+		class="com.somnus.support.web.resolver.CustomMappingExceptionResolver">
 		<!-- 条件 -->
 		<property name="predicates">
 			<list>
@@ -75,11 +75,10 @@
 		</property>
 		<property name="exceptionMappings">
 			<props>
-				<!-- 可定义多个类型异常并分类 
-				<prop key="com.ips.bmps.support.exception.BizRuntimeException">errors/businessError</prop>-->
-				<prop key="com.ips.bmps.support.exception.BizException">errors/businessError</prop>
-				<prop key="com.ips.bmps.support.exception.SysRuntimeException">errors/systemError</prop>
-				<prop key="com.ips.bmps.support.exception.SysException">errors/systemError</prop>
+				<!-- 可定义多个类型异常并分类 -->
+				<prop key="com.somnus.support.exception.BizException">errors/businessError</prop>
+				<prop key="com.somnus.support.exception.SysRuntimeException">errors/systemError</prop>
+				<prop key="com.somnus.support.exception.SysException">errors/systemError</prop>
 				<prop key="org.springframework.dao.DataAccessException">errors/dataAccessError</prop>
 			</props>
 		</property>

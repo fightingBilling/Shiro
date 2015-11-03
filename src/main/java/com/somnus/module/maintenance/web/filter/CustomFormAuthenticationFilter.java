@@ -9,7 +9,7 @@ public class CustomFormAuthenticationFilter extends FormAuthenticationFilter {
 	/**
 	 * @Description 获取应用到的路径
 	 * @return
-	 * @author caobin
+	 * @author Somnus
 	 */
 	public Map<String, Object> getAppliedPaths(){
 		return this.appliedPaths;
