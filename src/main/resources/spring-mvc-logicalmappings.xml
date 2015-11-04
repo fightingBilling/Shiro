@@ -52,7 +52,6 @@
 				<prop key="s5002">groupCreate</prop>
 				<prop key="s5003">groupUpdate</prop>
 				<prop key="s5004">groupDelete</prop>
-				
 			</props>
 		</property>
 	</bean>

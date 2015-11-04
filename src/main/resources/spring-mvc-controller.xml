@@ -17,7 +17,6 @@
         		<value>yyyyMMdd</value>
         		<value>yyyy/MM/dd</value>
         		<value>yyyy-MM-dd</value>
-        		<value>yyyy.MM.dd</value>
         	</list>
         </property>
          <!-- 消息资源访问器 -->

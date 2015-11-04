@@ -17,7 +17,8 @@
     
     
     <!-- 自定义图片验证码引擎 -->
-    <bean id="customImageCaptchaEngine" class="com.somnus.support.captcha.CustomImageCaptchaEngine">
+    <bean id="customImageCaptchaEngine" 
+        class="com.somnus.support.captcha.CustomImageCaptchaEngine">
     	<property name="backgroundGenerator" ref="gradientBackgroundGenerator"/>
     	<property name="wordGenerator" ref="wordGenerator"/>
     	<property name="textPaster" ref="randomTextPaster"/>
@@ -26,7 +27,8 @@
 
 
     <!-- 字符生成器 -->
-    <bean id="wordGenerator" class="com.octo.captcha.component.word.wordgenerator.RandomWordGenerator">
+    <bean id="wordGenerator" 
+        class="com.octo.captcha.component.word.wordgenerator.RandomWordGenerator">
     	<constructor-arg>
     		<value>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</value>
     	</constructor-arg>
@@ -34,7 +36,8 @@
     
     
     <!-- 字符颜色及个数生成器 -->
-    <bean id="randomTextPaster" class="com.octo.captcha.component.image.textpaster.RandomTextPaster">
+    <bean id="randomTextPaster" 
+        class="com.octo.captcha.component.image.textpaster.RandomTextPaster">
     	<constructor-arg index="0"><!-- min Accepted Word Length -->
     		<value>4</value>
     	</constructor-arg>
@@ -48,7 +51,8 @@
     </bean>
     
     <!-- 文字大小及字体生成器 -->
-    <bean id="randomFontGenerator" class="com.octo.captcha.component.image.fontgenerator.RandomFontGenerator">
+    <bean id="randomFontGenerator" 
+        class="com.octo.captcha.component.image.fontgenerator.RandomFontGenerator">
     	<constructor-arg index="0"><!-- min font size -->
     		<value>15</value>
     	</constructor-arg>
@@ -102,7 +106,8 @@
     
     <!-- 背景生成器  begin-->
     <!-- 单色 -->
-    <bean id="uniColorBackgroundGenerator" class="com.octo.captcha.component.image.backgroundgenerator.UniColorBackgroundGenerator">
+    <bean id="uniColorBackgroundGenerator" 
+        class="com.octo.captcha.component.image.backgroundgenerator.UniColorBackgroundGenerator">
     	<constructor-arg index="0" ref="backgroundWidth"/><!-- width -->
     	<constructor-arg index="1" ref="backgroundHeight"/><!-- height -->
     	<constructor-arg index="2"><!-- first color -->
@@ -115,7 +120,8 @@
     </bean>
     
     <!-- 双色渐变 -->
-    <bean id="gradientBackgroundGenerator" class="com.somnus.support.captcha.backgroundGenerator.CustomGradientBackGroundGenerator">
+    <bean id="gradientBackgroundGenerator" 
+        class="com.somnus.support.captcha.backgroundGenerator.CustomGradientBackGroundGenerator">
     	<constructor-arg index="0" ref="backgroundWidth"/><!-- width -->
     	<constructor-arg index="1" ref="backgroundHeight"/><!-- height -->
     	<constructor-arg index="2"><!-- first color -->
@@ -135,7 +141,8 @@
     </bean>
     
     <!-- 彩色 -->
-    <bean id="funkyBackgroundGenerator" class="com.octo.captcha.component.image.backgroundgenerator.FunkyBackgroundGenerator">
+    <bean id="funkyBackgroundGenerator" 
+        class="com.octo.captcha.component.image.backgroundgenerator.FunkyBackgroundGenerator">
     	<constructor-arg index="0" ref="backgroundWidth"/><!-- width -->
     	<constructor-arg index="1" ref="backgroundHeight"/><!-- height -->
     </bean>

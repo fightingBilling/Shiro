@@ -66,8 +66,11 @@
 		<jersey.version>1.17.1</jersey.version>
 
 		<!--###################### JDBC Driver ###################### -->
-		<!-- <jdbc.driver.groupId>com.oracle</jdbc.driver.groupId> <jdbc.driver.artifactId>ojdbc14</jdbc.driver.artifactId> 
-			<jdbc.driver.version>10.2.0.4.0</jdbc.driver.version> -->
+		<!-- 
+		<jdbc.driver.groupId>com.oracle</jdbc.driver.groupId> 
+		<jdbc.driver.artifactId>ojdbc14</jdbc.driver.artifactId> 
+		<jdbc.driver.version>10.2.0.4.0</jdbc.driver.version> 
+		-->
 		<jdbc.driver.groupId>mysql</jdbc.driver.groupId>
 		<jdbc.driver.artifactId>mysql-connector-java</jdbc.driver.artifactId>
 		<jdbc.driver.version>5.1.27</jdbc.driver.version>

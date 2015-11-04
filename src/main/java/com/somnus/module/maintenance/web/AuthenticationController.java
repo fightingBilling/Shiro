@@ -18,7 +18,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.somnus.module.maintenance.model.SetOptLog;
 import com.somnus.module.maintenance.model.SetUser;
 import com.somnus.module.maintenance.service.UserGroupService;
 import com.somnus.module.maintenance.web.token.CaptchaUsernamePasswordToken;
@@ -43,9 +42,6 @@ public class AuthenticationController extends BaseController {
 	 */
 	public ModelAndView authenticate(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		/*if(SecurityUtils.getSubject().isAuthenticated()){
-			SecurityUtils.getSubject().logout();
-		}	*/
 		String optIp = request.getRemoteAddr();// 获取登录ip地址
 		String logType = "";// 登录类型
 		String logDesc = "";// 登录描述
@@ -135,18 +131,12 @@ public class AuthenticationController extends BaseController {
 	
 	private String usernameParamName;
 	
-	private String passwordnameParamName;
-	
 	private String captchaParamName;
 
 	public void setUsernameParamName(String usernameParamName) {
 		this.usernameParamName = usernameParamName;
 	}
 
-	public void setPasswordnameParamName(String passwordnameParamName) {
-		this.passwordnameParamName = passwordnameParamName;
-	}
-	
 	/**
 	 * @param captchaParamName the captchaParamName to set
 	 */

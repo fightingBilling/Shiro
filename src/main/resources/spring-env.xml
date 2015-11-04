@@ -19,7 +19,7 @@
 	<!-- 开发环境 -->
 	<beans profile="dev">
 		<context:property-placeholder
-			ignore-unresolvable="true" location="classpath:/env/configurations-dev.properties,classpath*:/properties/blend.properties,classpath*:/properties/setmain.properties" />
+			ignore-unresolvable="true" location="classpath:/env/configurations-dev.properties" />
 		<!-- 数据源配置-DBCP数据库连接池 -->
 		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 			destroy-method="close">
@@ -39,7 +39,7 @@
 	<!-- SIT环境 -->
 	<beans profile="sit">
 		<context:property-placeholder
-			ignore-unresolvable="true" location="classpath:/env/configurations-sit.properties,classpath*:/properties/blend.properties,classpath*:/properties/setmain.properties" />
+			ignore-unresolvable="true" location="classpath:/env/configurations-dev.properties" />
 		<!-- 数据源配置,使用应用服务器的数据库连接池 -->
 		<jee:jndi-lookup id="dataSource" jndi-name="${jndi.name}"/>
 	</beans>
@@ -48,7 +48,7 @@
 	<!-- PRD环境 -->
 	<beans profile="prd">
 		<context:property-placeholder
-			ignore-unresolvable="true" location="classpath:/env/configurations-prd.properties,classpath*:/properties/blend.properties,classpath*:/properties/setmain.properties" />
+			ignore-unresolvable="true" location="classpath:/env/configurations-dev.properties" />
 		<!-- 数据源配置,使用应用服务器的数据库连接池 -->
 		<jee:jndi-lookup id="dataSource" jndi-name="${jndi.name}"/>
 	</beans>

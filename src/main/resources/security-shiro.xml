@@ -86,4 +86,5 @@
     <bean id="hashIterations" class="java.lang.Integer">
     	<constructor-arg value="${security.shiro.md5.hashIter}"/>
     </bean>
+    
 </beans>
