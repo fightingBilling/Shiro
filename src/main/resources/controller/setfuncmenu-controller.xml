@@ -6,7 +6,7 @@
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd ">
 
    <bean id="setFuncMenuController" class="com.somnus.module.maintenance.web.SetFuncMenuController" parent="baseController">
-   		<property name="setFuncMenuService" ref="setFuncMenuService"/>
+   		<property name="setFuncMenuService" ref="setFuncMenuServiceImpl"/>
    </bean>
 
 </beans>

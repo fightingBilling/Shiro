@@ -6,8 +6,8 @@
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd ">
 
    <bean id="rroleResourceController" class="com.somnus.module.maintenance.web.RroleResourceController" parent="baseController">
-   		<property name="rroleResourceService" ref="rroleResourceService"/>
-   		<property name="setResourceService" ref="setResourceService"/>
+   		<property name="rroleResourceService" ref="rroleResourceServiceImpl"/>
+   		<property name="setResourceService" ref="setResourceServiceImpl"/>
    </bean>
 
 </beans>

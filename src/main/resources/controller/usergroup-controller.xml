@@ -7,7 +7,7 @@
 
 
     <bean id="userGroupController" class="com.somnus.module.maintenance.web.UserGroupController" parent="baseController">
-    	<property name="userGroupService" ref="userGroupService"/>
+    	<property name="userGroupService" ref="userGroupServiceImpl"/>
     </bean>
     
 </beans>

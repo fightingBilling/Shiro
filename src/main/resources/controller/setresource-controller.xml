@@ -6,7 +6,7 @@
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd ">
 
    <bean id="setResourceController" class="com.somnus.module.maintenance.web.SetResourceController" parent="baseController">
-   		<property name="setResourceService" ref="setResourceService"/>
+   		<property name="setResourceService" ref="setResourceServiceImpl"/>
    		<property name="shiroService" ref="shiroService"/>
    </bean>
 

@@ -7,7 +7,7 @@
 
 
     <bean id="roleGroupController" class="com.somnus.module.maintenance.web.RoleGroupController" parent="baseController">
-    	<property name="roleGroupSerivce" ref="roleGroupSerivce"/>
+    	<property name="roleGroupSerivce" ref="roleGroupSerivceImpl"/>
     </bean>
     
 </beans>

@@ -35,7 +35,7 @@
         <!-- <property name="timeout" value="30"/> -->  
     </bean>
     <!-- 打开事务注解 --> 
-    <tx:annotation-driven transaction-manager="txManager" proxy-target-class="true" />
+    <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />
     
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <property name="dataSource" ref="proxyDataSource"/>

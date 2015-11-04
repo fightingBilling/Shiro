@@ -11,9 +11,9 @@
 	
 	<task:scheduled-tasks scheduler="scheduler">
 	    <!-- cron:每分钟一次 -->
-	    <task:scheduled ref="scheduler" method="execute" cron="0 0 1 * * ?"/>
+	    <task:scheduled ref="schedulerAction" method="execute" cron="0 0 1 * * ?"/>
 	</task:scheduled-tasks>
 
-	<bean id="scheduler" class="com.somnus.module.scheduled.SchedulerAction"/>
+	<bean id="schedulerAction" class="com.somnus.module.scheduled.SchedulerAction"/>
 	
 </beans>

@@ -36,7 +36,7 @@ function checkpwd(){
 		</div>
 		<center>
 		  <br></br>
-		  <h1>资金管理平台</h1>
+		  <h1>管理平台</h1>
 		</center>
 		<div class="container" style="width:620px; margin-top: 10px;">
 			<div class="well">
@@ -58,7 +58,7 @@ function checkpwd(){
 					<div class="control-group">
 						<label class="control-label" for="password">密码</label>
 						<div class="controls">
-						  <input type="hidden" id="hidAccTranPasswd" name="hidAccTranPasswd"  />
+						  <input type="password" id="hidAccTranPasswd" name="hidAccTranPasswd"  />
 						</div>
 					</div>
 					

@@ -6,8 +6,8 @@
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd ">
 
    <bean id="roleMenuController" class="com.somnus.module.maintenance.web.RoleMenuController" parent="baseController">
-   		<property name="roleMenuService" ref="roleMenuService"/>
-   		<property name="setFuncMenuService" ref="setFuncMenuService"/>
+   		<property name="roleMenuService" ref="roleMenuServiceImpl"/>
+   		<property name="setFuncMenuService" ref="setFuncMenuServiceImpl"/>
    </bean>
 
 </beans>

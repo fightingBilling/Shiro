@@ -127,14 +127,20 @@ public class AuthenticationController extends BaseController {
 		return createMAV("redirect:/login.html");
 	}
 	
-	private transient Logger log = LoggerFactory.getLogger(this.getClass());
+private transient Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	private String usernameParamName;
+	
+	private String passwordnameParamName;
 	
 	private String captchaParamName;
 
 	public void setUsernameParamName(String usernameParamName) {
 		this.usernameParamName = usernameParamName;
+	}
+	
+	public void setPasswordnameParamName(String passwordnameParamName) {
+		this.passwordnameParamName = passwordnameParamName;
 	}
 
 	/**
@@ -143,7 +149,6 @@ public class AuthenticationController extends BaseController {
 	public void setCaptchaParamName(String captchaParamName) {
 		this.captchaParamName = captchaParamName;
 	}
-
 
 	@Autowired
 	UserGroupService userGroupService;

@@ -24,7 +24,7 @@
 		<!-- 忽略验证码，供测试使用，随环境配置加载 -->
 		<property name="captchaIgnore" value="${captcha.ignore}"/>
 		<property name="captchaService" ref="captchaService"/>
-		<property name="defaultService" ref="defaultService"/>
+		<property name="defaultService" ref="defaultServiceImpl"/>
 	</bean>
 	
 	<bean id="shiroDbService" class="com.somnus.module.maintenance.service.impl.ShiroDbServiceImpl"/>
