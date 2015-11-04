@@ -51,6 +51,22 @@
 		<property name="maxUploadSize" value="-1" />
 	</bean>
 
+	
+	<!-- 异常条件 -->
+	<bean id="businessExPredicate"
+		class="com.somnus.support.exception.logger.predicate.BusinessExceptionLoggerPredicate" />
+	<bean id="systemExPredicate"
+		class="com.somnus.support.exception.logger.predicate.SystemExceptionLoggerPredicate" />
+
+	<!-- 异常执行体 -->
+	<bean id="businessExClosure"
+		class="com.somnus.support.exception.logger.closure.BusinessExceptionLoggerClosure" />
+	<bean id="systemExClosure"
+		class="com.somnus.support.exception.logger.closure.SystemExceptionLoggerClosure" />
+	<!-- 默认异常执行体 -->
+	<bean id="defaultExClosure"
+		class="com.somnus.support.exception.logger.closure.DefaultExceptionLoggerClosure" />
+	
 	<!-- 异常解析器 -->
 	<bean id="exceptionResolver" 
 		class="com.somnus.support.web.resolver.CustomMappingExceptionResolver">

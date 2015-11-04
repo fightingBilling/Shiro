@@ -16,6 +16,7 @@
 
 	<!-- <context:annotation-config/> -->
 	<!-- <task:annotation-driven/>  -->
+	
 	<context:component-scan base-package="com.somnus"/>
 
 	<import resource="classpath:/spring-env.xml" />
@@ -23,46 +24,9 @@
 	<import resource="classpath:/spring-mybatis.xml" />
 	<import resource="classpath:/security-shiro.xml" />
 	<import resource="classpath:/spring-scheduler.xml" />
+	<import resource="classpath:/msg/spring-message.xml" />
+	
 	<bean class="com.somnus.support.holder.ApplicationContextHolder"></bean>
 	<bean class="com.somnus.support.util.BeanUtilsHelper"></bean>
-
-	<!-- ************************************************************************************************* -->
-	<!-- * 消息资源加载/访问 * -->
-	<!-- ************************************************************************************************* -->
-
-	<!-- 资源加载 -->
-	<bean id="messageSource"
-		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<property name="useCodeAsDefaultMessage" value="true" />
-		<property name="basenames">
-			<array>
-				<value>classpath:/msg/errors_message</value>
-			</array>
-		</property>
-		<property name="defaultEncoding" value="UTF-8" />
-	</bean>
-
-	<!-- 资源访问 -->
-	<bean id="msa" class="com.somnus.support.message.Msa">
-		<constructor-arg>
-			<ref bean="messageSource" />
-		</constructor-arg>
-	</bean>
-
-	<!-- 异常条件 -->
-	<bean id="businessExPredicate"
-		class="com.somnus.support.exception.logger.predicate.BusinessExceptionLoggerPredicate" />
-	<bean id="systemExPredicate"
-		class="com.somnus.support.exception.logger.predicate.SystemExceptionLoggerPredicate" />
-
-	<!-- 异常执行体 -->
-	<bean id="businessExClosure"
-		class="com.somnus.support.exception.logger.closure.BusinessExceptionLoggerClosure" />
-	<bean id="systemExClosure"
-		class="com.somnus.support.exception.logger.closure.SystemExceptionLoggerClosure" />
-
-	<!-- 默认异常执行体 -->
-	<bean id="defaultExClosure"
-		class="com.somnus.support.exception.logger.closure.DefaultExceptionLoggerClosure" />
 
 </beans>

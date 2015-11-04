@@ -1,9 +1,9 @@
 package com.somnus.support.exception;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.MessageSourceAccessor;
 
 import com.somnus.support.holder.ApplicationContextHolder;
-import com.somnus.support.message.Msa;
 
 /**
  * @Description 基础应用平台业务异常
@@ -37,7 +37,7 @@ public class BusinessException extends RuntimeException {
 
 	public BusinessException(String msgCode, Object[] params) {
 		ApplicationContext context = ApplicationContextHolder.getApplicationContext();
-		Msa msa = (Msa) context.getBean("msa");
+		MessageSourceAccessor msa = (MessageSourceAccessor) context.getBean("msa");
 		msgCode = msa.getMessage(msgCode, params);
 	}
 

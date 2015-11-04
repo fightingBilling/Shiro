@@ -17,13 +17,13 @@ import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.time.DateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 import org.springframework.web.util.WebUtils;
 
 import com.somnus.support.exception.SysRuntimeException;
-import com.somnus.support.message.Msa;
 import com.somnus.support.web.controller.pagination.CustomPaginatedList;
 import com.somnus.support.web.controller.pagination.Pageable;
 import com.somnus.support.web.controller.pagination.PaginatedList;
@@ -293,13 +293,12 @@ public abstract class BaseController extends MultiActionController{
 	/**
 	 * 消息资源访问器
 	 * */
-	protected Msa msa;
+	protected MessageSourceAccessor msa;
 	
-	public void setMsa(Msa msa) {
+	public void setMsa(MessageSourceAccessor msa) {
 		this.msa = msa;
 	}
 
-	
 	public void setCandidateDatePatterns(String[] candidateDatePatterns) {
 		this.candidateDatePatterns = candidateDatePatterns;
 	}
