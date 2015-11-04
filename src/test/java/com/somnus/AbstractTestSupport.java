@@ -12,10 +12,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
- * @author caobin
+ * @author Somnus
  * @version 1.0
  * @Description 后台单元测试基类
- * @date 2012-11-19
+ * @date 2015-11-04
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:spring-basic.xml")

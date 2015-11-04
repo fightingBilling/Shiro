@@ -11,8 +11,8 @@ import com.somnus.module.maintenance.model.SetFuncMenu;
 
 /**
  * @Description 
- * @author caobin
- * @date 2013-3-11
+ * @author Somnus
+ * @date 2015-11-04
  * @version 1.0
  */
 public class DefaultDaoTestcase extends AbstractTestSupport{
