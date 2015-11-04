@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://packtag.sf.net" prefix="pack"%>
+<%@ taglib uri="https://github.com/d8bitr/packtag" prefix="pack" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
-<%@ taglib prefix="display" uri="/display"%>
 <% 
 	response.setHeader("Cache-Control", "no-cache, no-store"); 
 	response.setHeader("Expires", "-1");
