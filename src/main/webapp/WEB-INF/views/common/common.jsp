@@ -7,6 +7,7 @@
 <% 
 	response.setHeader("Cache-Control", "no-cache, no-store"); 
 	response.setHeader("Expires", "-1");
+	String path = request.getContextPath();
 %>
 <!DOCTYPE html>
 <pack:style src="/bootstrap/css/bootstrap.css" />

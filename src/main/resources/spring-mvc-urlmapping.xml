@@ -8,11 +8,6 @@
 	<!-- url映射配置 -->
 	<bean id="publicUrlMapping"
 		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-        <!-- <property name="interceptors">
-            <list>
-                <ref bean="auditLogInterceptor"/>
-            </list>
-        </property> -->
 		<property name="mappings">
 			<props>
 				<!-- 验证码 -->

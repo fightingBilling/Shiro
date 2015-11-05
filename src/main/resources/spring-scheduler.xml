@@ -7,7 +7,9 @@
 
 	<description>Spring	Scheduled</description>
 	
-	<task:scheduler id="scheduler" pool-size="2"/>
+	<!-- 配置任务线性池 -->  
+    <task:executor id="executor" pool-size="3" />  
+    <task:scheduler id="scheduler" pool-size="3" /> 
 	
 	<task:scheduled-tasks scheduler="scheduler">
 	    <!-- cron:每分钟一次 -->

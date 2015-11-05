@@ -21,7 +21,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.somnus.module.maintenance.model.SetUser;
 import com.somnus.module.maintenance.service.UserGroupService;
 import com.somnus.module.maintenance.web.token.CaptchaUsernamePasswordToken;
-import com.somnus.support.util.BusinessUtil;
 import com.somnus.support.web.controller.BaseController;
 
 /**
@@ -45,18 +44,13 @@ public class AuthenticationController extends BaseController {
 		String optIp = request.getRemoteAddr();// 获取登录ip地址
 		String logType = "";// 登录类型
 		String logDesc = "";// 登录描述
-		String strUsername = findStringParameterValue(request,
-				usernameParamName);
-		String sessionPwd = (String)request.getSession().getAttribute("mcrypt_key");
-		String strPassword = BusinessUtil.decryByKey(request.getParameter("hidAccTranPasswd"), sessionPwd);
-		String strCaptcha = findStringParameterValue(request,
-				captchaParamName);	
+		String strUsername = findStringParameterValue(request, usernameParamName);
+		String strPassword = findStringParameterValue(request, passwordnameParamName);
+		String strCaptcha = findStringParameterValue(request, captchaParamName);	
 		
 		Subject objCurrentUser = SecurityUtils.getSubject();
-		log.debug("user principal: {}",
-				new Object[] { objCurrentUser.getPrincipal() });
-		log.debug("user authenticated: {}",
-				new Object[] { objCurrentUser.isAuthenticated() });
+		log.debug("user principal: {}", new Object[] { objCurrentUser.getPrincipal() });
+		log.debug("user authenticated: {}", new Object[] { objCurrentUser.isAuthenticated() });
 
 		if (!objCurrentUser.isAuthenticated()) {
 			CaptchaUsernamePasswordToken objToken = new CaptchaUsernamePasswordToken(
@@ -93,8 +87,7 @@ public class AuthenticationController extends BaseController {
 				 logDesc = strUsername + "用户名不存在,登录失败";
 				throw new UnknownAccountException(String.format("不存在用户[%s]", objToken.getPrincipal()));
 			} catch (IncorrectCredentialsException ice) {
-				log.error("用户[{}]密码错误",
-						new Object[] { objToken.getPrincipal() });
+				log.error("用户[{}]密码错误", new Object[] { objToken.getPrincipal() });
 				 logType = "28";
 				 logDesc = strUsername + "用户密码错误,登录失败";
 				throw new IncorrectCredentialsException(String.format("用户[%s]密码错误", 
@@ -106,9 +99,7 @@ public class AuthenticationController extends BaseController {
 				log.error(t.getMessage(), t);
 				throw new AuthenticationException(t.getMessage());
 			}
-
 		}
-		request.getSession().removeAttribute("mcrypt_key");
 		// 已通过身份验证
         return createMAV("redirect:/default.html");
 	}
@@ -127,7 +118,7 @@ public class AuthenticationController extends BaseController {
 		return createMAV("redirect:/login.html");
 	}
 	
-private transient Logger log = LoggerFactory.getLogger(this.getClass());
+    private transient Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	private String usernameParamName;
 	

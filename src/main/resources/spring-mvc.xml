@@ -7,7 +7,7 @@
 	<description>SpringMVC公共配置</description>
 
 	<import resource="classpath*:/spring-mvc-*.xml" />
-
+    <import resource="classpath:/spring-env.xml"/>
 	<context:annotation-config />
 
 	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />

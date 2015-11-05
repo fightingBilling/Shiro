@@ -23,24 +23,11 @@ public class ShiroDbFilterFactoryBean extends ShiroFilterFactoryBean implements
 		appendChainDefinition = new LinkedHashMap<String, String>();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.apache.shiro.spring.web.ShiroFilterFactoryBean#setFilterChainDefinitions
-	 * (java.lang.String)
-	 */
 	@Override
 	public void setFilterChainDefinitions(String definitions) {
 		throw new UnsupportedOperationException();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.apache.shiro.spring.web.ShiroFilterFactoryBean#
-	 * setFilterChainDefinitionMap(java.util.Map)
-	 */
 	@Override
 	public void setFilterChainDefinitionMap(
 			Map<String, String> filterChainDefinitionMap) {
@@ -56,8 +43,7 @@ public class ShiroDbFilterFactoryBean extends ShiroFilterFactoryBean implements
 		if (lstFilters != null && !lstFilters.isEmpty()) {
 			for (SFilter f : lstFilters) {
 				StringBuilder valueBuilder = new StringBuilder();
-				valueBuilder
-						.append(f.getSecurityFilter().equals("anon") ? "anon"
+				valueBuilder.append(f.getSecurityFilter().equals("anon") ? "anon"
 								: String.format("%s,cRoles[%s]",
 										f.getSecurityFilter(),
 										f.getResourceId()));
@@ -88,8 +74,7 @@ public class ShiroDbFilterFactoryBean extends ShiroFilterFactoryBean implements
 	 * @param appendChainDefinition
 	 *            the appendChainDefinition to set
 	 */
-	public void setAppendChainDefinition(
-			Map<String, String> appendChainDefinition) {
+	public void setAppendChainDefinition(Map<String, String> appendChainDefinition) {
 		this.appendChainDefinition = appendChainDefinition;
 	}
 

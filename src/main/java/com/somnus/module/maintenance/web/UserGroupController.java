@@ -25,9 +25,7 @@ import com.somnus.module.maintenance.model.SetUser;
 import com.somnus.module.maintenance.model.SetUserRgroup;
 import com.somnus.module.maintenance.service.UserGroupService;
 import com.somnus.support.constant.Constants;
-import com.somnus.support.security.MD5Util;
 import com.somnus.support.shiro.ShiroHelper;
-import com.somnus.support.util.BusinessUtil;
 import com.somnus.support.web.controller.BaseController;
 import com.somnus.support.web.controller.pagination.Pageable;
 import com.somnus.support.web.controller.pagination.PaginatedList;
@@ -113,9 +111,7 @@ public class UserGroupController extends BaseController {
 	private ModelAndView userAddDisPlay(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		List<SetRoleGroup> groups = userGroupService.queryAll();
 		HttpSession session = request.getSession();
-		String mcrypt_key = MD5Util.init32Key();
-        session.setAttribute("mcrypt_key",mcrypt_key);
-		return createMAV("/mt/user/user_create").addObject("groups", groups).addObject("mcrypt_key",mcrypt_key);
+		return createMAV("/mt/user/user_create").addObject("groups", groups);
 	}
 	
 	private ModelAndView userUpdateDisPlay(HttpServletRequest request, 
@@ -124,15 +120,13 @@ public class UserGroupController extends BaseController {
 		List<SetRoleGroup> candidateResources = userGroupService.queryCandidateResource(userId);
 		List<SetRoleGroup> selectedResources = userGroupService.querySelectedResource(userId);
 		HttpSession session = request.getSession();
-		String mcrypt_key = MD5Util.init32Key();
-        session.setAttribute("mcrypt_key",mcrypt_key);
 		return createMAV("/mt/user/user_update")
 					.addObject("candidate_resources", candidateResources)
 					.addObject("selected_resources", selectedResources)
 					.addObject("userName", this.findStringParameterValue(request, "userName"))
 					.addObject("status", this.findStringParameterValue(request, "status"))
 					.addObject("password", this.findStringParameterValue(request, "password"))
-					.addObject("userId", userId).addObject("mcrypt_key",mcrypt_key);
+					.addObject("userId", userId);
 	}
 	
 	/**
@@ -146,8 +140,7 @@ public class UserGroupController extends BaseController {
 	public ModelAndView userGroupCreate(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		String gids = this.findStringParameterValue(request,"gids");
 		String userName = this.findStringParameterValue(request,"userName");
-		String sessionPwd = (String)request.getSession().getAttribute("mcrypt_key");
-		String password = BusinessUtil.decryByKey(request.getParameter("userPassword"), sessionPwd);
+		String password = request.getParameter("userPassword");
 		String status = this.findStringParameterValue(request,"status");
 		Date updateTime = new Date();
 		
@@ -240,8 +233,7 @@ public class UserGroupController extends BaseController {
 	public ModelAndView userGroupUpdate(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		String gids = this.findStringParameterValue(request,"gids");
 		String userName = this.findStringParameterValue(request,"userName");
-		String sessionPwd = (String)request.getSession().getAttribute("mcrypt_key");
-		String password = BusinessUtil.decryByKey(request.getParameter("userPassword"), sessionPwd);
+		String password = request.getParameter("userPassword");
 		String status = this.findStringParameterValue(request,"status");
 		BigDecimal userId = this.findBigDecimalParameterValue(request, "userId");
 		Date updateTime = new Date();
@@ -337,18 +329,14 @@ public class UserGroupController extends BaseController {
     public ModelAndView updatePwdView(HttpServletRequest request,
             HttpServletResponse response) throws Exception {
     	HttpSession session = request.getSession();
-		String mcrypt_key = MD5Util.init32Key();
-        session.setAttribute("mcrypt_key",mcrypt_key);
-        return createMAV("mt/user/updatepwd").addObject("flag", this.findStringParameterValue(request,"flag"))
-        		.addObject("mcrypt_key",mcrypt_key);
+        return createMAV("mt/user/updatepwd").addObject("flag", this.findStringParameterValue(request,"flag"));
     }
 
     public ModelAndView updatePwd(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView view = createMAV("/mt/user/updatepwd");
         SetUser setUser = userGroupService.selectByUsername(ShiroHelper.getUsername());
-        String sessionPwd = (String)request.getSession().getAttribute("mcrypt_key");
-		String newpwd = BusinessUtil.decryByKey(request.getParameter("newpwd"), sessionPwd);
-        String oldpwd = BusinessUtil.decryByKey(request.getParameter("oldpwd"), sessionPwd);
+		String newpwd = request.getParameter("newpwd");
+        String oldpwd = request.getParameter("oldpwd");
         Date updateTime = new Date();
        
         if (!DigestUtils.md5Hex(oldpwd).equals(setUser.getPassword())) {

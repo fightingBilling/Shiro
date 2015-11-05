@@ -9,8 +9,12 @@ Activator.activeValidation("login_form",
 		Loginalphanumeric : true
 
 	},
-	hidAccTranPasswd : {
-		required : true
+	password : {
+		required : true,
+		minlength : 4,
+		// 只允许字母，数字以及下划线
+		Loginalphanumeric : true
+
 	},
 	captcha : {
 		required : true,
