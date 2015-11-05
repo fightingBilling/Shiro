@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2015-11-04 14:36:52
+Date: 2015-11-05 18:24:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,3 +29,4 @@ CREATE TABLE `set_rgroup_frole` (
 -- ----------------------------
 -- Records of set_rgroup_frole
 -- ----------------------------
+INSERT INTO set_rgroup_frole VALUES ('10048', '10038', null, null);

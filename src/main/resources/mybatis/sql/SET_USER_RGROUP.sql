@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2015-11-04 14:37:17
+Date: 2015-11-05 18:24:29
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,3 +29,4 @@ CREATE TABLE `set_user_rgroup` (
 -- ----------------------------
 -- Records of set_user_rgroup
 -- ----------------------------
+INSERT INTO set_user_rgroup VALUES ('10023', '10048', null, null);

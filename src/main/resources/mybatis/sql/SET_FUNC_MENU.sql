@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2015-11-04 14:36:28
+Date: 2015-11-05 18:23:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -38,11 +38,11 @@ CREATE TABLE `set_func_menu` (
 -- ----------------------------
 -- Records of set_func_menu
 -- ----------------------------
-INSERT INTO SET_FUNC_MENU VALUES ('10050', '-1', '10050', '后台管理', null, '0', '1', null, '400000', '1', null, null);
-INSERT INTO SET_FUNC_MENU VALUES ('10051', '10050', '10050-10051', '用户维护', null, '1', '2', '/mt/user/user_read.html?opt=s7000', '400100', '1', null, null);
-INSERT INTO SET_FUNC_MENU VALUES ('10052', '10050', '10050-10052', '角色组维护', null, '1', '2', '/mt/rgroup/rgroup_read.html?opt=s5000', '400200', '1', null, null);
-INSERT INTO SET_FUNC_MENU VALUES ('10053', '10050', '10050-10053', '角色维护', null, '0', '2', null, '400300', '1', null, null);
-INSERT INTO SET_FUNC_MENU VALUES ('10054', '10050', '10050-10054', '资源维护', null, '1', '2', '/mt/resource/resource_read.html?opt=s2000', '400400', '1', null, null);
-INSERT INTO SET_FUNC_MENU VALUES ('10055', '10050', '10050-10055', '菜单维护', null, '1', '2', '/mt/menu/menu_read.html?opt=s3000', '400500', '1', null, null);
-INSERT INTO SET_FUNC_MENU VALUES ('10056', '10053', '10050-10053-10056', '功能角色维护', null, '1', '3', '/mt/role/role_menu_read.html?opt=s4000', '400320', '1', null, null);
-INSERT INTO SET_FUNC_MENU VALUES ('10057', '10053', '10050-10053-10057', '资源角色维护', null, '1', '3', '/mt/role/role_resource_read.html?opt=s6000', '400310', '1', null, null);
+INSERT INTO set_func_menu VALUES ('10050', '-1', '10050', '后台管理', null, '0', '1', null, '400000', '1', null, null);
+INSERT INTO set_func_menu VALUES ('10051', '10050', '10050-10051', '用户维护', null, '1', '2', '/mt/user/user_read.html?opt=s7000', '400100', '1', null, null);
+INSERT INTO set_func_menu VALUES ('10052', '10050', '10050-10052', '角色组维护', null, '1', '2', '/mt/rgroup/rgroup_read.html?opt=s5000', '400200', '1', null, null);
+INSERT INTO set_func_menu VALUES ('10053', '10050', '10050-10053', '角色维护', null, '0', '2', null, '400300', '1', null, null);
+INSERT INTO set_func_menu VALUES ('10054', '10050', '10050-10054', '资源维护', null, '1', '2', '/mt/resource/resource_read.html?opt=s2000', '400400', '1', null, null);
+INSERT INTO set_func_menu VALUES ('10055', '10050', '10050-10055', '菜单维护', null, '1', '2', '/mt/menu/menu_read.html?opt=s3000', '400500', '1', null, null);
+INSERT INTO set_func_menu VALUES ('10056', '10053', '10050-10053-10056', '功能角色维护', null, '1', '3', '/mt/role/role_menu_read.html?opt=s4000', '400320', '1', null, null);
+INSERT INTO set_func_menu VALUES ('10057', '10053', '10050-10053-10057', '资源角色维护', null, '1', '3', '/mt/role/role_resource_read.html?opt=s6000', '400310', '1', null, null);

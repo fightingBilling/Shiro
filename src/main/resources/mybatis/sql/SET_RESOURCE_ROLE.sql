@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2015-11-04 14:36:47
+Date: 2015-11-05 18:24:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -33,3 +33,4 @@ CREATE TABLE `set_resource_role` (
 -- ----------------------------
 -- Records of set_resource_role
 -- ----------------------------
+INSERT INTO set_resource_role VALUES ('10046', null, '后台管理资源', null, null, '1', null, null);

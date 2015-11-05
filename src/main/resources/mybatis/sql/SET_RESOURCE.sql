@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2015-11-04 14:36:42
+Date: 2015-11-05 18:23:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,10 +31,10 @@ CREATE TABLE `set_resource` (
 -- ----------------------------
 -- Records of set_resource
 -- ----------------------------
-INSERT INTO SET_RESOURCE VALUES ('992', 'cAuthc', '/mt/rgroup/rgroup_read.html', '1', null, null);
-INSERT INTO SET_RESOURCE VALUES ('993', 'cAuthc', '/mt/user/user_read.html', '1', null, null);
-INSERT INTO SET_RESOURCE VALUES ('994', 'cAuthc', '/mt/role/role_resource_read.html', '1', null, null);
-INSERT INTO SET_RESOURCE VALUES ('995', 'cAuthc', '/mt/role/role_menu_read.html', '1', null, null);
-INSERT INTO SET_RESOURCE VALUES ('996', 'cAuthc', '/mt/resource/resource_read.html', '1', null, null);
-INSERT INTO SET_RESOURCE VALUES ('997', 'cAuthc', '/mt/menu/menu_read.html', '1', null, null);
-INSERT INTO SET_RESOURCE VALUES ('999', 'cAuthc', '/default.html', '1', null, null);
+INSERT INTO set_resource VALUES ('992', 'cAuthc', '/mt/rgroup/rgroup_read.html', '1', null, null);
+INSERT INTO set_resource VALUES ('993', 'cAuthc', '/mt/user/user_read.html', '1', null, null);
+INSERT INTO set_resource VALUES ('994', 'cAuthc', '/mt/role/role_resource_read.html', '1', null, null);
+INSERT INTO set_resource VALUES ('995', 'cAuthc', '/mt/role/role_menu_read.html', '1', null, null);
+INSERT INTO set_resource VALUES ('996', 'cAuthc', '/mt/resource/resource_read.html', '1', null, null);
+INSERT INTO set_resource VALUES ('997', 'cAuthc', '/mt/menu/menu_read.html', '1', null, null);
+INSERT INTO set_resource VALUES ('999', 'cAuthc', '/default.html', '1', null, null);

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2015-11-04 14:37:11
+Date: 2015-11-05 18:24:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -33,3 +33,4 @@ CREATE TABLE `set_user` (
 -- ----------------------------
 -- Records of set_user
 -- ----------------------------
+INSERT INTO set_user VALUES ('10023', 'admin', '68cf63c62bc68d71fc41c028375e2f6e', null, '1', 'admin', '2015-11-05 12:26:36');

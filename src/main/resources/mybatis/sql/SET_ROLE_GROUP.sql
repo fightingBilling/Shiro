@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2015-11-04 14:37:02
+Date: 2015-11-05 18:24:16
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,4 +30,4 @@ CREATE TABLE `set_role_group` (
 -- ----------------------------
 -- Records of set_role_group
 -- ----------------------------
-INSERT INTO SET_ROLE_GROUP VALUES ('40000', null, '高阶操作员', null, null);
+INSERT INTO set_role_group VALUES ('10048', null, '后台管理角色组', null, null);

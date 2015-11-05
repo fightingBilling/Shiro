@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2015-11-04 14:37:06
+Date: 2015-11-05 18:24:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,3 +29,10 @@ CREATE TABLE `set_rrole_resource` (
 -- ----------------------------
 -- Records of set_rrole_resource
 -- ----------------------------
+INSERT INTO set_rrole_resource VALUES ('10046', '992', null, '2015-11-05 13:27:04');
+INSERT INTO set_rrole_resource VALUES ('10046', '993', null, '2015-11-05 13:25:56');
+INSERT INTO set_rrole_resource VALUES ('10046', '994', null, '2015-11-05 13:26:00');
+INSERT INTO set_rrole_resource VALUES ('10046', '995', null, '2015-11-05 13:26:44');
+INSERT INTO set_rrole_resource VALUES ('10046', '996', null, '2015-11-05 13:27:09');
+INSERT INTO set_rrole_resource VALUES ('10046', '997', null, '2015-11-05 13:27:07');
+INSERT INTO set_rrole_resource VALUES ('10046', '999', null, '2015-11-05 13:27:05');

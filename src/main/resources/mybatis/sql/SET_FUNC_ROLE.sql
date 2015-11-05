@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2015-11-04 14:36:37
+Date: 2015-11-05 18:23:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -33,4 +33,4 @@ CREATE TABLE `set_func_role` (
 -- ----------------------------
 -- Records of set_func_role
 -- ----------------------------
-INSERT INTO SET_FUNC_ROLE VALUES ('40000', null, '高阶操作员', null, null, '1', null, null);
+INSERT INTO set_func_role VALUES ('10038', null, '后台管理功能', null, null, '1', null, null);

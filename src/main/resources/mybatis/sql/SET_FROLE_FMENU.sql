@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2015-11-04 14:36:25
+Date: 2015-11-05 18:23:43
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,3 +29,11 @@ CREATE TABLE `set_frole_fmenu` (
 -- ----------------------------
 -- Records of set_frole_fmenu
 -- ----------------------------
+INSERT INTO set_frole_fmenu VALUES ('10038', '10050', null, null);
+INSERT INTO set_frole_fmenu VALUES ('10038', '10051', null, null);
+INSERT INTO set_frole_fmenu VALUES ('10038', '10052', null, null);
+INSERT INTO set_frole_fmenu VALUES ('10038', '10053', null, null);
+INSERT INTO set_frole_fmenu VALUES ('10038', '10054', null, null);
+INSERT INTO set_frole_fmenu VALUES ('10038', '10055', null, null);
+INSERT INTO set_frole_fmenu VALUES ('10038', '10056', null, null);
+INSERT INTO set_frole_fmenu VALUES ('10038', '10057', null, null);
