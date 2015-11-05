@@ -6,8 +6,8 @@ import java.text.DecimalFormat;
 
 /**
  * @Description: TODO(这里用一句话描述这个类的作用)
- * @author yemulin
- * @create 2012-8-20 上午10:48:25
+ * @author Somnus
+ * @date 2015年11月5日 下午10:10:58 
  */
 public class AmtUtil {
 

@@ -7,10 +7,13 @@ import com.somnus.module.maintenance.model.SetRgroupRroleKey;
 import com.somnus.support.repository.mybatis._annotation.MyBatisRepository;
 
 /**
- * @Description 资源角色组关系数据访问接口
+ * 
+ * @Title: SetRgroupRroleDao.java 
+ * @Package com.somnus.module.maintenance.dao 
+ * @Description: 资源角色组关系数据访问接口
  * @author Somnus
- * @date 2013-03-01
- * @version 1.0
+ * @date 2015年11月5日 下午10:09:54 
+ * @version V1.0
  */
 @MyBatisRepository
 public interface SetRgroupRroleDao {

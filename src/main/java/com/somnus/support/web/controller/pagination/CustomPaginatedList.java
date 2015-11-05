@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * @Description Displaytag 数据库级分页扩展
  * @author Somnus
- * @date 2012-12-10
+ * @date 2015年11月5日 下午10:10:58 
  * @version 1.0
  */
 public class CustomPaginatedList implements PaginatedList {

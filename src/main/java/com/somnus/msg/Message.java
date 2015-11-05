@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 /** 
  * @Description: TODO
- * @author 
- * @date 2015年11月3日 下午5:51:50 
+ * @author Somnus
+ * @date 2015年11月5日 下午10:10:58 
  * @version V1.0 
  */
 public class Message implements Serializable{

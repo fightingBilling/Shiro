@@ -7,10 +7,13 @@ import com.somnus.module.maintenance.model.SetFuncRole;
 import com.somnus.support.repository.mybatis._annotation.MyBatisRepository;
 
 /**
- * @Description 功能角色数据访问接口
- * @author zhangbo
- * @date 2013-03-01
- * @version 1.0
+ * 
+ * @Title: SetFuncRoleDao.java 
+ * @Package com.somnus.module.maintenance.dao 
+ * @Description: 功能角色数据访问接口
+ * @author Somnus
+ * @date 2015年11月5日 下午10:09:11 
+ * @version V1.0
  */
 @MyBatisRepository
 public interface SetFuncRoleDao {

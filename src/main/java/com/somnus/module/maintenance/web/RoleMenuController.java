@@ -76,7 +76,6 @@ public class RoleMenuController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView roleMenuPersistenceDisplay(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		String subBtn = this.findStringParameterValue(request, "subBtn");
@@ -112,7 +111,6 @@ public class RoleMenuController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView roleMenuCreate(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		String mids = this.findStringParameterValue(request,"mids");
@@ -161,7 +159,6 @@ public class RoleMenuController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView roleMenuUpdate(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		String mids = this.findStringParameterValue(request,"mids");

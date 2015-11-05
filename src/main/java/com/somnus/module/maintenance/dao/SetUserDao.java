@@ -6,10 +6,13 @@ import com.somnus.module.maintenance.model.SetUser;
 import com.somnus.support.repository.mybatis._annotation.MyBatisRepository;
 
 /**
- * 用户数据访问接口
  * 
- * @author zhangbo 2013-03-01
- * @version 1.0
+ * @Title: SetUserDao.java 
+ * @Package com.somnus.module.maintenance.dao 
+ * @Description: 用户数据访问接口
+ * @author Somnus
+ * @date 2015年11月5日 下午10:10:25 
+ * @version V1.0
  */
 @MyBatisRepository
 public interface SetUserDao {

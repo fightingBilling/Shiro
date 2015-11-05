@@ -12,7 +12,7 @@ import com.somnus.module.maintenance.web.filter.CustomRolesAuthorizationFilter;
 /**
  * @Description 
  * @author Somnus
- * @date 2013-2-27
+ * @date 2015年11月5日 下午10:10:58 
  * @version 1.0
  */
 public class DefaultShiroService implements ShiroService, InitializingBean {

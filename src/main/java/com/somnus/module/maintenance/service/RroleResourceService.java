@@ -11,7 +11,7 @@ import com.somnus.support.web.controller.pagination.Pageable;
 /**
  * @Description 资源角色管理Service层接口
  * @author Somnus
- * @date 2013-03-01
+ * @date 2015年11月5日 下午10:10:58 
  * @version 1.0
  */
 public interface RroleResourceService {

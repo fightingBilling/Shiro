@@ -3,11 +3,10 @@ package com.somnus.support.exception.logger.predicate;
 import com.somnus.support.exception.BizException;
 import com.somnus.support.exception.logger.context.ExceptionLoggerContext;
 
-
 /**
  * @Description 业务异常日志处理分支条件
  * @author Somnus
- * @date 2012-11-19
+ * @date 2015年11月5日 下午10:10:58 
  * @version 1.0
  */
 public class BusinessExceptionLoggerPredicate extends BasePredicate {

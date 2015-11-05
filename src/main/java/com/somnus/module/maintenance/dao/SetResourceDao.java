@@ -12,10 +12,13 @@ import com.somnus.module.maintenance.model.SetResource;
 import com.somnus.support.repository.mybatis._annotation.MyBatisRepository;
 
 /**
- * 资源数据访问接口
  * 
- * @author zhangbo 2013-02-28
- * @version 1.0
+ * @Title: SetResourceDao.java 
+ * @Package com.somnus.module.maintenance.dao 
+ * @Description: 资源数据访问接口
+ * @author Somnus
+ * @date 2015年11月5日 下午10:09:22 
+ * @version V1.0
  */
 @MyBatisRepository
 public interface SetResourceDao {
@@ -43,7 +46,6 @@ public interface SetResourceDao {
 	 * @Description 查询分页记录
 	 * @param params
 	 * @return 
-	 * @author zhangbo
 	 */
 	PageList<SetResource> queryPaged(Map<String, Object> params,PageBounds pageBounds);
 	

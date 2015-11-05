@@ -39,7 +39,6 @@ public class UserGroupController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView userGroupDisplay(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		
@@ -92,7 +91,6 @@ public class UserGroupController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView userPersistenceDisplay(HttpServletRequest request,
 	        HttpServletResponse response) throws Exception{
@@ -134,7 +132,6 @@ public class UserGroupController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView userGroupCreate(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		String gids = this.findStringParameterValue(request,"gids");
@@ -227,7 +224,6 @@ public class UserGroupController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView userGroupUpdate(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		String gids = this.findStringParameterValue(request,"gids");

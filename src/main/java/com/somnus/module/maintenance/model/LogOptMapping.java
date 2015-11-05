@@ -2,12 +2,6 @@ package com.somnus.module.maintenance.model;
 
 import java.util.Properties;
 
-/**
- * LogOptMapping
- *
- * @author levis
- * @version 1.0 15-8-18
- */
 public class LogOptMapping {
 
     public Properties getMappings() {

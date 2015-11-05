@@ -3,7 +3,7 @@ package com.somnus.support.shiro;
 /**
  * @Description shiro动态资源扩展服务
  * @author Somnus
- * @date 2013-2-27
+ * @date 2015年11月5日 下午10:10:58 
  * @version 1.0
  */
 public interface ShiroService{

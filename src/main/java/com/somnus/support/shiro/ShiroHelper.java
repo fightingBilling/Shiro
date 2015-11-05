@@ -7,7 +7,7 @@ import com.somnus.module.maintenance.ShiroDbRealm.ShiroUser;
 /**
  * @Description shiro框架帮助类
  * @author Somnus
- * @date 2013-3-21
+ * @date 2015年11月5日 下午10:10:58 
  * @version 1.0
  */
 public class ShiroHelper {

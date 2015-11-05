@@ -10,10 +10,13 @@ import com.somnus.module.maintenance.model.SetFuncMenu;
 import com.somnus.support.repository.mybatis._annotation.MyBatisRepository;
 
 /**
- * @Description 菜单数据访问接口
+ * 
+ * @Title: SetFuncMenuDao.java 
+ * @Package com.somnus.module.maintenance.dao 
+ * @Description: 菜单数据访问接口
  * @author Somnus
- * @date 2013-02-28
- * @version 1.0
+ * @date 2015年11月5日 下午10:08:56 
+ * @version V1.0
  */
 @MyBatisRepository
 public interface SetFuncMenuDao {

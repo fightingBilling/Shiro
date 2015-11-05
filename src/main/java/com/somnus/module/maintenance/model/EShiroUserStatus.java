@@ -1,11 +1,5 @@
 package com.somnus.module.maintenance.model;
 
-/**
- * @Description 用户状态
- * @author Somnus
- * @date 2013-2-5
- * @version 1.0
- */
 public enum EShiroUserStatus {
 	/**
 	 * 正常

@@ -16,11 +16,10 @@ import com.somnus.support.web.controller.BaseController;
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
 
-
 /**
  * @Description 验证码控制器
  * @author Somnus
- * @date 2013-2-26
+ * @date 2015年11月5日 下午10:10:58 
  * @version 1.0
  */
 public class CaptchaController extends BaseController {

@@ -2,8 +2,8 @@ package com.somnus.support.message;
 
 /**
  * @Description: 错误码(Generated via template)
- * @author: Somnus
- * @date: 2013-04-18
+ * @author Somnus
+ * @date 2015年11月5日 下午10:10:58 
  * @version: 1.0
  */
 public class Errors {

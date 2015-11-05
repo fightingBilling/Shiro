@@ -8,10 +8,13 @@ import org.springframework.web.servlet.ModelAndView;
 import com.somnus.support.web.controller.BaseController;
 
 /**
- * @Description 首页控制器
- * @author caobin
- * @date 2013-2-25
- * @version 1.0
+ * 
+ * @Title: DefaultController.java 
+ * @Package com.somnus.module.defaults.web 
+ * @Description: 首页控制器
+ * @author Somnus
+ * @date 2015年11月5日 下午10:06:44 
+ * @version V1.0
  */
 public class DefaultController extends BaseController {
 

@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
  * @Description 以注解方式来标识MyBatis的DAO,
  * 				{@link org.mybatis.spring.mapper.MapperScannerConfigurer}进行扫描
  * @author Somnus
- * @date 2012-11-15
+ * @date 2015年11月5日 下午10:10:58 
  * @version 1.0
  */
 @Retention(RetentionPolicy.RUNTIME)

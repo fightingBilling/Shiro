@@ -11,8 +11,8 @@ import com.somnus.support.web.controller.pagination.Pageable;
 
 /**
  * 用户组管理Service层接口
- * 
- * @author Somnus 2013-03-01
+ * @author Somnus
+ * @date 2015年11月5日 下午10:10:58 
  * @version 1.0
  */
 public interface UserGroupService {

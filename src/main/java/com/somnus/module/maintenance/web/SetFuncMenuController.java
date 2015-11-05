@@ -29,7 +29,6 @@ public class SetFuncMenuController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView menuDisplay(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		
@@ -79,7 +78,6 @@ public class SetFuncMenuController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView menuPersistenceDisplay(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String subBtn = this.findStringParameterValue(request, "subBtn");
@@ -105,7 +103,6 @@ public class SetFuncMenuController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView menuUpdateDisplay(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		BigDecimal menuId = this.findBigDecimalParameterValue(request, "menuId");
@@ -126,7 +123,6 @@ public class SetFuncMenuController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView menuCreate(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		SetFuncMenu menu =  this.bindModel(request, SetFuncMenu.class);
@@ -193,7 +189,6 @@ public class SetFuncMenuController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView menuUpdate(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		SetFuncMenu menu =  this.bindModel(request, SetFuncMenu.class);

@@ -7,7 +7,7 @@ import com.somnus.support.web.controller.pagination.Pageable;
 /**
  * @Description 分页实现-请求
  * @author Somnus
- * @date 2012-11-15
+ * @date 2015年11月5日 下午10:10:58 
  * @version 1.0
  */
 public class PageRequest implements Pageable {

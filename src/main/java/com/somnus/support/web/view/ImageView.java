@@ -10,7 +10,7 @@ import org.springframework.web.servlet.view.AbstractView;
 /**
  * @Description 图片视图
  * @author Somnus
- * @date 2013-2-26
+ * @date 2015年11月5日 下午10:10:58 
  * @version 1.0
  */
 public class ImageView extends AbstractView {

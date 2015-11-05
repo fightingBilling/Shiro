@@ -10,7 +10,6 @@ import com.somnus.support.constant.Constants;
 import com.somnus.support.exception.BizException;
 import com.somnus.support.message.Errors;
 
-
 public class ExceptionUtil {
 	// 日志
 	private static final Logger log = LoggerFactory.getLogger(ExceptionUtil.class);

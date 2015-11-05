@@ -126,8 +126,6 @@ public class ShiroDbRealm extends AuthorizingRealm {
 		public String toString() {
 			return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);
 		}
-		
-		
 	}
 	
 	private DefaultService defaultService;

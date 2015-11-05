@@ -2,8 +2,12 @@ package com.somnus.support.constant;
 
 /**
  * 
- * @author xiezl
- * 
+ * @Title: Constants.java 
+ * @Package com.somnus.support.constant 
+ * @Description: TODO
+ * @author Somnus
+ * @date 2015年11月5日 下午10:16:26 
+ * @version V1.0
  */
 public class Constants {
 

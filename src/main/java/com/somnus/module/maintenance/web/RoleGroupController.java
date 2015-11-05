@@ -34,7 +34,6 @@ public class RoleGroupController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView roleGroupDisplay(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		
@@ -80,7 +79,6 @@ public class RoleGroupController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView groupPersistenceDisplay(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		String subBtn = this.findStringParameterValue(request, "subBtn");
@@ -124,7 +122,6 @@ public class RoleGroupController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView groupCreate(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		String ridStr = this.findStringParameterValue(request,"rids");
@@ -188,7 +185,6 @@ public class RoleGroupController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView groupUpdate(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		String ridStr = this.findStringParameterValue(request,"rids");
@@ -253,7 +249,6 @@ public class RoleGroupController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView groupDelete(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String _delData = this.findStringParameterValue(request, Constants._delData);

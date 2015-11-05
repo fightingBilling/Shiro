@@ -2,12 +2,6 @@ package com.somnus.module.maintenance.model;
 
 import java.math.BigDecimal;
 
-/**
- * @Description 安全过滤器
- * @author Somnus
- * @date 2013-2-5
- * @version 1.0
- */
 public class SFilter {
 	private BigDecimal resourceId;
 

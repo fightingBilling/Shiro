@@ -9,8 +9,8 @@ import com.somnus.support.web.controller.pagination.Pageable;
 
 /**
  * 资源Service层接口
- * 
- * @author Somnus 2013-02-28
+ * @author Somnus
+ * @date 2015年11月5日 下午10:10:58 
  * @version 1.0
  */
 public interface SetResourceService {
@@ -44,7 +44,6 @@ public interface SetResourceService {
 
 	/**
 	 * @Description 查询所有资源记录
-	 * @author zhangbo
 	 */
     List<SetResource> queryAll(String urlPattern);
 	

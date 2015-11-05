@@ -22,7 +22,6 @@ import com.somnus.support.web.controller.pagination.Pageable;
 import com.somnus.support.web.controller.pagination.PaginatedList;
 import com.somnus.support.web.controller.pagination.impl.PageRequest;
 
-
 public class SetResourceController extends BaseController {
 	
 	/**
@@ -31,7 +30,6 @@ public class SetResourceController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView resourceDisplay(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		
@@ -77,7 +75,6 @@ public class SetResourceController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView resourceCreateDisplay(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		return createMAV("/mt/resource/resource_create");
@@ -89,7 +86,6 @@ public class SetResourceController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView resourceCreate(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		SetResource resource =  this.bindModel(request, SetResource.class);
@@ -139,7 +135,6 @@ public class SetResourceController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView resourcePersistenceDisplay(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String _storage = this.findStringParameterValue(request, Constants._storage);
@@ -167,7 +162,6 @@ public class SetResourceController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView resourceUpdate(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		SetResource resource =  this.bindModel(request, SetResource.class);

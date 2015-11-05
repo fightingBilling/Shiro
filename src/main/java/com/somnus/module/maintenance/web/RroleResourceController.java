@@ -25,7 +25,6 @@ import com.somnus.support.web.controller.pagination.Pageable;
 import com.somnus.support.web.controller.pagination.PaginatedList;
 import com.somnus.support.web.controller.pagination.impl.PageRequest;
 
-
 public class RroleResourceController extends BaseController {
 	
 	
@@ -35,7 +34,6 @@ public class RroleResourceController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView roleResourceDisplay(HttpServletRequest request, 
 	        HttpServletResponse response) throws Exception{
@@ -81,7 +79,6 @@ public class RroleResourceController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView roleResourcePersistenceDisplay(HttpServletRequest request,
 	        HttpServletResponse response) throws Exception{
@@ -126,7 +123,6 @@ public class RroleResourceController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView roleResourceCreate(HttpServletRequest request,
 	        HttpServletResponse response) throws Exception{
@@ -175,7 +171,6 @@ public class RroleResourceController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView roleResourceUpdate(HttpServletRequest request,
 	        HttpServletResponse response) throws Exception{
@@ -227,7 +222,6 @@ public class RroleResourceController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author zhangbo
 	 */
 	public ModelAndView roleResourceDelete(HttpServletRequest request,
 	        HttpServletResponse response) throws Exception {

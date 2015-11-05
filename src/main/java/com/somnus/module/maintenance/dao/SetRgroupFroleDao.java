@@ -7,10 +7,13 @@ import com.somnus.module.maintenance.model.SetRgroupFroleKey;
 import com.somnus.support.repository.mybatis._annotation.MyBatisRepository;
 
 /**
- * @Description 功能角色组关系数据访问接口
+ * 
+ * @Title: SetRgroupFroleDao.java 
+ * @Package com.somnus.module.maintenance.dao 
+ * @Description: 功能角色组关系数据访问接口
  * @author Somnus
- * @date 2013-03-01
- * @version 1.0
+ * @date 2015年11月5日 下午10:09:45 
+ * @version V1.0
  */
 @MyBatisRepository
 public interface SetRgroupFroleDao {

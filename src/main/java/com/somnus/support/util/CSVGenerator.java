@@ -13,15 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.csvreader.CsvReader;
 
 /**
  * @Description CSV生成
  * @author Somnus
- * @date 2013-3-14
+ * @date 2015年11月5日 下午10:10:58 
  * @version 1.0
  */
 public class CSVGenerator {

@@ -10,7 +10,7 @@ import com.somnus.support.web.controller.BaseController;
 /**
  * @Description 未授权跳转
  * @author Somnus
- * @date 2013-2-5
+ * @date 2015年11月5日 下午10:10:58 
  * @version 1.0
  */
 public class UnauthorizedController extends BaseController {
