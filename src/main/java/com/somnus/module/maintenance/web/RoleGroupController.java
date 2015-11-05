@@ -26,9 +26,7 @@ import com.somnus.support.web.controller.pagination.Pageable;
 import com.somnus.support.web.controller.pagination.PaginatedList;
 import com.somnus.support.web.controller.pagination.impl.PageRequest;
 
-
 public class RoleGroupController extends BaseController {
-	
 	
 	/**
 	 * @Description 显示角色组管理页面
@@ -52,11 +50,10 @@ public class RoleGroupController extends BaseController {
 			_search_value = rgroupName;
 		}
 
-		Map<String, String> params = new HashMap<String, String>();
+		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("groupName", rgroupName);
 		
 		Pageable pageable = null;
-		
 		
 		if(request.getParameter("pageSize") == null){
 			Integer start = findIntegerParameterValue(request, Constants._page);

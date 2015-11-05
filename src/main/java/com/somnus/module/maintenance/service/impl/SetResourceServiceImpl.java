@@ -1,7 +1,6 @@
 package com.somnus.module.maintenance.service.impl;
 
 import java.math.BigDecimal;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -9,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
 import com.somnus.module.maintenance.dao.SetResourceDao;
 import com.somnus.module.maintenance.model.SetResource;
 import com.somnus.module.maintenance.service.SetResourceService;
@@ -21,16 +22,11 @@ import com.somnus.support.web.controller.pagination.impl.PageResponse;
 public class SetResourceServiceImpl implements SetResourceService {
 
 	@Override
-	public Pageable queryPaged(Pageable pageable, Map<String, String> params) {
-		// 参数设置
-		Map<String, Object> sqlParams = new HashMap<String, Object>();
-		sqlParams.put("page", pageable);
-		sqlParams.putAll(params);
+	public Pageable queryPaged(Pageable pageable, Map<String, Object> params) {
 		//分页结果集
-		List<SetResource> list = resourceDao.queryPaged(sqlParams);
-		//符合条件的记录总数
-		int totalCount = resourceDao.queryTotalCount(sqlParams);
-		return new PageResponse(list, totalCount);
+		PageList<SetResource> pagelist = resourceDao.queryPaged(params,
+				new PageBounds(pageable.getPageStart(), pageable.getPageLimit()));
+		return new PageResponse(pagelist, pagelist.getPaginator().getTotalCount());
 	}
 
 	@Transactional(readOnly=false)

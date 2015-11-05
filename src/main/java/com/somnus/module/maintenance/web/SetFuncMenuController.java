@@ -47,7 +47,7 @@ public class SetFuncMenuController extends BaseController {
 			_search_value = menuName;
 		}
 
-		Map<String, String> params = new HashMap<String, String>();
+		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("lv", lv);
 		params.put("menuName", menuName);
 		

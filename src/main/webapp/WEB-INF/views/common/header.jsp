@@ -15,7 +15,7 @@
 				<span class="icon-bar"></span>
 			</a> 
 			<a class="brand" href="<%=pageContext.getServletContext().getContextPath()%>/default.html">
-                <font color="#0044cc" face="微软雅黑">管理平台</font>
+                <font color="#0044cc" face="微软雅黑">通用后台管理系统</font>
             </a>
 			<div class="nav-collapse">
 				<ul class="nav">

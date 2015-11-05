@@ -2,28 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.somnus.module.maintenance.dao.DefaultDao">
-	<resultMap id="SetFuncMenuResultMap"
-		type="com.somnus.module.maintenance.model.SetFuncMenu">
+	<resultMap id="SetFuncMenuResultMap" type="com.somnus.module.maintenance.model.SetFuncMenu">
 		<id column="MENU_ID" property="menuId" jdbcType="DECIMAL" />
 		<result column="PMENU_ID" property="pmenuId" jdbcType="DECIMAL" />
 		<result column="MENU_CODE" property="menuCode" jdbcType="VARCHAR" />
 		<result column="MENU_NAME" property="menuName" jdbcType="VARCHAR" />
-		<result column="MENU_NAME_BRIEF" property="menuNameBrief"
-			jdbcType="VARCHAR" />
+		<result column="MENU_NAME_BRIEF" property="menuNameBrief" jdbcType="VARCHAR" />
 		<result column="IS_LEAF" property="isLeaf" jdbcType="CHAR" />
 		<result column="LV" property="lv" jdbcType="DECIMAL" />
 		<result column="URL" property="url" jdbcType="VARCHAR" />
-		<result column="DISPLAY_ORDER" property="displayOrder"
-			jdbcType="DECIMAL" />
+		<result column="DISPLAY_ORDER" property="displayOrder" jdbcType="DECIMAL" />
 		<result column="STATUS" property="status" jdbcType="CHAR" />
 		<result column="LAST_UPDATOR" property="lastUpdator" jdbcType="VARCHAR" />
-		<result column="LAST_UPDATE_TIME" property="lastUpdateTime"
-			jdbcType="TIMESTAMP" />
+		<result column="LAST_UPDATE_TIME" property="lastUpdateTime" jdbcType="TIMESTAMP" />
 	</resultMap>
 	<sql id="SetFuncMenu_Column_List">
 		MENU_ID, PMENU_ID, MENU_CODE, MENU_NAME, MENU_NAME_BRIEF, IS_LEAF, LV, URL,
-		DISPLAY_ORDER,
-		STATUS, LAST_UPDATOR, LAST_UPDATE_TIME
+		DISPLAY_ORDER, STATUS, LAST_UPDATOR, LAST_UPDATE_TIME
 	</sql>
 	<select id="findAllMenu" resultMap="SetFuncMenuResultMap"
 		parameterType="java.math.BigDecimal">
@@ -84,8 +79,5 @@
 		ORDER BY
 		   SFM.DISPLAY_ORDER 
 	</select>
-
-
-
 
 </mapper>

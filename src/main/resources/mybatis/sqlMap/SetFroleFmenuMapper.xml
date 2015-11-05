@@ -30,10 +30,18 @@
       and FUNC_MENU_ID = #{funcMenuId,jdbcType=DECIMAL}
   </delete>
   <insert id="insert" parameterType="com.somnus.module.maintenance.model.SetFroleFmenu" >
-    insert into SET_FROLE_FMENU (FUNC_ROLE_ID, FUNC_MENU_ID, LAST_UPDATOR, 
-      LAST_UPDATE_TIME)
-    values (#{funcRoleId,jdbcType=DECIMAL}, #{funcMenuId,jdbcType=DECIMAL}, #{lastUpdator,jdbcType=VARCHAR}, 
-      #{lastUpdateTime,jdbcType=TIMESTAMP})
+    insert into SET_FROLE_FMENU (
+    	FUNC_ROLE_ID, 
+    	FUNC_MENU_ID, 
+    	LAST_UPDATOR, 
+    	LAST_UPDATE_TIME
+    )
+    values (
+    	#{funcRoleId,jdbcType=DECIMAL}, 
+    	#{funcMenuId,jdbcType=DECIMAL}, 
+    	#{lastUpdator,jdbcType=VARCHAR}, 
+    	#{lastUpdateTime,jdbcType=TIMESTAMP}
+    )
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.somnus.module.maintenance.model.SetFroleFmenu" >
     update SET_FROLE_FMENU
@@ -46,6 +54,6 @@
       </if>
     </set>
     where FUNC_ROLE_ID = #{funcRoleId,jdbcType=DECIMAL}
-      and FUNC_MENU_ID = #{funcMenuId,jdbcType=DECIMAL}
+    and FUNC_MENU_ID = #{funcMenuId,jdbcType=DECIMAL}
   </update>
 </mapper>

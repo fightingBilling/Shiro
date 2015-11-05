@@ -17,14 +17,12 @@ public interface SetUserDao {
 	/**
 	 * @Description 查询Sequences
 	 * @param 
-	 * @author zhangbo
 	 */
 	String getSequences();
 	
 	/**
 	 * @Description 插入新记录
 	 * @param user
-	 * @author zhangbo
 	 */
 	void insert(SetUser user);
 	
@@ -32,28 +30,24 @@ public interface SetUserDao {
 	 * @Description 根据主键删除记录
 	 * @param userId
 	 * @return
-	 * @author zhangbo
 	 */
 	void deleteByPrimaryKey(BigDecimal userId);
 	
 	/**
 	 * @Description 更新记录
 	 * @param user
-	 * @author zhangbo
 	 */
     int updateByPrimaryKeySelective(SetUser user);
 	
 	/**
 	 * @Description 根据主键查询记录
 	 * @param userId
-	 * @author zhangbo
 	 */
 	SetUser selectByPrimaryKey(BigDecimal userId);
 
     /**
      * @Description 根据用户名查询记录
      * @param username
-     * @author zhangbo
      */
     SetUser selectByUsername(String username);
 

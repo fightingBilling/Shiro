@@ -61,12 +61,11 @@ public class UserGroupController extends BaseController {
             searchValue = roleGroup;
 		}
 
-		Map<String, String> params = new HashMap<String, String>();
+		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("userName", userName);
         params.put("roleGroup", roleGroup);
 		
 		Pageable pageable = null;
-		
 		
 		if(request.getParameter("pageSize") == null){
 			Integer start = findIntegerParameterValue(request, Constants._page);

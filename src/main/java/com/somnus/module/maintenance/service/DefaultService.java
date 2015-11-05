@@ -14,7 +14,6 @@ public interface DefaultService {
 	/**
 	 * @Description 获取所有有效菜单
 	 * @return
-	 * @author Somnus
 	 */
 	List<SetFuncMenu> findAllMenu();
 	
@@ -22,7 +21,6 @@ public interface DefaultService {
 	 * @Description 通过用户名称查找有效菜单
 	 * @param username
 	 * @return
-	 * @author Somnus
 	 */
 	List<SetFuncMenu> findMenuByUserName(String username);
 }

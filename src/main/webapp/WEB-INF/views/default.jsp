@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>资金管理系统-首页</title>
+		<title>通用后台管理系统-首页</title>
 	</head>
 <body>	
 	<jsp:include page="common/header.jsp"/>

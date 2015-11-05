@@ -45,7 +45,7 @@ public class SetResourceController extends BaseController {
 			_search_value = urlPattern;
 		} 
 
-		Map<String, String> params = new HashMap<String, String>();
+		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("urlPattern", urlPattern);
 		
 		Pageable pageable = null;

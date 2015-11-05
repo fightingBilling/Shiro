@@ -1,5 +1,5 @@
 <%@page import="java.util.List"%>
-<%@page import="com.ips.commons.support.util.JsonUtils"%>
+<%@page import="com.somnus.support.util.JsonUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../../common/common.jsp"%>
@@ -9,23 +9,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>编辑用户</title>
 </head>
-<script type="text/javascript">
-//密码控件处理
-var pgeditor = new $.pge({
-    pgePath: "<%=pageContext.getServletContext().getContextPath()%>/ocx/",  //控件文件目录
-    pgeId: "accTranPasswd",//控件ID
-    pgeEdittype: 0,//控件类型,0星号,1明文
-    pgeEreg1: "",//输入过程中字符类型限制
-    pgeEreg2: "",	//输入完毕后字符类型判断条件
-    pgeMaxlength: 20,//允许最大输入长度
-    pgeTabindex: 2,//tab键顺序，控件在当前表单中的tabindex顺序
-    pgeClass: "ocx_style_first_modify", //控件css样式，可以设置控件框高度、长度
-    tabCallback: "input3", //火狐控件Tab键回调，设置要跳转到的ID
-    pgeOnkeydown:"" //光标在密码框内按回车键后要调用的函数，比如：提交表单的函数
-});
-
-
-</script>
 <body>
 	<jsp:include page="../../common/header.jsp" />
 	<pack:script src="user_update.js" />

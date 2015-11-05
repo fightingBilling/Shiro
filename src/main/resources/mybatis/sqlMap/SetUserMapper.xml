@@ -14,7 +14,7 @@
     USER_ID, USERNAME, PASSWORD, DESCRIPTION, STATUS, LAST_UPDATOR, LAST_UPDATE_TIME
   </sql>
   
-      <!-- 得到Sequences -->
+	<!-- 得到Sequences -->
   <select id="getSequences" resultType="java.lang.String" >
     select SEQ_SET_USER.nextVal from dual
   </select>

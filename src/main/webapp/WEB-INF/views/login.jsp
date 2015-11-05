@@ -21,7 +21,7 @@
 		</div>
 		<center>
 		  <br></br>
-		  <h1>管理平台</h1>
+		  <h1>通用后台管理系统</h1>
 		</center>
 		<div class="container" style="width:620px; margin-top: 10px;">
 			<div class="well">

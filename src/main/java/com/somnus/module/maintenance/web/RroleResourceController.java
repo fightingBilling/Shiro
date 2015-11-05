@@ -51,11 +51,10 @@ public class RroleResourceController extends BaseController {
             searchValue = roleName;
 		}
 
-		Map<String, String> params = new HashMap<String, String>();
+		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("resourceRoleName", roleName);
 		
 		Pageable pageable = null;
-		
 		
 		if(request.getParameter("pageSize") == null){
 			Integer start = findIntegerParameterValue(request, Constants._page);
@@ -169,7 +168,6 @@ public class RroleResourceController extends BaseController {
 		return roleResourceAddDisPlay(request, response).addObject(Constants._message, "创建成功");
 		
 	}
-	
 	
 	/**
 	 * @Description 角色编辑

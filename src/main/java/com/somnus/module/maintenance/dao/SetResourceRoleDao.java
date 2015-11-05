@@ -8,7 +8,7 @@ import com.somnus.support.repository.mybatis._annotation.MyBatisRepository;
 
 /**
  * @Description 资源角色数据访问接口
- * @author zhangbo
+ * @author Somnus
  * @date 2013-03-01
  * @version 1.0
  */
@@ -18,14 +18,12 @@ public interface SetResourceRoleDao {
 	/**
 	 * @Description 查询Sequences
 	 * @param 
-	 * @author zhangbo
 	 */
 	String getSequences();
 	
 	/**
 	 * @Description 插入新记录
 	 * @param role
-	 * @author zhangbo
 	 */
 	void insert(SetResourceRole role);
 	
@@ -33,21 +31,18 @@ public interface SetResourceRoleDao {
 	 * @Description 根据主键删除记录
 	 * @param roleId
 	 * @return
-	 * @author zhangbo
 	 */
 	void deleteByPrimaryKey(BigDecimal roleId);
 	
 	/**
 	 * @Description 更新记录
 	 * @param role
-	 * @author zhangbo
 	 */
 	void updateByPrimaryKeySelective(SetResourceRole role);
 	
 	/**
 	 * @Description 查询所有记录
 	 * @return
-	 * @author zhangbo
 	 */
 	List<SetResourceRole> queryAll();
 	
@@ -56,7 +51,6 @@ public interface SetResourceRoleDao {
 	 * @Description 通过ID查询候选记录
 	 * @param rgroupId
 	 * @return
-	 * @author zhangbo
 	 */
 	List<SetResourceRole> queryCandidateResource(BigDecimal rgroupId);
 	
@@ -64,7 +58,6 @@ public interface SetResourceRoleDao {
 	 * @Description 通过ID查询已选记录
 	 * @param rgroupId
 	 * @return
-	 * @author zhangbo
 	 */
 	List<SetResourceRole> querySelectedResource(BigDecimal rgroupId);
 

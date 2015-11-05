@@ -20,7 +20,6 @@ public interface ShiroDbDao {
 	 * @Description 通过用户名称查询用户信息
 	 * @param username 用户名称
 	 * @return
-	 * @author Somnus
 	 */
 	SetUser findByUserName(String username);
 	
@@ -28,15 +27,12 @@ public interface ShiroDbDao {
 	 * @Description 通过用户名称查询用户资源权限
 	 * @param username 用户名称
 	 * @return
-	 * @author Somnus
 	 */
 	List<SetResource> findResourceRolesByUserName(String username);
-	
 	
 	/**
 	 * @Description 查询所有过滤器
 	 * @return
-	 * @author Somnus
 	 */
 	List<SFilter> findAllFilters();
 

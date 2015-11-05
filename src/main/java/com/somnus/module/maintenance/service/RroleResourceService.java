@@ -10,7 +10,7 @@ import com.somnus.support.web.controller.pagination.Pageable;
 
 /**
  * @Description 资源角色管理Service层接口
- * @author zhangbo
+ * @author Somnus
  * @date 2013-03-01
  * @version 1.0
  */
@@ -21,16 +21,14 @@ public interface RroleResourceService {
 	 * @param pageable 分页对象
 	 * @param menu 查询条件
 	 * @return
-	 * @author zhangbo
 	 */
-	public Pageable queryPaged(Pageable pageable,  Map<String, String> params);
+	public Pageable queryPaged(Pageable pageable,  Map<String, Object> params);
 	
 	/**
 	 * @Description 新增角色以及用户资源关系
 	 * @param role 角色对象
 	 * @param list 角色资源关系集合
 	 * @return
-	 * @author zhangbo
 	 */
 	public void create(SetResourceRole role, List<SetRroleResource> list);
 	
@@ -39,7 +37,6 @@ public interface RroleResourceService {
 	 * @param role 角色对象
 	 * @param list 角色资源关系集合
 	 * @return
-	 * @author zhangbo
 	 */
 	public void update(SetResourceRole role, List<SetRroleResource> list);
 	
@@ -47,14 +44,12 @@ public interface RroleResourceService {
 	 * @Description 删除角色以及用户资源关系
 	 * @param roleId 角色对象主键
 	 * @return
-	 * @author zhangbo
 	 */
 	public void delete(BigDecimal roleId);
 	
 	/**
 	 * @Description 得到角色主键
 	 * @return
-	 * @author zhangbo
 	 */
 	public String queryRoleSeq();
 

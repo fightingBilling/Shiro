@@ -10,7 +10,7 @@ import com.somnus.support.web.controller.pagination.Pageable;
 /**
  * 资源Service层接口
  * 
- * @author zhangbo 2013-02-28
+ * @author Somnus 2013-02-28
  * @version 1.0
  */
 public interface SetResourceService {
@@ -20,28 +20,24 @@ public interface SetResourceService {
 	 * @param pageable 分页对象
 	 * @param menu 查询条件
 	 * @return
-	 * @author zhangbo
 	 */
-	public Pageable queryPaged(Pageable pageable,  Map<String, String> params);
+	public Pageable queryPaged(Pageable pageable,  Map<String, Object> params);
 	
 	
 	/**
 	 * @Description 创建资源
 	 * @param resource 
-	 * @author zhangbo
 	 */
 	void create(SetResource resource);
 	
 	/**
 	 * @Description 更新资源
 	 * @param resource 
-	 * @author zhangbo
 	 */
 	void update(SetResource resource);
 	
 	/**
 	 * @Description 查询Sequences
-	 * @author zhangbo
 	 */
 	String querySeq();
 	
@@ -55,14 +51,12 @@ public interface SetResourceService {
 	/**
 	 * @Description 根据主键查询资源记录
 	 * @param resourceId 
-	 * @author zhangbo
 	 */
 	SetResource queryById(BigDecimal resourceId);
 	
 	/**
 	 * @Description 根据主键删除资源记录
 	 * @param menuId 
-	 * @author zhangbo
 	 */
 	void deleteMenu(BigDecimal resourceId);
 	
@@ -71,7 +65,6 @@ public interface SetResourceService {
 	 * @Description 通过资源角色ID查询候选资源
 	 * @param resourceRoleId
 	 * @return
-	 * @author Somnus
 	 */
     List<SetResource> queryCandidateResource(Map<String, Object> params);
 	
@@ -79,7 +72,6 @@ public interface SetResourceService {
 	 * @Description 通过资源角色ID查询已选资源
 	 * @param resourceRoleId
 	 * @return
-	 * @author Somnus
 	 */
 	List<SetResource> querySelectedResource(BigDecimal resourceRoleId);
 

@@ -16,7 +16,6 @@
     where USER_ID = #{userId,jdbcType=DECIMAL}
   </delete>
   
-  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.somnus.module.maintenance.model.SetUserRgroupKey" >
     select 
     <include refid="Base_Column_List" />

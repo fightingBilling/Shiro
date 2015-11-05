@@ -1,5 +1,5 @@
 <%@page import="java.util.List"%>
-<%@page import="com.ips.commons.support.util.JsonUtils"%>
+<%@page import="com.somnus.support.util.JsonUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../../common/common.jsp"%>

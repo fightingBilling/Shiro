@@ -6,6 +6,8 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
 
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
 import com.somnus.module.maintenance.model.SetResource;
 import com.somnus.support.repository.mybatis._annotation.MyBatisRepository;
 
@@ -21,24 +23,20 @@ public interface SetResourceDao {
 	/**
 	 * @Description 插入新记录
 	 * @param resource
-	 * @author zhangbo
 	 */
 	void insert(SetResource resource);
 	
 	/**
 	 * @Description 更新记录
 	 * @param resource
-	 * @author zhangbo
 	 */
 	void updateByPrimaryKeySelective(SetResource resource);
 	
 	/**
 	 * @Description 查询Sequences
 	 * @param 
-	 * @author zhangbo
 	 */
 	String getSequences();
-	
 	
 
 	/**
@@ -47,21 +45,11 @@ public interface SetResourceDao {
 	 * @return 
 	 * @author zhangbo
 	 */
-	List<SetResource> queryPaged(Map<String, Object> params);
-	
-	
-	/**
-	 * @Description 查询记录总数
-	 * @param params
-	 * @return
-	 * @author zhangbo
-	 */
-	int queryTotalCount(Map<String, Object> params);
+	PageList<SetResource> queryPaged(Map<String, Object> params,PageBounds pageBounds);
 	
 	/**
 	 * @Description 查询所有记录
 	 * @return
-	 * @author zhangbo
 	 */
     List<SetResource> queryAll(@Param("urlPattern") String urlPattern);
 	
@@ -69,7 +57,6 @@ public interface SetResourceDao {
 	 * @Description 根据主键查询记录
 	 * @param resourceId
 	 * @return
-	 * @author zhangbo
 	 */
 	SetResource selectByPrimaryKey(BigDecimal resourceId);
 	
@@ -77,7 +64,6 @@ public interface SetResourceDao {
 	 * @Description 根据主键删除记录
 	 * @param resourceId
 	 * @return
-	 * @author zhangbo
 	 */
 	void deleteByPrimaryKey(BigDecimal resourceId);
 	
@@ -85,7 +71,6 @@ public interface SetResourceDao {
 	 * @Description 通过资源角色ID查询候选资源
 	 * @param resourceRoleId
 	 * @return
-	 * @author Somnus
 	 */
     List<SetResource> queryCandidateResource(Map<String, Object> params);
 	
@@ -93,7 +78,6 @@ public interface SetResourceDao {
 	 * @Description 通过资源角色ID查询已选资源
 	 * @param resourceRoleId
 	 * @return
-	 * @author Somnus
 	 */
 	List<SetResource> querySelectedResource(BigDecimal resourceRoleId);
 
