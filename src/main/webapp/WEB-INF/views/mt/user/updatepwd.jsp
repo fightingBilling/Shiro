@@ -47,6 +47,6 @@
 		</form>
 	</div>
 	
-	<jsp:include page="../../common/footerlogin.jsp"/>
+	<jsp:include page="../../common/login-footer.jsp"/>
 </body>
 </html>
