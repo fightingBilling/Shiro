@@ -27,7 +27,6 @@ import com.somnus.support.web.controller.pagination.impl.PageRequest;
 
 public class RroleResourceController extends BaseController {
 	
-	
 	/**
 	 * @Description 显示角色管理页面
 	 * @param request

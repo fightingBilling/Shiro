@@ -14,7 +14,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</a> 
-			<a class="brand" href="<%=pageContext.getServletContext().getContextPath()%>/default.html">
+			<a class="brand" href="<%=request.getContextPath()%>/default.html">
                 <font color="#0044cc" face="微软雅黑">通用后台管理系统</font>
             </a>
 			<div class="nav-collapse">
@@ -27,10 +27,10 @@
 						<li><a href="#"><i class="icon-user"></i><b class="text-error">&nbsp;<shiro:principal property="userName"/></b></a></li>
 					</shiro:authenticated>
 					<li class="divider-vertical"></li>
-					<li><a href="<%=pageContext.getServletContext().getContextPath()%>/mt/user/user_read.html?opt=updatePwdView">
+					<li><a href="<%=request.getContextPath()%>/mt/user/user_read.html?opt=updatePwd">
 						<i class="icon-th-list"></i>&nbsp;修改密码</a></li>	
 					<li class="divider-vertical"></li>
-					<li><a href="<%=pageContext.getServletContext().getContextPath()%>/secure/authentication.html?opt=logout">
+					<li><a href="<%=request.getContextPath()%>/secure/authentication.html?opt=logout">
 						<i class="icon-off"></i>&nbsp;登出</a></li>
 				</ul>
 			</div>

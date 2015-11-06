@@ -15,16 +15,6 @@ Activator.activeValidation("pwd_form",
 
 $(document).ready(function(){
 	$("#formsubmit").click(function(){
-		var mcrypt_key = $("#mcrypt_key").val();
-	    //设置随机因子
-	    pgeditor.pwdSetSk(mcrypt_key);
-	    var newpwd=pgeditor.pwdResult();
-	    
-	    pgeditor1.pwdSetSk(mcrypt_key);
-	    var surenewpwd=pgeditor1.pwdResult();
-
-	    pgeditor2.pwdSetSk(mcrypt_key);
-	    var oldpwd=pgeditor2.pwdResult();
 	    if(oldpwd==null || oldpwd.length == 0){
 	    	bootbox.dialog("原密码不能为空", [{
 				"label" : "确定",	
@@ -32,7 +22,7 @@ $(document).ready(function(){
 				"callback": function() {
 					
 				}
-				}]);
+			}]);
 	    }else if(newpwd==null || newpwd.length == 0){
 	    	bootbox.dialog("新密码不能为空", [{
 				"label" : "确定",	
@@ -48,14 +38,8 @@ $(document).ready(function(){
 				"callback": function() {
 					
 				}
-				}]);
-	    }else{
-	    	$("#newpwd").val(newpwd);
-	    	$("#oldpwd").val(oldpwd);
-	    	$("#pwd_form").submit();
+			}]);
 	    }
-		
-		
 	});
 	
 	

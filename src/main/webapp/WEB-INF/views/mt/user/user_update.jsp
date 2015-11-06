@@ -32,8 +32,7 @@
 		<div class="control-group span2.2">
 			<label class="control-label" for="userPassword">用户密码</label>
 			<div class="controls">
-				<script type="text/javascript">pgeditor.generate();</script>
-				<input type="hidden" id="userPassword" name="userPassword" />
+				<input type="password" id="userPassword" name="userPassword" />
 				<span style="color: #468847;margin-left: 0px;">密码长度必须大于等于8位字符，且需要由大小写字母和数字组成。</span>
 			</div>
 		</div>

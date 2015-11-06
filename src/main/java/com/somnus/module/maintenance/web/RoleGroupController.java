@@ -39,7 +39,6 @@ public class RoleGroupController extends BaseController {
 		
 		String _search_rgroupName = "_search_rgroupName";
 		
-		log.info("==========打印获取到的搜索参数==========");
 		String rgroupName = this.findStringParameterValue(request,_search_rgroupName);
 		log.info("search menuName: {}", new Object[] { rgroupName });
 

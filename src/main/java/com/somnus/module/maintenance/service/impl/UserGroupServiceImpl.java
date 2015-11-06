@@ -89,7 +89,8 @@ public class UserGroupServiceImpl implements UserGroupService {
     public SetUser selectByUsername(String username) {
         return setUserDao.selectByUsername(username);
     }
-
+    
+    @Transactional(readOnly=false)
     @Override
     public int updatePwd(SetUser user) {
         return setUserDao.updateByPrimaryKeySelective(user);

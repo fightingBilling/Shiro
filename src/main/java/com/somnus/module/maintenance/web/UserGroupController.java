@@ -11,7 +11,6 @@ import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang.ArrayUtils;
@@ -107,7 +106,6 @@ public class UserGroupController extends BaseController {
 	
 	private ModelAndView userAddDisPlay(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		List<SetRoleGroup> groups = userGroupService.queryAll();
-		HttpSession session = request.getSession();
 		return createMAV("/mt/user/user_create").addObject("groups", groups);
 	}
 	
@@ -116,7 +114,6 @@ public class UserGroupController extends BaseController {
 		BigDecimal userId = this.findBigDecimalParameterValue(request, "userId");
 		List<SetRoleGroup> candidateResources = userGroupService.queryCandidateResource(userId);
 		List<SetRoleGroup> selectedResources = userGroupService.querySelectedResource(userId);
-		HttpSession session = request.getSession();
 		return createMAV("/mt/user/user_update")
 					.addObject("candidate_resources", candidateResources)
 					.addObject("selected_resources", selectedResources)
@@ -323,11 +320,13 @@ public class UserGroupController extends BaseController {
      */
     public ModelAndView updatePwdView(HttpServletRequest request,
             HttpServletResponse response) throws Exception {
-    	HttpSession session = request.getSession();
         return createMAV("mt/user/updatepwd").addObject("flag", this.findStringParameterValue(request,"flag"));
     }
 
     public ModelAndView updatePwd(HttpServletRequest request, HttpServletResponse response) {
+    	if(isGet(request)){
+    		return createMAV("mt/user/updatepwd").addObject("flag", this.findStringParameterValue(request,"flag"));
+    	}
         ModelAndView view = createMAV("/mt/user/updatepwd");
         SetUser setUser = userGroupService.selectByUsername(ShiroHelper.getUsername());
 		String newpwd = request.getParameter("newpwd");

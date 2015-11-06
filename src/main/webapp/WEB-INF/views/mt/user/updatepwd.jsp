@@ -31,14 +31,13 @@
 			<div class="control-group">
 				<label class="control-label" for="surenewpwd">确认新密码</label>
 				<div class="controls">
-							<!-- <input type="password" name="surenewpwd" maxlength="32" id="surenewpwd" autocomplete="off" /> -->
 					<input type="password" id="surenewpwd" name="surenewpwd" />
 				</div>
 			</div>
 			<div class="control-group">
 				<!-- Button -->
 				<div class="controls">
-					<input type="button" id="formsubmit" class="btn btn-primary" value="确定"/>
+					<input type="submit" id="formsubmit" class="btn btn-primary" value="确定"/>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="button" id="back" class="btn btn-danger" value="返回"/>
 				</div>

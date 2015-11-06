@@ -19,6 +19,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.web.bind.ServletRequestDataBinder;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 import org.springframework.web.util.WebUtils;
@@ -44,7 +45,6 @@ public abstract class BaseController extends MultiActionController{
 	/**
 	 * @Description 创建ModelAndView实例
 	 * @return
-	 * @author Somnus
 	 */
 	protected ModelAndView createMAV() {
 		return new ModelAndView();
@@ -54,14 +54,19 @@ public abstract class BaseController extends MultiActionController{
 	 * @Description 创建带有试图名称的ModelAndView实例
 	 * @param viewName
 	 * @return
-	 * @author Somnus
 	 */
 	protected ModelAndView createMAV(String viewName) {
 		return new ModelAndView(viewName);
 	}
 	
+	protected boolean isGet(HttpServletRequest request){
+		boolean flag = false;
+		if("GET".equalsIgnoreCase(request.getMethod())){
+			flag = true;
+		}
+		return flag;
+	}
 	
-
 	@Override
 	protected void initBinder(HttpServletRequest request,
 			ServletRequestDataBinder binder) throws Exception {
@@ -91,7 +96,6 @@ public abstract class BaseController extends MultiActionController{
 	 * @param clazz 绑定类
 	 * @return
 	 * @throws Exception
-	 * @author Somnus
 	 */
 	protected <T> T bindModel(HttpServletRequest request, Class<T> clazz)
 			throws Exception {
@@ -105,7 +109,6 @@ public abstract class BaseController extends MultiActionController{
 	 * @Description 获取分页信息
 	 * @param request
 	 * @return
-	 * @author Somnus
 	 */
 	protected Pageable findPage(HttpServletRequest request){		
 		return findPage(request, PAGE_PARAM_START, PAGE_PARAM_LIMIT);
@@ -117,7 +120,6 @@ public abstract class BaseController extends MultiActionController{
 	 * @param pageFieldName 起始页字段名称
 	 * @param pageSizeFieldName 单页总量字段名称
 	 * @return
-	 * @author Somnus
 	 */
 	protected Pageable findPage(HttpServletRequest request, String pageFieldName, String pageSizeFieldName){
 		Validate.notBlank(pageFieldName, "page field name required");
@@ -144,7 +146,6 @@ public abstract class BaseController extends MultiActionController{
 	 * @param start
 	 * @param limit
 	 * @return
-	 * @author Somnus
 	 */
 	protected PaginatedList doPaging(Pageable pageable, int start, int limit){
 		  // 分页获取记录  
@@ -169,7 +170,6 @@ public abstract class BaseController extends MultiActionController{
 	 * @param request
 	 * @param pageable 分页结果
 	 * @return 
-	 * @author Somnus
 	 */
 	protected PaginatedList doPaging(HttpServletRequest request, Pageable pageable){
 	    // 分页获取记录  
@@ -199,7 +199,6 @@ public abstract class BaseController extends MultiActionController{
 	 * @param request
 	 * @param name 参数名称
 	 * @return
-	 * @author Somnus
 	 */
 	protected Integer findIntegerParameterValue(HttpServletRequest request,
 			String name) {
@@ -212,7 +211,6 @@ public abstract class BaseController extends MultiActionController{
 	 * @param request
 	 * @param name 参数名称
 	 * @return
-	 * @author Somnus
 	 */
 	protected Long findLongParameterValue(HttpServletRequest request,
 			String name) {
@@ -225,7 +223,6 @@ public abstract class BaseController extends MultiActionController{
 	 * @param request
 	 * @param name 参数名称
 	 * @return
-	 * @author Somnus
 	 */
 	protected BigDecimal findBigDecimalParameterValue(HttpServletRequest request,
 			String name) {
@@ -238,7 +235,6 @@ public abstract class BaseController extends MultiActionController{
 	 * @param request
 	 * @param name 参数名称
 	 * @return
-	 * @author Somnus
 	 */
 	protected String findStringParameterValue(HttpServletRequest request,
 			String name) {
@@ -250,7 +246,6 @@ public abstract class BaseController extends MultiActionController{
 	 * @param request
 	 * @param name 参数名称
 	 * @return
-	 * @author Somnus
 	 */
 	protected Boolean findBooleanParameterValue(HttpServletRequest request,
 			String name) {
@@ -265,7 +260,6 @@ public abstract class BaseController extends MultiActionController{
 	 * @param datePattern 日期模式
 	 * @return
 	 * @throws ParseException
-	 * @author Somnus
 	 */
 	protected Date findDateParameterValue(HttpServletRequest request,
 			String name, String datePattern) throws ParseException {
