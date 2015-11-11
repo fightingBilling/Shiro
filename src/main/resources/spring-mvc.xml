@@ -8,9 +8,7 @@
 
 	<import resource="classpath*:/spring-mvc-*.xml" />
     <import resource="classpath:/spring-env.xml"/>
-	<context:annotation-config />
-
-	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+    <context:annotation-config/>
 	
 	<!-- 视图解析器 -->
 	<bean id="viewResolver"
@@ -38,16 +36,11 @@
 		</property>
 	</bean>
 
-	<!-- json对象转换器 -->
-	<bean id="jsonConvert" 
-		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
-
 	<!-- 文件上传解析器 -->
 	<bean id="multipartResolver" 
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="maxUploadSize" value="-1" />
 	</bean>
-
 	
 	<!-- 异常条件 -->
 	<bean id="businessExPredicate"
