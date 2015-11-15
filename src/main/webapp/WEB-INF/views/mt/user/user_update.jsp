@@ -14,7 +14,6 @@
 	<pack:script src="user_update.js" />
 	<!-- userName -->
 <form id="user_update_form" method="POST" action="user_read.html">
-<input type="hidden" id="mcrypt_key" name="mcrypt_key" value="${mcrypt_key}" />
 		<div class="container" style="width:90%">
 		<div class="control-group span2.2">
 			<label class="control-label" for="user_name">用户名称</label>
@@ -32,7 +31,7 @@
 		<div class="control-group span2.2">
 			<label class="control-label" for="userPassword">用户密码</label>
 			<div class="controls">
-				<input type="password" id="userPassword" name="userPassword" />
+				<input type="password" id="userPassword" name="userPassword" value="${password}"/>
 				<span style="color: #468847;margin-left: 0px;">密码长度必须大于等于8位字符，且需要由大小写字母和数字组成。</span>
 			</div>
 		</div>

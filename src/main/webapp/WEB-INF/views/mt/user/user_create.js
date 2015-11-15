@@ -30,21 +30,8 @@ $(document).ready(function(){
 		$("input[name='gids']").val(arr.join(","));
 		$("input[name='userName']").val($("input[name='user_name']").val());
 		$("input[name='status']").val($("input[name='isLeaf']").val());
-		var mcrypt_key = $("#mcrypt_key").val();
-	    //设置随机因子
-	    pgeditor.pwdSetSk(mcrypt_key);
-	    var pwdResult=pgeditor.pwdResult();
-	    if(pwdResult==null || pwdResult.length == 0){
-	    	bootbox.dialog("密码不能为空", [{
-				"label" : "确定",	
-				"class" : "btn-success",	
-				"callback": function() {
-				}
-				}]);
-	    }else{
-	    	$("#userPassword").val(pwdResult);
-	    	$("form[id='user_create_form']").submit();
-	    }
+		$("input[name='userPassword']").val($("input[name='userPassword']").val());
+		$("form[id='user_create_form']").submit();
 	});
 	
 	
