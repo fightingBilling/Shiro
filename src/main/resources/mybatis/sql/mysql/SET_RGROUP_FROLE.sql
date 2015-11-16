@@ -10,23 +10,23 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2015-11-05 18:24:12
+Date: 2015-11-05 18:24:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for `set_rgroup_rrole`
+-- Table structure for `set_rgroup_frole`
 -- ----------------------------
-DROP TABLE IF EXISTS `set_rgroup_rrole`;
-CREATE TABLE `set_rgroup_rrole` (
+DROP TABLE IF EXISTS `set_rgroup_frole`;
+CREATE TABLE `set_rgroup_frole` (
   `RGROUP_ID` int(11) NOT NULL DEFAULT '0',
-  `RESOURCE_ROLE_ID` int(11) NOT NULL DEFAULT '0',
+  `FUNC_ROLE_ID` int(11) NOT NULL DEFAULT '0',
   `LAST_UPDATOR` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `LAST_UPDATE_TIME` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`RGROUP_ID`,`RESOURCE_ROLE_ID`)
+  `LAST_UPDATE_TIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`RGROUP_ID`,`FUNC_ROLE_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
--- Records of set_rgroup_rrole
+-- Records of set_rgroup_frole
 -- ----------------------------
-INSERT INTO set_rgroup_rrole VALUES ('10048', '10046', null, null);
+INSERT INTO set_rgroup_frole VALUES ('10048', '10038', null, null);

@@ -10,24 +10,23 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2015-11-05 18:24:16
+Date: 2015-11-05 18:24:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for `set_role_group`
+-- Table structure for `set_rgroup_rrole`
 -- ----------------------------
-DROP TABLE IF EXISTS `set_role_group`;
-CREATE TABLE `set_role_group` (
+DROP TABLE IF EXISTS `set_rgroup_rrole`;
+CREATE TABLE `set_rgroup_rrole` (
   `RGROUP_ID` int(11) NOT NULL DEFAULT '0',
-  `RGROUP_CODE` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `RGROUP_NAME` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `RESOURCE_ROLE_ID` int(11) NOT NULL DEFAULT '0',
   `LAST_UPDATOR` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `LAST_UPDATE_TIME` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`RGROUP_ID`)
+  `LAST_UPDATE_TIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`RGROUP_ID`,`RESOURCE_ROLE_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
--- Records of set_role_group
+-- Records of set_rgroup_rrole
 -- ----------------------------
-INSERT INTO set_role_group VALUES ('10048', null, '后台管理角色组', null, null);
+INSERT INTO set_rgroup_rrole VALUES ('10048', '10046', null, null);
