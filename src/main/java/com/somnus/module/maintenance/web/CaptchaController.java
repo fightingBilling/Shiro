@@ -13,8 +13,6 @@ import org.slf4j.LoggerFactory;
 
 import com.octo.captcha.service.image.ImageCaptchaService;
 import com.somnus.support.web.controller.BaseController;
-import com.sun.image.codec.jpeg.JPEGCodec;
-import com.sun.image.codec.jpeg.JPEGImageEncoder;
 
 /**
  * @Description 验证码控制器
@@ -42,8 +40,7 @@ public class CaptchaController extends BaseController {
 
 		BufferedImage challenge = captchaService.getImageChallengeForID(captchaId, request.getLocale());
 		
-		JPEGImageEncoder jpegEncoder = JPEGCodec.createJPEGEncoder(jpegOutputStream);
-		jpegEncoder.encode(challenge);
+		ImageIO.write(challenge, "jpg", jpegOutputStream);
 		
 		captchaChallengeAsJpeg = jpegOutputStream.toByteArray();
 		
