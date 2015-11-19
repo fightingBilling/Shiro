@@ -3,6 +3,7 @@ package com.somnus.module.maintenance.web;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 
+import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
