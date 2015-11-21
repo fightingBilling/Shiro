@@ -15,7 +15,8 @@ import java.io.Serializable;
  */
 public class CustomGimpy extends ImageCaptcha implements Serializable {
 
-    private String response;
+	private static final long serialVersionUID = 1L;
+	private String response;
 
     CustomGimpy(String question, BufferedImage challenge, String response) {
         super(question, challenge);

@@ -102,6 +102,7 @@ public class JsonUtils {
 	 * @param strJsonString 需要转换的JSON字符串
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public static<E, V> Map<E, V> jsonString2Map(String strJsonString){
 		try {
 			ObjectMapper objectMapper = instanceObjectMapper();

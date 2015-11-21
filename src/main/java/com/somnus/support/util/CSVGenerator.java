@@ -66,6 +66,7 @@ public class CSVGenerator {
 	 * @return
 	 * @author Somnus
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static List<String[]> list2StringArray(List<Object> list){
 		if(list != null && !list.isEmpty()){
 			List<String[]> lstResult = new ArrayList<String[]>();

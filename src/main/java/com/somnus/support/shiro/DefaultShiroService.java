@@ -17,6 +17,7 @@ import com.somnus.module.maintenance.web.filter.CustomRolesAuthorizationFilter;
  */
 public class DefaultShiroService implements ShiroService, InitializingBean {
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public synchronized void addSecurityFilter(String urlPattern, String[] roles) {
 		//获取身份验证过滤器的全局匹配路径
