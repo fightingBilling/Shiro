@@ -634,6 +634,8 @@
 
 	<build>
 		<finalName>Shiro</finalName>
+		<!-- 被编译过的应用程序class文件存放的目录 -->
+		<outputDirectory>${basedir}/src/main/webapp/WEB-INF/classes</outputDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -643,6 +645,74 @@
 					<resource>1.7</resource>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+
+            <!--###################### 文件目录清空插件 ###################### -->
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.5</version>
+                <executions>
+                    <execution>
+                        <id>auto-clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                        <configuration>
+                            <verbose>true</verbose>
+                            <filesets>
+                                <fileset>
+                                    <directory>${basedir}/src/main/webapp/WEB-INF/</directory>
+                                    <followSymlinks>false</followSymlinks>
+                                    <includes>
+                                        <include>lib/**/*.*</include>
+                                        <include>lib</include>
+                                    </includes>
+                                </fileset>
+                            </filesets>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--###################### 依赖拷贝插件 ###################### -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <!-- 输出lib目录 -->
+                            <outputDirectory>${basedir}/src/main/webapp/WEB-INF/lib</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>false</overWriteSnapshots>
+                            <overWriteIfNewer>true</overWriteIfNewer>
+                            <!-- 包含运行时所依赖的jar(provided由容器提供，test不用包含) -->
+                            <includeScope>runtime</includeScope>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--###################### 打war包插件 ###################### -->
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <packagingExcludes>
+                        WEB-INF/classes/logback-test.xml
+                    </packagingExcludes>
+                </configuration>
+            </plugin>
 
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
@@ -672,15 +742,20 @@
 					<finalName>${project.build.finalName}</finalName>
 					<server>tomcat7</server>
 				</configuration>
-				<!-- <executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-				</executions> -->
 			</plugin>
+			
+			<plugin>
+                <groupId>com.oracle.weblogic</groupId>
+                <artifactId>weblogic-maven-plugin</artifactId>
+                <version>10.3.6.0</version>
+                <configuration>
+                    <upload>true</upload>
+                    <remote>true</remote>
+                    <verbose>true</verbose>
+                    <source>${project.build.directory}/${project.build.finalName}</source>
+                    <name>${project.build.finalName}</name>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 	<!-- 指定Maven仓库 -->
