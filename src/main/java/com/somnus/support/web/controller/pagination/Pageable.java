@@ -1,7 +1,5 @@
 package com.somnus.support.web.controller.pagination;
 
-import java.math.BigDecimal;
-
 /**
  * @Description 分页接口 
  * @author Somnus
@@ -39,11 +37,4 @@ public interface Pageable {
 	 * @author Somnus
 	 */
 	<RESULTTYPE> RESULTTYPE getResult(Class<RESULTTYPE> resultType);
-
-	/**
-	 * 获取总金额 批次下发需要
-	 * 
-	 * @return
-	 */
-	BigDecimal getTotalAmount();
 }

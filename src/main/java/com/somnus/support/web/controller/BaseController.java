@@ -146,19 +146,17 @@ public abstract class BaseController extends MultiActionController{
 	 * @param limit
 	 * @return
 	 */
-	protected PaginatedList doPaging(Pageable pageable, int start, int limit){
-		  // 分页获取记录  
-	    int pageNumber = start;
+	protected PaginatedList doPaging(Pageable pageable, int page, int pageSize){
 	      
 	    CustomPaginatedList pageList = new CustomPaginatedList();  
 
 	    // 设置当前页数  
-	    pageList.setPageNumber(pageNumber);  
+	    pageList.setPageNumber(page);
+	    // 设置page size  
+        pageList.setObjectsPerPage(pageSize);  
 	    // 设置当前页列表  
 	    pageList.setList(pageable.getResult(List.class));  
-	    // 设置page size  
-	    pageList.setObjectsPerPage(limit);  
-	    // 设置总页数  
+	    // 设置总页数 
 	    pageList.setFullListSize(pageable.getCount());  
 
 	    return pageList;

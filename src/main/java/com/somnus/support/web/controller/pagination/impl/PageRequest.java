@@ -1,7 +1,5 @@
 package com.somnus.support.web.controller.pagination.impl;
 
-import java.math.BigDecimal;
-
 import com.somnus.support.web.controller.pagination.Pageable;
 
 /**
@@ -42,13 +40,5 @@ public class PageRequest implements Pageable {
 	private Integer start;
 	//单页总量
 	private Integer limit;
-
-	/**
-	 * 获取总金额 批次下发需要
-	 */
-	@Override
-	public BigDecimal getTotalAmount() {
-		return null;
-	}
 	
 }
