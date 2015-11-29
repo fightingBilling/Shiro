@@ -127,7 +127,7 @@
 									<c:if test="${soptlog.status == 0 }">失败</c:if>
 								</td>
 								<td style="white-space: nowrap;">
-									<display:column name="logType" value="${soptlog.logType}" />
+									<c:out value="${param.logType}" />
 								</td>
 							</tr>
 						</c:forEach>
@@ -135,8 +135,8 @@
 				</table>
 				<!-- 配合分页参数使用 -->
 				<div id="exPageData">
-					<input type="hidden" value="${pageList.fullListSize}" /> <input
-						name="pageSize" type="hidden" value="${pageList.objectsPerPage}" />
+					<input type="hidden" value="${pageList.fullListSize}" /> 
+					<input name="pageSize" type="hidden" value="${pageList.objectsPerPage}" />
 					<input name="page" type="hidden"
 						value='<c:choose><c:when test="${pageList.pageNumber > 0}">${pageList.pageNumber}</c:when><c:otherwise>1</c:otherwise></c:choose>' />
 				</div>

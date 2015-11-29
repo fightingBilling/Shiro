@@ -42,15 +42,15 @@
 				</table>
 				<!-- 配合分页参数使用 -->
 				<div id="exPageData">
-					<input type="hidden" value="${pageList.fullListSize}" /> <input
-						name="pageSize" type="hidden" value="${pageList.objectsPerPage}" /> <input name="page"
-						type="hidden"
+					<input type="hidden" value="${pageList.fullListSize}" /> 
+					<input name="pageSize" type="hidden" value="${pageList.objectsPerPage}" /> 
+					<input name="page" type="hidden"
 						value='<c:choose><c:when test="${pageList.pageNumber > 0}">${pageList.pageNumber}</c:when><c:otherwise>1</c:otherwise></c:choose>' />
 				</div>
 				<!-- 配合搜索栏使用 -->
 				<div id="exSearchData">
-					<input name="search_key" type="hidden" value='${_search_key}' /> <input
-						name="search_value" type="hidden" value='${_search_value}' />
+					<input name="search_key" type="hidden" value='${_search_key}' /> 
+					<input name="search_value" type="hidden" value='${_search_value}' />
 				</div>
 			</form>
 		</fieldset>
