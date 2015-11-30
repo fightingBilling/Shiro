@@ -129,16 +129,14 @@ $(document).ready(function(){
 			},
 			
 			//自定动作项
-			customOperationConfig : [
-				{
+			customOperationConfig : [{
 					bindSubmitElement: "csvExport",
 					type : "add",//跳过勾选检查
 					action : function(table){
 						//导出当页数据
 						Component.csvExportCurrentPage($("#contextpath").val(), table);
 					}
-				},
-				{
+				},{
 					bindSubmitElement: "csvExportBk",
 					type : "add",//跳过勾选检查
 					action : function(table){
@@ -148,29 +146,17 @@ $(document).ready(function(){
 							baseParam : {opt:"s600", aa:"test"}
 						});
 					}
-				},
-				{
+				},{
 					bindSubmitElement: "tableClear",
 					type : "add",//跳过勾选检查
 					action : function(table){
 						//清空表格数据
 						table.clearAll();
 					}
-				}/*,
-				{
-					bindSubmitElement: "printBk",
-					type : "add",//跳过勾选检查
-					action : function(table){
-						Component.print({
-							baseUrl: $("#contextpath").val() + "sample/print.html",
-							baseParam : {opt:"s800", aa:"test"}
-						});
-					}
-				}*/
+				}
 				
 			],
 			
-
 			// 分页栏设置项
 			paginationConfig : {
 				// 分页工具栏
@@ -194,40 +180,6 @@ $(document).ready(function(){
 				$('body').modalmanager('loading');
 			}		
 		});
-		
-		/** 打印 **/
-		//出款文件-多页
-		$("#tp1").click(function(){
-			Component.print({
-				baseUrl: $("#contextpath").val() + "sample/print.html",
-				baseParam : {opt:"s800", total:"137", reprint: $("#drawFileReprintID").hasClass("active")}
-			});		
-		});
-		
-		//出款文件-单页
-		$("#tp2").click(function(){
-			Component.print({
-				baseUrl: $("#contextpath").val() + "sample/print.html",
-				baseParam : {opt:"s800", total:"10", reprint: $("#drawFileReprintID").hasClass("active")}
-			});		
-		});
-		
-		//退款-多页
-		$("#tp3").click(function(){
-			Component.print({
-				baseUrl: $("#contextpath").val() + "sample/print.html",
-				baseParam : {opt:"s801", total:"137", reprint: $("#refundReprintID").hasClass("active")}
-			});		
-		});
-		
-		//退款-单页
-		$("#tp4").click(function(){
-			Component.print({
-				baseUrl: $("#contextpath").val() + "sample/print.html",
-				baseParam : {opt:"s801", total:"10", reprint: $("#refundReprintID").hasClass("active")}
-			});		
-		});
-		
 		
 		//折叠
 		Component.fold({

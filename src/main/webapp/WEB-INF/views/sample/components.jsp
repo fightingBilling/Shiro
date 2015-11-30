@@ -15,7 +15,7 @@
 			<div id="legend">
 				<legend>CSV导出</legend>
 			</div>
-			<form id="funcForm" class="form-search" method="post" action="components.html">
+			<form id="funcForm" class="form-search" method="post" action="component.html">
 				<input type="hidden" name="opt" value="s200" />
 				<button id="csvExport" class="btn btn-success" type="button"><i class="icon-share"></i>&nbsp;CSV本页导出</button>
 				<button id="csvExportBk" class="btn btn-info" type="button"><i class="icon-share"></i>&nbsp;CSV后台导出</button>
