@@ -29,7 +29,7 @@
 			<props>
 				<!-- 验证码 -->
 				<prop key="authenticate">1:登录系统</prop>
-                <prop key="logout!">2:退出系统</prop>
+				<prop key="logout!">2:退出系统</prop>
 			</props>
 		</property>
 	</bean>
