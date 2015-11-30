@@ -83,20 +83,19 @@ public class AuthenticationController extends BaseController {
 					objCurrentUser.login(objToken);
 				}
 			} catch (UnknownAccountException uae) {
-                log.error("不存在用户[{}]", new Object[] { objToken.getPrincipal() });
+                log.error("不存在用户[{}]", new Object[] {objToken.getPrincipal()});
                 // 插入日志
                 logType = "27";
                 logDesc = strUsername + "用户名不存在,登录失败";
                 insertOptLogVo(strUsername,optIp,logType,logDesc);
                 throw new UnknownAccountException(String.format("不存在用户[%s]", objToken.getPrincipal()));
             } catch (IncorrectCredentialsException ice) {
-                log.error("用户[{}]密码错误",new Object[] { objToken.getPrincipal()});
+                log.error("用户[{}]密码错误",new Object[] {objToken.getPrincipal()});
                 logType = "28";
                 logDesc = strUsername + "用户密码错误,登录失败";
                 // 插入日志
                 insertOptLogVo(strUsername,optIp,logType,logDesc);
-                throw new IncorrectCredentialsException(String.format("用户[%s]密码错误", 
-                        objToken.getPrincipal()));
+                throw new IncorrectCredentialsException(String.format("用户[%s]密码错误", objToken.getPrincipal()));
             } catch (DisabledAccountException dae) {
 				log.error(dae.getMessage(), dae);
 				throw new DisabledAccountException(dae.getMessage(), dae);

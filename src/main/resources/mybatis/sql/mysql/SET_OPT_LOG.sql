@@ -27,10 +27,10 @@ CREATE TABLE `set_opt_log` (
   `OPT_IP` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
   `STATUS` char(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `LAST_UPDATOR` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  `LAST_UPDATE_TIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `LAST_UPDATE_TIME` datetime NOT NULL,
   `OPT_DATE` datetime NOT NULL,
   PRIMARY KEY (`LOG_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of set_opt_log
