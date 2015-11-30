@@ -1,25 +1,24 @@
-Activator.activeCalendar("dateBegin_dateDiv", {
+Activator.activeCalendar("beginDate_dateDiv", {
 	// 显示格式
 	format : "yyyy-mm-dd"
 });
 
-Activator.activeCalendar("dateEnd_dateDiv", {
+Activator.activeCalendar("endDate_dateDiv", {
 	// 显示格式
 	format : "yyyy-mm-dd"
 });
-
 
 
 /** 日期范围校验 * */
 Activator.activeValidation("form",
 // 校验字段
 {
-	dateBegin : {
+	beginDate : {
 		required:true,
-		dateRange : "#dateEnd",
-	    dateRange30 : "#dateEnd"
+		dateRange : "#endDate",
+	    dateRange30 : "#endDate"
 	},
-	dateEnd : {
+	endDate : {
 		required:true
 	}
 },
@@ -29,10 +28,12 @@ Activator.activeValidation("form",
 
 $(document).ready(function() {
 	
-	setDefaultDate('dateBegin',new Date());
-	setDefaultDate('dateEnd',new Date());
-		$("#listDiff").tablecloth({
-			formId : "form_result",
+	setDefaultDate('beginDate',new Date());
+	
+	setDefaultDate('endDate',new Date());
+	
+	$("#listDiff").tablecloth({
+			formId : "form",
 			theme : "default",
 			striped : true,
 			bordered : true,
@@ -49,7 +50,7 @@ $(document).ready(function() {
 			
 					// 后台数据导出
 					Component.csvExport({
-								baseUrl : "setoptlog_view.html?opt=setOptLogCSV",
+								baseUrl : "setoptlog_read.html?opt=setOptLogCSV",
 								baseParam : data
 							});
 				}
@@ -59,8 +60,8 @@ $(document).ready(function() {
 				type : "add",// 跳过勾选检查
 				action : function(table) {
 					clear('form',table);
-					setDefaultDate('dateBegin',new Date());
-					setDefaultDate('dateEnd',new Date());
+					setDefaultDate('beginDate',new Date());
+					setDefaultDate('endDate',new Date());
 				}
 			}],
 

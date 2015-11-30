@@ -29,6 +29,8 @@ CREATE TABLE `set_frole_fmenu` (
 -- ----------------------------
 -- Records of set_frole_fmenu
 -- ----------------------------
+INSERT INTO set_frole_fmenu VALUES ('10038', '10001', null, null);
+INSERT INTO set_frole_fmenu VALUES ('10038', '10002', null, null);
 INSERT INTO set_frole_fmenu VALUES ('10038', '10050', null, null);
 INSERT INTO set_frole_fmenu VALUES ('10038', '10051', null, null);
 INSERT INTO set_frole_fmenu VALUES ('10038', '10052', null, null);
@@ -37,3 +39,5 @@ INSERT INTO set_frole_fmenu VALUES ('10038', '10054', null, null);
 INSERT INTO set_frole_fmenu VALUES ('10038', '10055', null, null);
 INSERT INTO set_frole_fmenu VALUES ('10038', '10056', null, null);
 INSERT INTO set_frole_fmenu VALUES ('10038', '10057', null, null);
+INSERT INTO set_frole_fmenu VALUES ('10038', '20010', null, null);
+INSERT INTO set_frole_fmenu VALUES ('10038', '20011', null, null);

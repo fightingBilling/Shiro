@@ -52,6 +52,21 @@
 				<prop key="s5002">groupCreate</prop>
 				<prop key="s5003">groupUpdate</prop>
 				<prop key="s5004">groupDelete</prop>
+				
+				
+				<!-- 日志信息查询 -->
+                <prop key="optlogQuery">optLogQuery</prop>
+                <prop key="setOptLogCSV">setOptLogCSV</prop>
+                
+                
+                <!-- sample -->
+                <prop key="s100">sampleWsDisplay</prop>
+                <prop key="s101">sampleWsInvoke</prop>
+                <prop key="s200">sampleCompsDisplay</prop>
+                <prop key="s400">sampleCompsCascadeAsync</prop>
+                <prop key="s500">sampleCompsLabelLoad</prop>
+                <prop key="s600">sampleCsvExport</prop>
+                <prop key="s700">sampleFileUpload</prop>
 			</props>
 		</property>
 	</bean>

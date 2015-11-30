@@ -8,6 +8,11 @@
 	<!-- url映射配置 -->
 	<bean id="publicUrlMapping"
 		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="interceptors">
+            <list>
+                <ref bean="auditLogInterceptor"/>
+            </list>
+        </property>
 		<property name="mappings">
 			<props>
 				<!-- 验证码 -->
@@ -27,8 +32,13 @@
 				<prop key="/mt/user/user_read.html">userGroupController</prop>
 				<prop key="/mt/rgroup/rgroup_read.html">roleGroupController</prop>
 				<prop key="/mt/rgroup/rgroup_read.html">roleGroupController</prop>
+				
+				<!-- 日志查询 -->
+                <prop key="/log/setoptlog_read.html">displayLogController</prop>
 				<!-- csv导出 -->
 				<prop key="/export/csvExport.html">exportCsvController</prop>
+				<!-- 样例 -->
+                <prop key="/sample/component.html">sampleController</prop>
 			</props>
 		</property>
 	</bean>

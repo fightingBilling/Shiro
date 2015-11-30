@@ -39,7 +39,7 @@ public class UserGroupController extends BaseController {
 	 * @return
 	 * @throws Exception
 	 */
-	public ModelAndView userGroupDisplay(HttpServletRequest request, HttpServletResponse response) throws Exception{
+	public ModelAndView userGroupDisplay(HttpServletRequest request , HttpServletResponse response) throws Exception{
 		
         String searchUserName = "_search_userName";
 		

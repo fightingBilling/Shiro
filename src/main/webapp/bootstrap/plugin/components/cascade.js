@@ -185,7 +185,7 @@ $.extend(Component, {
 		var data =  $.evalJSON(config.cache.val());	
 		// 父控件操作
 		var grepParentArray = (config.parentFilter)(data);
-		_options.parent.append("<option value=''></option>");
+		_options.parent.append("<option value=''>请选择</option>");
 		$(grepParentArray).each(function(){
 			_options.parent.append("<option value='"+ this[config.parentOptionMapping.value] +"'>"+ this[config.parentOptionMapping.text] +"</option>");
 		});
@@ -196,11 +196,14 @@ $.extend(Component, {
 				var grepData = $.grep(data, function(n){
 					return n[config.childOptionMapping.ref] - 0 == seletedId - 0;
 				});
-				_options.child.find("option").remove();
-				_options.child.append("<option value=''></option>");
+				console.info(_options.child);
+				_options.child[0].find("option").remove();
+				_options.child[0].append("<option value=''>请选择</option>");
 				$(grepData).each(function(){
-					_options.child.append("<option value='"+ this[config.childOptionMapping.value] +"'>"+ this[config.childOptionMapping.text] +"</option>");
+					_options.child[0].append("<option value='"+ this[config.childOptionMapping.value] +"'>"+ this[config.childOptionMapping.text] +"</option>");
 				});
+			}else{
+				_options.child[0].find("option").remove();
 			}
 		});
 	},

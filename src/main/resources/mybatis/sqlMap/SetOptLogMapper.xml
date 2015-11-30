@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.somnus.module.maintenance.dao.SetOptLogDao" >
+  <resultMap id="BaseResultMap" type="com.somnus.module.maintenance.model.SetOptLog" >
+    <id column="LOG_ID" property="logId" jdbcType="VARCHAR" />
+    <result column="OPT_USER_NAME" property="optUserName" jdbcType="VARCHAR" />
+    <result column="LOG_TYPE" property="logType" jdbcType="VARCHAR" />
+    <result column="OPT_NAME" property="optName" jdbcType="VARCHAR" />
+    <result column="OPT_IP" property="optIp" jdbcType="VARCHAR" />
+    <result column="LOG_DESC" property="logDesc" jdbcType="VARCHAR" />
+    <result column="OPT_DATE" property="optDate" jdbcType="TIMESTAMP" />
+    <result column="STATUS" property="status" jdbcType="CHAR" />
+    <result column="LAST_UPDATOR" property="lastUpdator" jdbcType="VARCHAR" />
+    <result column="LAST_UPDATE_TIME" property="lastUpdateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    LOG_ID, OPT_USER_NAME, LOG_TYPE, OPT_NAME, OPT_IP,OPT_DATE, STATUS,LAST_UPDATOR, LAST_UPDATE_TIME
+  </sql>
+
+  <insert id="insert" parameterType="com.somnus.module.maintenance.model.SetOptLog" >
+      insert into SET_OPT_LOG (
+        LOG_ID, 
+        OPT_USER_NAME, 
+        LOG_TYPE,
+        OPT_NAME,
+        LOG_DESC,
+        OPT_IP,
+        OPT_DATE, 
+        STATUS, 
+        LAST_UPDATOR,
+        LAST_UPDATE_TIME)
+      values (
+        #{logId,jdbcType=VARCHAR}, 
+        #{optUserName,jdbcType=VARCHAR}, 
+        #{logType,jdbcType=VARCHAR},
+        #{optName,jdbcType=VARCHAR},
+        #{logDesc,jdbcType=VARCHAR},
+        #{optIp,jdbcType=VARCHAR},
+        #{optDate,jdbcType=TIMESTAMP},
+        #{status,jdbcType=CHAR}, 
+        #{lastUpdator,jdbcType=VARCHAR},
+        #{lastUpdateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <select id="queryPaged" parameterType="map" resultMap="BaseResultMap">
+    SELECT 
+    <include refid="Base_Column_List"/>
+    FROM SET_OPT_LOG
+    <where>
+        <if test="beginDate != null and beginDate != ''">
+            <!-- AND to_char(OPT_DATE,'yyyy-mm-dd') &gt;=#{beginDate} -->
+            AND DATE_FORMAT(OPT_DATE,'%Y-%m-%d') &gt;=#{beginDate}
+        </if>
+        <if test="endDate != null and endDate != ''">
+            <!-- AND to_char(OPT_DATE,'yyyy-mm-dd') &lt;=#{endDate} -->
+            AND DATE_FORMAT(OPT_DATE,'%Y-%m-%d') &lt;=#{endDate}
+        </if>
+        <if test="optUserName != null and optUserName != ''">
+            AND OPT_USER_NAME = #{optUserName,jdbcType=VARCHAR}
+        </if>
+        <if test="status != null and status != ''">
+            AND STATUS = #{status,jdbcType=VARCHAR}
+        </if>
+        <if test="logType != null and logType != ''">
+            AND LOG_TYPE = #{logType,jdbcType=VARCHAR}
+        </if>
+    </where>
+    order by OPT_DATE desc
+  </select>
+	
+  <select id="queryLogByCondition" parameterType="map" resultMap="BaseResultMap">
+    SELECT 
+    <include refid="Base_Column_List"/>
+    FROM SET_OPT_LOG
+    <where>
+        <if test="dateBegin != null and dateBegin != ''">
+            AND to_char(OPT_DATE,'yyyy-mm-dd') &gt;=#{dateBegin}
+        </if>
+        <if test="dateEnd != null and dateEnd != ''">
+            AND to_char(OPT_DATE,'yyyy-mm-dd')  &lt;=#{dateEnd}
+        </if>
+        <if test="optUserName != null and optUserName != ''">
+            AND OPT_USER_NAME = #{optUserName,jdbcType=VARCHAR}
+        </if>
+        <if test="status != null and status != ''">
+            AND STATUS = #{status,jdbcType=VARCHAR}
+        </if>
+        <if test="logType != null and logType != ''">
+            AND LOG_TYPE = #{logType,jdbcType=VARCHAR}
+        </if>
+    </where>
+    order by OPT_DATE desc
+  </select>
+	
+</mapper>

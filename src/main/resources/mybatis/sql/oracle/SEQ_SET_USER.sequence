@@ -1,0 +1,7 @@
+create sequence SEQ_SET_USER
+minvalue 10000
+maxvalue 999999999
+start with 10000
+increment by 1
+nocache
+order;

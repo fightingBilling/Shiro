@@ -11,7 +11,7 @@
 	<jsp:include page="../common/header.jsp" />
 	<pack:script src="setoptlog.js" />
 	<div class="container" style="width: 90%">
-		<form id="form" class="form-horizontal" action="setoptlog_view.html"
+		<form id="form" class="form-horizontal" action="setoptlog_read.html"
 			method="POST">
 			<input type="hidden" name="opt" value="optlogQuery" />
 			<fieldset>
@@ -23,7 +23,7 @@
 							<div class="input-prepend">
 								<input type="text" id="optUserName" name="optUserName"
 									maxlength="40"
-									value="<c:out value="${param.optUserName}" />" />
+									value="${param.optUserName}" />" />
 							</div>
 						</div>
 					</div>
@@ -33,7 +33,9 @@
 					<div class="control-group span6">
 						<label class="control-label">日志状态</label>
 						<div class="controls">
-						  <c:out value="${param.status}" />
+						  <display:select name="status" filterAll="false" 
+						  id="status" mapping="status" 
+                                value="${param.status}"></display:select>
 						</div>
 					</div>
 				</div>
@@ -41,7 +43,9 @@
 					<div class="control-group span6">
 						<label class="control-label">日志类型</label>
 						<div class="controls">
-						  <c:out value="${param.logType}" />
+						  <display:select name="logType" filterAll="false" 
+						  id="logType" mapping="logType" 
+                                value="${param.logType}"></display:select>
 						</div>
 					</div>
 				</div>
@@ -49,11 +53,11 @@
                     <div class="control-group span6">
                         <label class="control-label">起始日期</label>
                         <div class="controls">
-                            <div class="input-append date" id="dateBegin_dateDiv">
-                                <input type="text" id="dateBegin" name="dateBegin"
-                                    value="<c:out value="${param.dateBegin}"/>" class="span2 "
-                                    readonly /> <span class="add-on"> <i
-                                    class="icon-calendar"></i>
+                            <div class="input-append date" id="beginDate_dateDiv">
+                                <input type="text" id="beginDate" name="beginDate"
+                                    value="${param.beginDate}" class="span2" readonly /> 
+                                <span class="add-on"> 
+                                    <i class="icon-calendar"></i>
                                 </span>
                             </div>
                         </div>
@@ -61,11 +65,11 @@
                        <div class="control-group span6">
                         <label class="control-label">截止日期</label>
                         <div class="controls">
-                             <div class="input-append date" id="dateEnd_dateDiv">
-                                <input type="text" id="dateEnd" name="dateEnd"
-                                    value="<c:out value="${param.dateEnd}"/>" class="span2"
-                                    readonly /> <span class="add-on"> <i
-                                    class="icon-calendar"></i>
+                             <div class="input-append date" id="endDate_dateDiv">
+                                <input type="text" id="endDate" name="endDate"
+                                    value="${param.endDate}" class="span2" readonly /> 
+                                <span class="add-on"> 
+                                    <i class="icon-calendar"></i>
                                 </span>
                             </div>
                         </div>
@@ -91,18 +95,14 @@
 	                      <button id="csvExportBk" class="btn btn-info" type="button">
 	                         <i class="icon-share"></i>&nbsp;CSV后台导出
 	                      </button>
-<!-- 	                      <ol class="text-error"> -->
-<!-- 	                         <li>下载CSV按钮将下载所有符合条件的记录，默认下载的最大数量为1000条记录</li> -->
-<!-- 	                      </ol> -->
 	                 </div>
 	                
 	            </div>
             </c:if>
-			<form id="form_result" class="form-horizontal"
-				action="setoptlog_view.html" method="POST">
+			<form id="form" class="form-horizontal" action="setoptlog_read.html" method="POST">
 				<input type="hidden" name="opt" value="optlogQuery" /> 
-				<input type="hidden" name="dateBegin" value="${param.dateBegin }" />
-				<input type="hidden" name="dateEnd" value="${param.dateEnd }" />
+				<input type="hidden" name="beginDate" value="${param.beginDate }" />
+				<input type="hidden" name="endDate" value="${param.endDate }" />
 				<input type="hidden" name="optUserName" value="${param.optUserName }" />
 				<input type="hidden" name="status" value="${param.status }" />
 				<input type="hidden" name="logType" value="${param.logType }" />
@@ -127,7 +127,7 @@
 									<c:if test="${soptlog.status == 0 }">失败</c:if>
 								</td>
 								<td style="white-space: nowrap;">
-									<c:out value="${param.logType}" />
+									<display:column name="logType" value="${soptlog.logType}" />
 								</td>
 							</tr>
 						</c:forEach>

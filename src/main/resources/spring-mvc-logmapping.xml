@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<description>log描述映射配置</description>
+
+    <bean id="auditLogInterceptor" class="com.somnus.module.maintenance.AuditLogInterceptor">
+        <!--审计日志映射 -->
+        <property name="logMapping" ref="logMapping"/>
+        <!--审计日志服务 -->
+        <property name="optLogService" ref="optLogServiceImpl" />
+    </bean>
+
+
+    <!-- 日志描述配置 -->
+    <!--配置格式 key=操作码，value=日志类型:日志描述
+                     日志类型目前有如下6类：
+        0：默认
+        1：登录系统
+        2：退出系统
+        3：进入菜单
+        4：查询操作
+        5：业务操作
+    -->
+	<bean id="logMapping"
+		class="com.somnus.module.maintenance.model.LogOptMapping">
+		<property name="mappings">
+			<props>
+				<!-- 验证码 -->
+				<prop key="authenticate">1:登录系统</prop>
+                <prop key="logout!">2:退出系统</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>

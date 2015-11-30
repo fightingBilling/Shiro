@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.somnus.module.sample.dao.SampleDao">
+  <resultMap id="SampleCityResultMap"
+		type="com.somnus.module.sample.model.SampleCity">
+		<id column="ID" property="id"/>
+		<result column="CITY_NAME" property="cityName"/>
+		<result column="PARENT_CITY" property="parentCity"/>	
+  </resultMap>
+	
+  <sql id="CITY_FIELDS">
+    ID, CITY_NAME, PARENT_CITY 
+  </sql>
+	
+  <select id="queryAllCities" resultMap="SampleCityResultMap">
+    SELECT 
+    <include refid="CITY_FIELDS"/>
+    FROM 
+    SAMPLE_CITY 
+  </select>
+
+  <select id="queryLv1City" resultMap="SampleCityResultMap">
+    SELECT 
+    <include refid="CITY_FIELDS"/>
+    FROM 
+    SAMPLE_CITY 
+    WHERE 
+    PARENT_CITY IS NULL
+  </select>
+	
+  <select id="queryLv2City" resultMap="SampleCityResultMap" parameterType="long">
+    SELECT 
+    <include refid="CITY_FIELDS"/>
+    FROM 
+    SAMPLE_CITY 
+    WHERE 
+    PARENT_CITY = #{id}
+  </select>
+	
+  <select id="queryCityById" resultMap="SampleCityResultMap" parameterType="long">
+    SELECT 
+    <include refid="CITY_FIELDS"/>
+    FROM 
+    SAMPLE_CITY 
+    WHERE 
+    ID = #{id}
+  </select>
+	
+  <select id="queryAllCitiesPaged" resultMap="SampleCityResultMap" parameterType="map">
+    SELECT 
+    <include refid="CITY_FIELDS"/>
+    FROM 
+    SAMPLE_CITY 
+  </select>
+	
+</mapper>
