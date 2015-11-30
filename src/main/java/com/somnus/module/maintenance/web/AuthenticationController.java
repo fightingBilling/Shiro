@@ -18,7 +18,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.somnus.module.maintenance.model.SetOptLog;
 import com.somnus.module.maintenance.model.SetUser;
+import com.somnus.module.maintenance.service.OptLogService;
 import com.somnus.module.maintenance.service.UserGroupService;
 import com.somnus.module.maintenance.web.token.CaptchaUsernamePasswordToken;
 import com.somnus.support.web.controller.BaseController;
@@ -41,6 +43,9 @@ public class AuthenticationController extends BaseController {
 	 */
 	public ModelAndView authenticate(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
+	    String optIp = request.getRemoteAddr();// 获取登录ip地址
+        String logType = "";// 登录类型
+        String logDesc = "";// 登录描述
 		String strUsername = findStringParameterValue(request, usernameParamName);
 		String strPassword = findStringParameterValue(request, passwordnameParamName);
 		String strCaptcha = findStringParameterValue(request, captchaParamName);	
@@ -78,14 +83,21 @@ public class AuthenticationController extends BaseController {
 					objCurrentUser.login(objToken);
 				}
 			} catch (UnknownAccountException uae) {
-				log.error("不存在用户[{}]", new Object[] { objToken.getPrincipal() });
-				throw new UnknownAccountException(String.format("不存在用户[%s]", 
-				        objToken.getPrincipal()));
-			} catch (IncorrectCredentialsException ice) {
-				log.error("用户[{}]密码错误", new Object[] { objToken.getPrincipal() });
-				throw new IncorrectCredentialsException(String.format("用户[%s]密码错误", 
-				        objToken.getPrincipal()));
-			} catch (DisabledAccountException dae) {
+                log.error("不存在用户[{}]", new Object[] { objToken.getPrincipal() });
+                // 插入日志
+                logType = "27";
+                logDesc = strUsername + "用户名不存在,登录失败";
+                insertOptLogVo(strUsername,optIp,logType,logDesc);
+                throw new UnknownAccountException(String.format("不存在用户[%s]", objToken.getPrincipal()));
+            } catch (IncorrectCredentialsException ice) {
+                log.error("用户[{}]密码错误",new Object[] { objToken.getPrincipal()});
+                logType = "28";
+                logDesc = strUsername + "用户密码错误,登录失败";
+                // 插入日志
+                insertOptLogVo(strUsername,optIp,logType,logDesc);
+                throw new IncorrectCredentialsException(String.format("用户[%s]密码错误", 
+                        objToken.getPrincipal()));
+            } catch (DisabledAccountException dae) {
 				log.error(dae.getMessage(), dae);
 				throw new DisabledAccountException(dae.getMessage(), dae);
 			}  catch (Throwable t) {
@@ -111,6 +123,21 @@ public class AuthenticationController extends BaseController {
 		return createMAV("redirect:/login.html");
 	}
 	
+	private void insertOptLogVo(String userName,String optIp,String logType,String logDesc){
+        SetOptLog optLog = new SetOptLog();
+        optLog.setOptUserName(userName);
+        optLog.setOptIp(optIp);
+        optLog.setLogType(logType);
+        optLog.setOptName("none");
+        optLog.setLogDesc(logDesc);
+        optLog.setOptDate(new Date());
+        optLog.setStatus("0");
+        optLog.setLastUpdator("system");
+        optLog.setLastUpdateTime(new Date());
+        //记录数据库审计日志
+        optLogService.create(optLog);
+   }
+	
     private transient Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	private String usernameParamName;
@@ -135,6 +162,10 @@ public class AuthenticationController extends BaseController {
 	}
 
 	@Autowired
-	UserGroupService userGroupService;
+	private UserGroupService userGroupService;
+	
+	@Autowired
+	private OptLogService optLogService;
+	
 
 }
