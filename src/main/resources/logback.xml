@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 	<!--###################### 属性定义 ###################### -->
-	<property name="USER_HOME" value="/var/bacs/logs/bmps_logs" />
+	<property name="USER_HOME" value="/var/logs/shiro" />
 	<property name="pattern"
 		value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%X{sessionId}] %-5level [%thread] %logger{80} :%msg%n" />
 
