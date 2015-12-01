@@ -31,5 +31,11 @@
 	<bean class="com.somnus.support.util.FileGenerator">
         <property name="encoding" value="${system.charset}"/>
     </bean>
+    
+    <!-- 初始化数据库 -->
+    <bean id="dataInitializer" class="com.somnus.module.defaults.initialize.DataInitializer">
+        <property name="transactionTemplate" ref="transactionTemplate"/>
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
 
 </beans>

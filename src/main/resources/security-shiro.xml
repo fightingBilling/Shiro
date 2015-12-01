@@ -36,7 +36,8 @@
 	</bean>
 	
 	<!-- Shiro Filter -->
-	<bean id="shiroFilter" class="com.somnus.module.maintenance.web.filter.ShiroDbFilterFactoryBean">
+	<bean id="shiroFilter" 
+		class="com.somnus.module.maintenance.web.filter.ShiroDbFilterFactoryBean" depends-on="dataInitializer">
 		<property name="securityManager" ref="securityManager" />
 		<property name="loginUrl" value="/login.html" />
 		<property name="unauthorizedUrl" value="/secure/unauthorized.html"/>

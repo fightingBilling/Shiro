@@ -12,11 +12,9 @@ import org.springframework.beans.factory.InitializingBean;
 import com.somnus.module.maintenance.model.SFilter;
 import com.somnus.module.maintenance.service.ShiroDbService;
 
-public class ShiroDbFilterFactoryBean extends ShiroFilterFactoryBean implements
-		InitializingBean {
+public class ShiroDbFilterFactoryBean extends ShiroFilterFactoryBean implements InitializingBean {
 
-	private static transient final Logger log = LoggerFactory
-			.getLogger(ShiroDbFilterFactoryBean.class);
+	private transient final Logger log = LoggerFactory.getLogger(this.getClass());
 
 	public ShiroDbFilterFactoryBean() {
 		super();

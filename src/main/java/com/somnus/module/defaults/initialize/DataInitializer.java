@@ -34,7 +34,7 @@ public class DataInitializer implements InitializingBean{
                   ") ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
             jdbcTemplate.update(sample_city);
         }
-        if(!existTable("sample_city")){
+        if(!existTable("set_frole_fmenu")){
             String set_frole_fmenu = "CREATE TABLE `set_frole_fmenu` (" +
                     "`FUNC_ROLE_ID` int(11) NOT NULL DEFAULT '0'," +
                     "`FUNC_MENU_ID` int(11) NOT NULL DEFAULT '0'," +
