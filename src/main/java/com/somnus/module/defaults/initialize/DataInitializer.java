@@ -5,9 +5,7 @@ import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallback;
 import org.springframework.transaction.support.TransactionTemplate;
@@ -18,13 +16,10 @@ import org.springframework.transaction.support.TransactionTemplate;
  * @date 2015年12月1日 上午10:46:48 
  * @version V1.0 
  */
-@Component
 public class DataInitializer implements InitializingBean{
     
-    @Autowired
     private TransactionTemplate transactionTemplate;
     
-    @Autowired
     private JdbcTemplate jdbcTemplate;
 
     @Override
@@ -405,6 +400,14 @@ public class DataInitializer implements InitializingBean{
             conn.close();    
         }    
         return false;    
+    }
+
+    public void setTransactionTemplate(TransactionTemplate transactionTemplate) {
+        this.transactionTemplate = transactionTemplate;
+    }
+
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }  
 
 }

@@ -40,4 +40,9 @@
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <property name="dataSource" ref="proxyDataSource"/>
     </bean>
+    
+    <bean class="com.somnus.module.defaults.initialize.DataInitializer">
+        <property name="transactionTemplate" ref="transactionTemplate"/>
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
 </beans>
