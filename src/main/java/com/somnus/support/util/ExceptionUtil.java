@@ -11,7 +11,7 @@ import com.somnus.support.exception.BizException;
 import com.somnus.support.message.Errors;
 
 public class ExceptionUtil {
-	// 日志
+    
 	private static final Logger log = LoggerFactory.getLogger(ExceptionUtil.class);
 
 	public static void exceptionHandle(ModelAndView view, MessageSourceAccessor msa, Exception e) {
@@ -43,4 +43,5 @@ public class ExceptionUtil {
 			msg.setRepMsg(e.getMessage());
 		}
 	}
+	
 }

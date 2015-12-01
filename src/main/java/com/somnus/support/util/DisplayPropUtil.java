@@ -3,7 +3,9 @@ package com.somnus.support.util;
 import java.util.Properties;
 
 public class DisplayPropUtil {
+    
 	private static Properties displayColumn = null;
+	
 	private static Properties displaySelect = null;
 
 	public static Properties getDisplayProp() throws Exception {

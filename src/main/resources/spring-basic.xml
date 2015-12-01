@@ -28,5 +28,8 @@
 	
 	<bean class="com.somnus.support.holder.ApplicationContextHolder"></bean>
 	<bean class="com.somnus.support.util.BeanUtilsHelper"></bean>
+	<bean class="com.somnus.support.util.FileGenerator">
+        <property name="encoding" value="${system.charset}"/>
+    </bean>
 
 </beans>

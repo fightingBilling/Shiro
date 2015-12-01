@@ -85,7 +85,6 @@ public class SampleController extends BaseController {
 	 * @param response
 	 * @return
 	 * @throws Exception
-	 * @author caobin
 	 */
 	public void sampleCompsCascadeAsync(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -112,7 +111,6 @@ public class SampleController extends BaseController {
 	 * @param request
 	 * @param response
 	 * @throws Exception
-	 * @author caobin
 	 */
 	public void sampleCompsLabelLoad(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -132,7 +130,6 @@ public class SampleController extends BaseController {
 	 * @param request
 	 * @param response
 	 * @throws Exception
-	 * @author caobin
 	 */
 	public void sampleCsvExport(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -154,7 +151,6 @@ public class SampleController extends BaseController {
 	 * @param file
 	 * @return
 	 * @throws Exception
-	 * @author caobin
 	 */
 	public ModelAndView sampleFileUpload(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {

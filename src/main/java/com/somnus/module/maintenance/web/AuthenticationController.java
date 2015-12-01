@@ -85,13 +85,13 @@ public class AuthenticationController extends BaseController {
 			} catch (UnknownAccountException uae) {
                 log.error("不存在用户[{}]", new Object[] {objToken.getPrincipal()});
                 // 插入日志
-                logType = "27";
+                logType = "3";
                 logDesc = strUsername + "用户名不存在,登录失败";
                 insertOptLogVo(strUsername,optIp,logType,logDesc);
                 throw new UnknownAccountException(String.format("不存在用户[%s]", objToken.getPrincipal()));
             } catch (IncorrectCredentialsException ice) {
                 log.error("用户[{}]密码错误",new Object[] {objToken.getPrincipal()});
-                logType = "28";
+                logType = "4";
                 logDesc = strUsername + "用户密码错误,登录失败";
                 // 插入日志
                 insertOptLogVo(strUsername,optIp,logType,logDesc);

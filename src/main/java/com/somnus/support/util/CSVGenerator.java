@@ -84,18 +84,12 @@ public class CSVGenerator {
 	}
 
 	public static void main(String[] args) throws IOException {
-		CsvReader reader = new CsvReader(new FileReader(
-				new File("c:/00124.csv")));
-		// reader.readHeaders();
+		CsvReader reader = new CsvReader(new FileReader(new File("c:/00124.csv")));
 		while (reader.readRecord()) {
 			System.out.println(reader.getRawRecord());
 			System.out.println(reader.get(7));
 			System.out.println(reader.get(9));
 			System.out.println(StringUtils.repeat('*', 20));
 		}
-		// reader.getValues()
-		// reader.setDelimiter(',');
-
-		// System.out.println(reader.get(0));
 	}
 }
