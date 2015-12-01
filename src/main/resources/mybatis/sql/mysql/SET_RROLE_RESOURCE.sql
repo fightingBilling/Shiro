@@ -30,11 +30,11 @@ CREATE TABLE `set_rrole_resource` (
 -- Records of set_rrole_resource
 -- ----------------------------
 INSERT INTO set_rrole_resource VALUES ('10046', '100', null, null);
-INSERT INTO set_rrole_resource VALUES ('10046', '992', null, '2015-11-05 13:27:04');
-INSERT INTO set_rrole_resource VALUES ('10046', '993', null, '2015-11-05 13:25:56');
-INSERT INTO set_rrole_resource VALUES ('10046', '994', null, '2015-11-05 13:26:00');
-INSERT INTO set_rrole_resource VALUES ('10046', '995', null, '2015-11-05 13:26:44');
-INSERT INTO set_rrole_resource VALUES ('10046', '996', null, '2015-11-05 13:27:09');
-INSERT INTO set_rrole_resource VALUES ('10046', '997', null, '2015-11-05 13:27:07');
-INSERT INTO set_rrole_resource VALUES ('10046', '998', null, '2015-11-30 10:43:59');
-INSERT INTO set_rrole_resource VALUES ('10046', '999', null, '2015-11-05 13:27:05');
+INSERT INTO set_rrole_resource VALUES ('10046', '992', null, null);
+INSERT INTO set_rrole_resource VALUES ('10046', '993', null, null);
+INSERT INTO set_rrole_resource VALUES ('10046', '994', null, null);
+INSERT INTO set_rrole_resource VALUES ('10046', '995', null, null);
+INSERT INTO set_rrole_resource VALUES ('10046', '996', null, null);
+INSERT INTO set_rrole_resource VALUES ('10046', '997', null, null);
+INSERT INTO set_rrole_resource VALUES ('10046', '998', null, null);
+INSERT INTO set_rrole_resource VALUES ('10046', '999', null, null);
