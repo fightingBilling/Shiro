@@ -33,4 +33,4 @@ CREATE TABLE `set_user` (
 -- ----------------------------
 -- Records of set_user
 -- ----------------------------
-INSERT INTO set_user VALUES ('10023', 'admin', '68cf63c62bc68d71fc41c028375e2f6e', null, '1', 'admin', null);
+INSERT INTO set_user VALUES ('10023', 'admin', '68cf63c62bc68d71fc41c028375e2f6e', null, '1', 'admin', '2015-12-01 12:00:00');
