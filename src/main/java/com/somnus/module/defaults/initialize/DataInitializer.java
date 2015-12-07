@@ -24,6 +24,10 @@ public class DataInitializer implements InitializingBean{
 
     @Override
     public void afterPropertiesSet() throws Exception {
+        execute();
+    }
+    
+    public void execute() throws Exception {
         /**创建相关表*/
         if(!existTable("SAMPLE_CITY")){
             String sample_city = "CREATE TABLE SAMPLE_CITY (" +
@@ -376,8 +380,8 @@ public class DataInitializer implements InitializingBean{
                 return null;
             }
         });
-    }
     
+    }
     /**  
      * 查询数据库是否有某表  
      * @param tableName  

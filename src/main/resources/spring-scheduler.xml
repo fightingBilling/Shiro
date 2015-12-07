@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:task="http://www.springframework.org/schema/task"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
-	http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.1.xsd"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd"
 	default-lazy-init="true">
 
 	<description>Spring	Scheduled</description>
 	
-	<!-- 配置任务线性池 -->  
-    <task:executor id="executor" pool-size="3" />  
-    <task:scheduler id="scheduler" pool-size="3" /> 
+    <task:scheduler id="scheduler" pool-size="1" />
 	
 	<task:scheduled-tasks scheduler="scheduler">
-	    <!-- cron:每分钟一次 -->
-	    <task:scheduled ref="schedulerAction" method="execute" cron="0 0 1 * * ?"/>
+	    <!-- cron:每5分钟一次 -->
+	    <task:scheduled ref="dataInitializer" method="execute" cron="0 */5 * * * ?"/>
 	</task:scheduled-tasks>
 
-	<bean id="schedulerAction" class="com.somnus.module.scheduled.SchedulerAction"/>
+	<!-- 配置任务线性池 -->
+	<task:executor id="executor" pool-size="2" />
+	
+    <!-- 启用annotation方式 -->  
+    <task:annotation-driven scheduler="scheduler" 
+        executor="executor" proxy-target-class="true" />
 	
 </beans>
