@@ -11,6 +11,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import com.somnus.module.maintenance.model.LogOptMapping;
 import com.somnus.module.maintenance.model.SetOptLog;
 import com.somnus.module.maintenance.service.OptLogService;
+import com.somnus.support.util.IpUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -91,7 +92,7 @@ public class AuditLogInterceptor extends HandlerInterceptorAdapter {
 
             logDesc = userName+ "于" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(startTime)) + " " + logDesc + "，耗时" + (endTime - startTime)/1000.0 + "秒";
 
-            String optIp = request.getRemoteAddr();
+            String optIp = IpUtil.getIpAddr(request);
 
             //记录文件审计日志
             auditLog.info("[{}][{}]{}",new Object[]{optIp,logType,logDesc});
@@ -100,6 +101,7 @@ public class AuditLogInterceptor extends HandlerInterceptorAdapter {
             SetOptLog optLog = new SetOptLog();
             optLog.setOptUserName(userName);
             optLog.setOptIp(optIp);
+            optLog.setOptAddress(IpUtil.getIpInfo(optIp));
             optLog.setLogType(logType);
             optLog.setOptName("none");
             optLog.setLogDesc(logDesc);

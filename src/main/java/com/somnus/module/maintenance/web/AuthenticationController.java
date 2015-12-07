@@ -23,6 +23,7 @@ import com.somnus.module.maintenance.model.SetUser;
 import com.somnus.module.maintenance.service.OptLogService;
 import com.somnus.module.maintenance.service.UserGroupService;
 import com.somnus.module.maintenance.web.token.CaptchaUsernamePasswordToken;
+import com.somnus.support.util.IpUtil;
 import com.somnus.support.web.controller.BaseController;
 
 /**
@@ -43,7 +44,7 @@ public class AuthenticationController extends BaseController {
 	 */
 	public ModelAndView authenticate(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-	    String optIp = request.getRemoteAddr();// 获取登录ip地址
+	    String optIp = IpUtil.getIpAddr(request);// 获取登录ip地址
         String logType = "";// 登录类型
         String logDesc = "";// 登录描述
 		String strUsername = findStringParameterValue(request, usernameParamName);
@@ -126,6 +127,7 @@ public class AuthenticationController extends BaseController {
         SetOptLog optLog = new SetOptLog();
         optLog.setOptUserName(userName);
         optLog.setOptIp(optIp);
+        optLog.setOptAddress(IpUtil.getIpInfo(optIp));
         optLog.setLogType(logType);
         optLog.setOptName("none");
         optLog.setLogDesc(logDesc);

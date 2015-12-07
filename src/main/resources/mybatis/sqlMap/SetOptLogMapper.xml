@@ -7,6 +7,7 @@
     <result column="LOG_TYPE" property="logType" jdbcType="VARCHAR" />
     <result column="OPT_NAME" property="optName" jdbcType="VARCHAR" />
     <result column="OPT_IP" property="optIp" jdbcType="VARCHAR" />
+    <result column="OPT_ADDRESS" property="optAddress" jdbcType="VARCHAR" />
     <result column="LOG_DESC" property="logDesc" jdbcType="VARCHAR" />
     <result column="OPT_DATE" property="optDate" jdbcType="TIMESTAMP" />
     <result column="STATUS" property="status" jdbcType="CHAR" />
@@ -15,7 +16,7 @@
   </resultMap>
 
   <sql id="Base_Column_List" >
-    LOG_ID, OPT_USER_NAME, LOG_TYPE, OPT_NAME, OPT_IP,OPT_DATE, STATUS,LAST_UPDATOR, LAST_UPDATE_TIME
+    LOG_ID, OPT_USER_NAME, LOG_TYPE, OPT_NAME, OPT_IP,OPT_ADDRESS,OPT_DATE, STATUS,LAST_UPDATOR, LAST_UPDATE_TIME
   </sql>
 
   <insert id="insert" parameterType="com.somnus.module.maintenance.model.SetOptLog" >
@@ -26,6 +27,7 @@
         OPT_NAME,
         LOG_DESC,
         OPT_IP,
+        OPT_ADDRESS,
         OPT_DATE, 
         STATUS, 
         LAST_UPDATOR,
@@ -37,6 +39,7 @@
         #{optName,jdbcType=VARCHAR},
         #{logDesc,jdbcType=VARCHAR},
         #{optIp,jdbcType=VARCHAR},
+        #{optAddress,jdbcType=VARCHAR},
         #{optDate,jdbcType=TIMESTAMP},
         #{status,jdbcType=CHAR}, 
         #{lastUpdator,jdbcType=VARCHAR},

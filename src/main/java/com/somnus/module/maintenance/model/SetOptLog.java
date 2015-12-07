@@ -21,6 +21,8 @@ public class SetOptLog {
     private String logDesc;
 
     private String optIp;
+    
+    private String optAddress;
 
     private Date optDate;
 
@@ -109,4 +111,13 @@ public class SetOptLog {
     public void setLastUpdateTime(Date lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
     }
+
+    public String getOptAddress() {
+        return optAddress;
+    }
+
+    public void setOptAddress(String optAddress) {
+        this.optAddress = optAddress;
+    }
+    
 }

@@ -85,6 +85,7 @@ public class DataInitializer implements InitializingBean{
                     "OPT_NAME varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
                     "LOG_DESC varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL," +
                     "OPT_IP varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
+                    "OPT_ADDRESS varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL," +
                     "STATUS char(255) COLLATE utf8_unicode_ci DEFAULT NULL," +
                     "LAST_UPDATOR varchar(32) COLLATE utf8_unicode_ci NOT NULL," +
                     "LAST_UPDATE_TIME datetime NOT NULL," +

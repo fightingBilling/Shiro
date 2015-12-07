@@ -111,6 +111,7 @@
 						<tr>             
 							<th>登录名</th>
 							<th>登录IP</th>
+							<th>登录地址</th>
 							<th>操作时间</th>
 							<th>日志状态</th>
 							<th>日志类型</th>
@@ -121,6 +122,7 @@
 							<tr>
 								<td><c:out value="${soptlog.optUserName }" /></td>
 								<td><c:out value="${soptlog.optIp }" /></td>
+								<td><c:out value="${soptlog.optAddress }" /></td>
 								<td style="white-space: nowrap;"><fmt:formatDate value="${soptlog.optDate }" pattern="yyyy-MM-dd HH:mm:ss" /> </td>
 								<td style="white-space: nowrap;">
 									<c:if test="${soptlog.status == 1 }">成功</c:if>
