@@ -100,9 +100,9 @@ public class AuthenticationController extends BaseController {
             } catch (DisabledAccountException dae) {
 				log.error(dae.getMessage(), dae);
 				throw new DisabledAccountException(dae.getMessage(), dae);
-			}  catch (Throwable t) {
-				log.error(t.getMessage(), t);
-				throw new AuthenticationException(t.getMessage());
+			}  catch (AuthenticationException ae) {
+				log.error(ae.getMessage(), ae);
+				throw new AuthenticationException(ae.getMessage(),ae);
 			}
 		}
 		// 已通过身份验证

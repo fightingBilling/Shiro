@@ -42,42 +42,36 @@ public class ShiroDbRealm extends AuthorizingRealm {
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authcToken) throws AuthenticationException {
 		CaptchaUsernamePasswordToken token = (CaptchaUsernamePasswordToken) authcToken;
-		try{		
-			if(!captchaIgnore){
-				boolean bCaptchaCorrect = captchaService.validateResponseForID(
-					(String)SecurityUtils.getSubject().getSession().getId(), token.getCaptcha());		
-			
-				if(!bCaptchaCorrect){
-					throw new AuthenticationException("验证码错误");
-				}
-			}else{//忽略验证码，供测试使用
-				log.warn("ignore captcha for testing.");
+		
+		if(!captchaIgnore){
+			boolean bCaptchaCorrect = captchaService.validateResponseForID(
+				(String)SecurityUtils.getSubject().getSession().getId(), token.getCaptcha());		
+		
+			if(!bCaptchaCorrect){
+				throw new AuthenticationException(String.format("验证码不匹配[%s]", token.getCaptcha()));
 			}
-			
-			
-			SetUser user = shiroDbService.findByUserName(token.getUsername());
-			if (user != null) {
-				String menuInfo = null;
-				if (EShiroUserStatus.NORMAL.getCode().equals(user.getStatus())) {
-					//List<SetFuncMenu> menus = defaultService.findAllMenu();
-					List<SetFuncMenu> menus = defaultService.findMenuByUserName(user.getUsername());
-					SetFuncMenu root = new SetFuncMenu();
-					root.setMenuId(new BigDecimal(-1));
-					menuInfo = MenuUtils.generateStaticMenu(menus, root);
-					log.trace("authenticated menu with user[{}] : {}", new Object[]{user.getUsername(), menuInfo});
-				}else if(EShiroUserStatus.FORBIDDEN.getCode().equals(user.getStatus())){
-					throw new DisabledAccountException(String.format("帐号[%s]已禁用", user.getUsername()));
-				}
-				SecurityUtils.getSubject().logout();
-				return new SimpleAuthenticationInfo(new ShiroUser(user.getUsername(), menuInfo), user.getPassword(), getName());
-			} else {
-				return null;
-			}
-		}catch(Exception e){
-			throw new AuthenticationException(e.getMessage(), e);
+		}else{//忽略验证码，供测试使用
+			log.warn("ignore captcha for testing.");
 		}
 		
-		
+		SetUser user = shiroDbService.findByUserName(token.getUsername());
+		if (user != null) {
+			String menuInfo = null;
+			if (EShiroUserStatus.NORMAL.getCode().equals(user.getStatus())) {
+				//List<SetFuncMenu> menus = defaultService.findAllMenu();
+				List<SetFuncMenu> menus = defaultService.findMenuByUserName(user.getUsername());
+				SetFuncMenu root = new SetFuncMenu();
+				root.setMenuId(new BigDecimal(-1));
+				menuInfo = MenuUtils.generateStaticMenu(menus, root);
+				log.trace("authenticated menu with user[{}] : {}", new Object[]{user.getUsername(), menuInfo});
+			}else if(EShiroUserStatus.FORBIDDEN.getCode().equals(user.getStatus())){
+				throw new DisabledAccountException(String.format("帐号[%s]已禁用", user.getUsername()));
+			}
+			SecurityUtils.getSubject().logout();
+			return new SimpleAuthenticationInfo(new ShiroUser(user.getUsername(), menuInfo), user.getPassword(), getName());
+		} else {
+			return null;
+		}
 	}
 
 	/**

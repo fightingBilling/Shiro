@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 	<!--###################### 属性定义 ###################### -->
-	<property name="USER_HOME" value="/var/bacs/logs/bmps_logs" />
 	<property name="pattern"
 		value="%d{yyyyMMdd:HH:mm:ss.SSS} [%thread] [%X{traceNo}] [%class] %-5level  %msg%n" />
 
