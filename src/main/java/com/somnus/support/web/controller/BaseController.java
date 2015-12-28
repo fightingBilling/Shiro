@@ -152,11 +152,11 @@ public abstract class BaseController extends MultiActionController{
 
 	    // 设置当前页数  
 	    pageList.setPageNumber(page);
-	    // 设置page size  
+	    // 设置每页显示条数 
         pageList.setObjectsPerPage(pageSize);  
-	    // 设置当前页列表  
+	    // 设置当前页列表数据  
 	    pageList.setList(pageable.getResult(List.class));  
-	    // 设置总页数 
+	    // 设置总记录数
 	    pageList.setFullListSize(pageable.getCount());  
 
 	    return pageList;
@@ -180,14 +180,13 @@ public abstract class BaseController extends MultiActionController{
 	    CustomPaginatedList pageList = new CustomPaginatedList();  
 
 	    // 设置当前页数  
-	    pageList.setPageNumber(pageNumber);  
-	    // 设置当前页列表  
+	    pageList.setPageNumber(pageNumber);
+	    // 设置每页显示条数 
+        pageList.setObjectsPerPage(this.findIntegerParameterValue(request, PAGE_PARAM_LIMIT));  
+	    // 设置当前页列表数据  
 	    pageList.setList(pageable.getResult(List.class));  
-	    // 设置page size  
-	    pageList.setObjectsPerPage(this.findIntegerParameterValue(request, PAGE_PARAM_LIMIT));  
-	    // 设置总页数  
+	    // 设置总记录数
 	    pageList.setFullListSize(pageable.getCount());  
-	   
 	    return pageList;
 	}
 

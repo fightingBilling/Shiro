@@ -15,7 +15,6 @@ public class PageResponse implements Pageable {
 		this.count = count;
 	}
 
-
 	@Override
 	public Integer getPageStart() {
 		throw new UnsupportedOperationException();
