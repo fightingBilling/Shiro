@@ -64,9 +64,9 @@
 	<!--error -->
 	<appender name="error"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${USER_HOME}/bmps-error.log</file>
+		<file>${USER_HOME}/shiro-error.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/bmps-error-%i.%d{yyyy-MM-dd}.gz
+			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/shiro-error-%i.%d{yyyy-MM-dd}.gz
 			</fileNamePattern>
 			<maxHistory>30</maxHistory>
 			<timeBasedFileNamingAndTriggeringPolicy
@@ -82,9 +82,9 @@
 	<!--error -->
 	<appender name="shiroError"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${USER_HOME}/bmps-shiroError.log</file>
+		<file>${USER_HOME}/shiro-shiroError.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/bmps-shiroError-%i.%d{yyyy-MM-dd}.gz
+			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/shiro-shiroError-%i.%d{yyyy-MM-dd}.gz
 			</fileNamePattern>
 			<maxHistory>30</maxHistory>
 			<timeBasedFileNamingAndTriggeringPolicy
@@ -97,23 +97,6 @@
 		</encoder>
 	</appender>
 
-
-	<appender name="resource"
-		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${USER_HOME}/bmps-resource.log</file>
-		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${USER_HOME}/%d{yyyy-MM-dd}/bmps-resource-%i.%d{yyyy-MM-dd}.gz
-			</fileNamePattern>
-			<maxHistory>30</maxHistory>
-			<timeBasedFileNamingAndTriggeringPolicy
-				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-				<MaxFileSize>30MB</MaxFileSize>
-			</timeBasedFileNamingAndTriggeringPolicy>
-		</rollingPolicy>
-		<encoder>
-			<pattern>${pattern}</pattern>
-		</encoder>
-	</appender>
 
 	<!-- 应用 Logger节点定义 -->
 	<logger name="org.apache.shiro.realm.AuthorizingRealm" level="info" additivity="false">

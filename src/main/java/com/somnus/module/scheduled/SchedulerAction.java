@@ -22,7 +22,7 @@ public class SchedulerAction {
     private TaskExecutor executor;
 	
     /*@Scheduled(fixedDelay=1000) #延时多少毫秒，多少毫秒执行一次*/
-    @Scheduled(cron="0 */1 * * * ?")
+    @Scheduled(cron="0 */10 * * * ?")
 	public void execute(){
         executor.execute(new Runnable(){
 
