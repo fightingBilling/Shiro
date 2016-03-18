@@ -80,6 +80,22 @@
 		<resource.plugin.version>2.6</resource.plugin.version>
 		<jdk.version>1.6</jdk.version>
 	</properties>
+	
+	<!-- 指定Maven仓库 -->
+	<repositories>
+		<!-- oschina的maven仓库 -->
+		<repository>
+			<id>oschinaRepository</id>
+			<name>local private nexus</name>
+			<url>http://maven.oschina.net/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -162,12 +178,12 @@
 		</dependency>
 
 		<!--###################### spring-ws ###################### -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.ws</groupId>
 			<artifactId>spring-ws</artifactId>
 			<version>${spring.ws.version}</version>
 			<classifier>all</classifier>
-		</dependency>
+		</dependency> -->
 
 		<!--###################### spring-oxm ###################### -->
 		<dependency>
@@ -758,19 +774,5 @@
             </plugin>
 		</plugins>
 	</build>
-	<!-- 指定Maven仓库 -->
-	<repositories>
-		<!-- oschina的maven仓库 -->
-		<repository>
-			<id>oschinaRepository</id>
-			<name>local private nexus</name>
-			<url>http://maven.oschina.net/content/groups/public/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
+	
 </project>
