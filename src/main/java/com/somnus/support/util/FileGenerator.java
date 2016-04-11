@@ -51,7 +51,7 @@ public class FileGenerator implements InitializingBean {
 		try {
 			response.reset();
 			response.setContentType("text/html;charset=".concat(charset));
-			response.setContentType("application/x-msdownload");
+			response.setContentType("application/vnd.ms-excel");
 			response.setHeader("Content-disposition",
 					"attachment; filename=".concat(fileInfo.getFileName()).concat(".").concat(fileInfo.getFileType()));
 			wbook = Workbook.createWorkbook(response.getOutputStream());
@@ -139,7 +139,7 @@ public class FileGenerator implements InitializingBean {
 		try {
 			response.reset();
 			response.setContentType("text/html;charset=".concat(charset));
-			response.setContentType("application/x-msdownload");
+			response.setContentType("application/vnd.ms-excel");
 			response.setHeader("Content-disposition",
 					"attachment; filename=".concat(fileInfo.getFileName()).concat(".").concat(fileInfo.getFileType()));
 			writer = new OutputStreamWriter(response.getOutputStream(), charset);
@@ -185,7 +185,7 @@ public class FileGenerator implements InitializingBean {
 		try {
 			response.reset();
 			response.setContentType("text/html;charset=".concat(charset));
-			response.setContentType("application/x-msdownload");
+			response.setContentType("text/plain");
 			response.setHeader("Content-disposition",
 					"attachment; filename=".concat(fileInfo.getFileName()).concat(".").concat(fileInfo.getFileType()));
 			writer = new OutputStreamWriter(response.getOutputStream(), charset);
