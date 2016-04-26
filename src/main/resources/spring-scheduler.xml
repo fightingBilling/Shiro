@@ -13,12 +13,5 @@
 	    <!-- cron:每5分钟一次 -->
 	    <task:scheduled ref="dataInitializer" method="execute" cron="0 */5 * * * ?"/>
 	</task:scheduled-tasks>
-
-	<!-- 配置任务线性池 -->
-	<task:executor id="executor" pool-size="2" />
-	
-    <!-- 启用annotation方式 -->  
-    <task:annotation-driven scheduler="scheduler" 
-        executor="executor" proxy-target-class="true" />
 	
 </beans>
