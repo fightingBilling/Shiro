@@ -32,161 +32,161 @@ public class DataInitializer implements InitializingBean{
         if(!existTable("SAMPLE_CITY")){
             String sample_city = "CREATE TABLE SAMPLE_CITY (" +
                     "ID int(11) NOT NULL AUTO_INCREMENT," +
-                    "CITY_NAME varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
+                    "CITY_NAME varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
                     "PARENT_CITY int(11) DEFAULT NULL," +
                     "PRIMARY KEY (ID)" +
-                  ") ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+                  ") ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;";
             jdbcTemplate.update(sample_city);
         }
         if(!existTable("SET_FROLE_FMENU")){
             String set_frole_fmenu = "CREATE TABLE SET_FROLE_FMENU (" +
                     "FUNC_ROLE_ID int(11) NOT NULL DEFAULT '0'," +
                     "FUNC_MENU_ID int(11) NOT NULL DEFAULT '0'," +
-                    "LAST_UPDATOR varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
+                    "LAST_UPDATOR varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
                     "LAST_UPDATE_TIME datetime DEFAULT NULL," +
                     "PRIMARY KEY (FUNC_ROLE_ID,FUNC_MENU_ID)" +
-                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;";
             jdbcTemplate.update(set_frole_fmenu);
         }
         if(!existTable("SET_FUNC_MENU")){
             String set_func_menu = "CREATE TABLE SET_FUNC_MENU (" +
                     "MENU_ID int(11) NOT NULL DEFAULT '0'," +
                     "PMENU_ID int(11) DEFAULT NULL," +
-                    "MENU_CODE varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "MENU_NAME varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "MENU_NAME_BRIEF varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "IS_LEAF char(1) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '0-非叶子菜单，1-叶子菜单'," +
+                    "MENU_CODE varchar(64) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "MENU_NAME varchar(128) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "MENU_NAME_BRIEF varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "IS_LEAF char(1) COLLATE utf8_general_ci DEFAULT NULL COMMENT '0-非叶子菜单，1-叶子菜单'," +
                     "LV int(11) DEFAULT NULL," +
-                    "URL varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL," +
+                    "URL varchar(128) COLLATE utf8_general_ci DEFAULT NULL," +
                     "DISPLAY_ORDER int(11) DEFAULT NULL," +
-                    "STATUS char(1) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '0-无效，1-有效'," +
-                    "LAST_UPDATOR varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
+                    "STATUS char(1) COLLATE utf8_general_ci DEFAULT NULL COMMENT '0-无效，1-有效'," +
+                    "LAST_UPDATOR varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
                     "LAST_UPDATE_TIME datetime DEFAULT NULL," +
                     "PRIMARY KEY (MENU_ID)," +
                     "UNIQUE KEY URL (URL)" +
-                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;";
             jdbcTemplate.update(set_func_menu);
         }
         if(!existTable("SET_FUNC_ROLE")){
             String set_func_role = "CREATE TABLE SET_FUNC_ROLE (" +
                     "FUNC_ROLE_ID int(11) NOT NULL DEFAULT '0'," +
-                    "FUNC_ROLE_CODE varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "FUNC_ROLE_NAME varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "FUNC_ROLE_TYPE varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "FUNC_ROLE_DESC varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "STATUS char(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '0-禁用，1-启用'," +
-                    "LAST_UPDATOR varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
+                    "FUNC_ROLE_CODE varchar(64) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "FUNC_ROLE_NAME varchar(128) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "FUNC_ROLE_TYPE varchar(12) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "FUNC_ROLE_DESC varchar(512) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "STATUS char(255) COLLATE utf8_general_ci DEFAULT NULL COMMENT '0-禁用，1-启用'," +
+                    "LAST_UPDATOR varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
                     "LAST_UPDATE_TIME datetime DEFAULT NULL," +
                     "PRIMARY KEY (FUNC_ROLE_ID)" +
-                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;";
             jdbcTemplate.update(set_func_role);
         }
         if(!existTable("SET_OPT_LOG")){
             String set_opt_log = "CREATE TABLE SET_OPT_LOG (" +
                     "LOG_ID int(11) NOT NULL AUTO_INCREMENT," +
-                    "OPT_USER_NAME varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
+                    "OPT_USER_NAME varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
                     "LOG_TYPE int(11) DEFAULT NULL," +
-                    "OPT_NAME varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "LOG_DESC varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "OPT_IP varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "OPT_ADDRESS varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "STATUS char(255) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "LAST_UPDATOR varchar(32) COLLATE utf8_unicode_ci NOT NULL," +
+                    "OPT_NAME varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "LOG_DESC varchar(256) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "OPT_IP varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "OPT_ADDRESS varchar(128) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "STATUS char(255) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "LAST_UPDATOR varchar(32) COLLATE utf8_general_ci NOT NULL," +
                     "LAST_UPDATE_TIME datetime NOT NULL," +
                     "OPT_DATE datetime NOT NULL," +
                     "PRIMARY KEY (LOG_ID)" +
-                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;";
             jdbcTemplate.update(set_opt_log);
         }
         if(!existTable("SET_RESOURCE_ROLE")){
             String set_resource_role = "CREATE TABLE SET_RESOURCE_ROLE (" +
                     "RESOURCE_ROLE_ID int(11) NOT NULL DEFAULT '0'," +
-                    "RESOURCE_ROLE_CODE varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "RESOURCE_ROLE_NAME varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "RESOURCE_ROLE_TYPE varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "RESOURCE_ROLE_DESC varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "STATUS char(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '0-禁用，1-启用'," +
-                    "LAST_UPDATOR varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
+                    "RESOURCE_ROLE_CODE varchar(64) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "RESOURCE_ROLE_NAME varchar(128) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "RESOURCE_ROLE_TYPE varchar(12) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "RESOURCE_ROLE_DESC varchar(512) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "STATUS char(255) COLLATE utf8_general_ci DEFAULT NULL COMMENT '0-禁用，1-启用'," +
+                    "LAST_UPDATOR varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
                     "LAST_UPDATE_TIME datetime DEFAULT NULL," +
                     "PRIMARY KEY (RESOURCE_ROLE_ID)" +
-                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;";
             jdbcTemplate.update(set_resource_role);
         }
         if(!existTable("SET_RESOURCE")){
             String set_resource = "CREATE TABLE SET_RESOURCE (" +
                     "RESOURCE_ID int(11) NOT NULL DEFAULT '0'," +
-                    "SECURITY_FILTER varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "URL_PATTERN varchar(384) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "STATUS char(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '0-禁用，1-启用'," +
-                    "LAST_UPDATOR varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
+                    "SECURITY_FILTER varchar(15) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "URL_PATTERN varchar(384) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "STATUS char(255) COLLATE utf8_general_ci DEFAULT NULL COMMENT '0-禁用，1-启用'," +
+                    "LAST_UPDATOR varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
                     "LAST_UPDATE_TIME datetime DEFAULT NULL," +
                     "PRIMARY KEY (RESOURCE_ID)" +
-                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;";
             jdbcTemplate.update(set_resource);
         }
         if(!existTable("SET_RGROUP_FROLE")){
             String set_rgroup_frole = "CREATE TABLE SET_RGROUP_FROLE (" +
                     "RGROUP_ID int(11) NOT NULL DEFAULT '0'," +
                     "FUNC_ROLE_ID int(11) NOT NULL DEFAULT '0'," +
-                    "LAST_UPDATOR varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
+                    "LAST_UPDATOR varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
                     "LAST_UPDATE_TIME datetime DEFAULT NULL," +
                     "PRIMARY KEY (RGROUP_ID,FUNC_ROLE_ID)" +
-                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;";
             jdbcTemplate.update(set_rgroup_frole);
         }
         if(!existTable("SET_RGROUP_RROLE")){
             String set_rgroup_rrole = "CREATE TABLE SET_RGROUP_RROLE (" +
                     "RGROUP_ID int(11) NOT NULL DEFAULT '0'," +
                     "RESOURCE_ROLE_ID int(11) NOT NULL DEFAULT '0'," +
-                    "LAST_UPDATOR varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
+                    "LAST_UPDATOR varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
                     "LAST_UPDATE_TIME datetime DEFAULT NULL," +
                     "PRIMARY KEY (RGROUP_ID,RESOURCE_ROLE_ID)" +
-                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;";
             jdbcTemplate.update(set_rgroup_rrole);
         }
         if(!existTable("SET_ROLE_GROUP")){
             String set_role_group = "CREATE TABLE SET_ROLE_GROUP (" +
                     "RGROUP_ID int(11) NOT NULL DEFAULT '0'," +
-                    "RGROUP_CODE varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "RGROUP_NAME varchar(128) COLLATE utf8_unicode_ci NOT NULL," +
-                    "LAST_UPDATOR varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
+                    "RGROUP_CODE varchar(64) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "RGROUP_NAME varchar(128) COLLATE utf8_general_ci NOT NULL," +
+                    "LAST_UPDATOR varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
                     "LAST_UPDATE_TIME datetime DEFAULT NULL," +
                     "PRIMARY KEY (RGROUP_ID)" +
-                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;";
             jdbcTemplate.update(set_role_group);
         }
         if(!existTable("SET_RROLE_RESOURCE")){
             String set_rrole_resource = "CREATE TABLE SET_RROLE_RESOURCE (" +
                     "RESOURCE_ROLE_ID int(11) NOT NULL DEFAULT '0'," +
                     "RESOURCE_ID int(11) NOT NULL DEFAULT '0'," +
-                    "LAST_UPDATOR varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
+                    "LAST_UPDATOR varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
                     "LAST_UPDATE_TIME datetime DEFAULT NULL," +
                     "PRIMARY KEY (RESOURCE_ROLE_ID,RESOURCE_ID)" +
-                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;";
             jdbcTemplate.update(set_rrole_resource);
         }
         if(!existTable("SET_USER_RGROUP")){
             String set_user_rgroup = "CREATE TABLE SET_USER_RGROUP (" +
                     "USER_ID int(11) NOT NULL DEFAULT '0'," +
                     "RGROUP_ID int(11) NOT NULL DEFAULT '0'," +
-                    "LAST_UPDATOR varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
+                    "LAST_UPDATOR varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
                     "LAST_UPDATE_TIME datetime DEFAULT NULL," +
                     "PRIMARY KEY (USER_ID,RGROUP_ID)" +
-                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;";
             jdbcTemplate.update(set_user_rgroup);
         }
         if(!existTable("SET_USER")){
             String set_user = "CREATE TABLE SET_USER (" +
                     "USER_ID int(11) NOT NULL DEFAULT '0'," +
-                    "USERNAME varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "PASSWORD varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "DESCRIPTION varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "STATUS char(255) COLLATE utf8_unicode_ci DEFAULT NULL," +
-                    "LAST_UPDATOR varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL," +
+                    "USERNAME varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "PASSWORD varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "DESCRIPTION varchar(256) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "STATUS char(255) COLLATE utf8_general_ci DEFAULT NULL," +
+                    "LAST_UPDATOR varchar(32) COLLATE utf8_general_ci DEFAULT NULL," +
                     "LAST_UPDATE_TIME datetime DEFAULT NULL," +
                     "PRIMARY KEY (USER_ID)," +
                     "UNIQUE KEY SET_USER_IX1 (USERNAME)" +
-                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;";
             jdbcTemplate.update(set_user);
         }
         
