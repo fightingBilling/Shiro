@@ -7,8 +7,7 @@
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>Shiro Maven Webapp</name>
-	<url>http://maven.apache.org</url>
+	<name>Shiro</name>
 
 	<!--****************************** 属性定义 ****************************** -->
 	<properties>
@@ -66,11 +65,8 @@
 		<jersey.version>1.17.1</jersey.version>
 
 		<!--###################### JDBC Driver ###################### -->
-		<!-- 
-		<jdbc.driver.groupId>com.oracle</jdbc.driver.groupId> 
-		<jdbc.driver.artifactId>ojdbc14</jdbc.driver.artifactId> 
-		<jdbc.driver.version>10.2.0.4.0</jdbc.driver.version> 
-		-->
+		<!-- <jdbc.driver.groupId>com.oracle</jdbc.driver.groupId> <jdbc.driver.artifactId>ojdbc14</jdbc.driver.artifactId> 
+			<jdbc.driver.version>10.2.0.4.0</jdbc.driver.version> -->
 		<jdbc.driver.groupId>mysql</jdbc.driver.groupId>
 		<jdbc.driver.artifactId>mysql-connector-java</jdbc.driver.artifactId>
 		<jdbc.driver.version>5.1.27</jdbc.driver.version>
@@ -80,14 +76,14 @@
 		<resource.plugin.version>2.6</resource.plugin.version>
 		<jdk.version>1.6</jdk.version>
 	</properties>
-	
+
 	<!-- 指定Maven仓库 -->
 	<repositories>
 		<!-- oschina的maven仓库 -->
 		<repository>
 			<id>oschinaRepository</id>
 			<name>local private nexus</name>
-			<url>http://maven.oschina.net/content/groups/public/</url>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -177,14 +173,6 @@
 			<version>${spring.version}</version>
 		</dependency>
 
-		<!--###################### spring-ws ###################### -->
-		<!-- <dependency>
-			<groupId>org.springframework.ws</groupId>
-			<artifactId>spring-ws</artifactId>
-			<version>${spring.ws.version}</version>
-			<classifier>all</classifier>
-		</dependency> -->
-
 		<!--###################### spring-oxm ###################### -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -272,17 +260,6 @@
 		</dependency>
 
 		<!--###################### jackson ###################### -->
-		<!-- <dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-core-asl</artifactId>
-			<version>${jackson-web.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>${jackson-web.version}</version>
-		</dependency> -->
-
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
@@ -635,16 +612,16 @@
 			<version>2.0</version>
 		</dependency>
 		<!--###################### pagination ###################### -->
-        <dependency>
+		<dependency>
 			<groupId>com.github.miemiedev</groupId>
 			<artifactId>mybatis-paginator</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-        <!--###################### pack ###################### -->
+		<!--###################### pack ###################### -->
 		<dependency>
-    		<groupId>de.galan.packtag</groupId>
-    		<artifactId>packtag-core</artifactId>
-    		<version>3.13.0</version>
+			<groupId>de.galan.packtag</groupId>
+			<artifactId>packtag-core</artifactId>
+			<version>3.13.0</version>
 		</dependency>
 	</dependencies>
 
@@ -662,74 +639,74 @@
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-            </plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+			</plugin>
 
-            <!--###################### 文件目录清空插件 ###################### -->
-            <plugin>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>2.5</version>
-                <executions>
-                    <execution>
-                        <id>auto-clean</id>
-                        <phase>clean</phase>
-                        <goals>
-                            <goal>clean</goal>
-                        </goals>
-                        <configuration>
-                            <verbose>true</verbose>
-                            <filesets>
-                                <fileset>
-                                    <directory>${basedir}/src/main/webapp/WEB-INF/</directory>
-                                    <followSymlinks>false</followSymlinks>
-                                    <includes>
-                                        <include>lib/**/*.*</include>
-                                        <include>lib</include>
-                                    </includes>
-                                </fileset>
-                            </filesets>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+			<!--###################### 文件目录清空插件 ###################### -->
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.5</version>
+				<executions>
+					<execution>
+						<id>auto-clean</id>
+						<phase>clean</phase>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+						<configuration>
+							<verbose>true</verbose>
+							<filesets>
+								<fileset>
+									<directory>${basedir}/src/main/webapp/WEB-INF/</directory>
+									<followSymlinks>false</followSymlinks>
+									<includes>
+										<include>lib/**/*.*</include>
+										<include>lib</include>
+									</includes>
+								</fileset>
+							</filesets>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 
-            <!--###################### 依赖拷贝插件 ###################### -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <!-- 输出lib目录 -->
-                            <outputDirectory>${basedir}/src/main/webapp/WEB-INF/lib</outputDirectory>
-                            <overWriteReleases>false</overWriteReleases>
-                            <overWriteSnapshots>false</overWriteSnapshots>
-                            <overWriteIfNewer>true</overWriteIfNewer>
-                            <!-- 包含运行时所依赖的jar(provided由容器提供，test不用包含) -->
-                            <includeScope>runtime</includeScope>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+			<!--###################### 依赖拷贝插件 ###################### -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<!-- 输出lib目录 -->
+							<outputDirectory>${basedir}/src/main/webapp/WEB-INF/lib</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+							<!-- 包含运行时所依赖的jar(provided由容器提供，test不用包含) -->
+							<includeScope>runtime</includeScope>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 
-            <!--###################### 打war包插件 ###################### -->
-            <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <packagingExcludes>
-                        WEB-INF/classes/logback-test.xml
-                    </packagingExcludes>
-                </configuration>
-            </plugin>
+			<!--###################### 打war包插件 ###################### -->
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<packagingExcludes>
+						WEB-INF/classes/logback-test.xml
+					</packagingExcludes>
+				</configuration>
+			</plugin>
 
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
@@ -760,20 +737,20 @@
 					<server>tomcat7</server>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
-                <groupId>com.oracle.weblogic</groupId>
-                <artifactId>weblogic-maven-plugin</artifactId>
-                <version>10.3.6.0</version>
-                <configuration>
-                    <upload>true</upload>
-                    <remote>true</remote>
-                    <verbose>true</verbose>
-                    <source>${project.build.directory}/${project.build.finalName}</source>
-                    <name>${project.build.finalName}</name>
-                </configuration>
-            </plugin>
+				<groupId>com.oracle.weblogic</groupId>
+				<artifactId>weblogic-maven-plugin</artifactId>
+				<version>10.3.6.0</version>
+				<configuration>
+					<upload>true</upload>
+					<remote>true</remote>
+					<verbose>true</verbose>
+					<source>${project.build.directory}/${project.build.finalName}</source>
+					<name>${project.build.finalName}</name>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-	
+
 </project>
