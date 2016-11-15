@@ -79,10 +79,9 @@
 
 	<!-- 指定Maven仓库 -->
 	<repositories>
-		<!-- oschina的maven仓库 -->
 		<repository>
-			<id>oschinaRepository</id>
-			<name>local private nexus</name>
+			<id>aliyunRepository</id>
+			<name>aliyun</name>
 			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
 			<releases>
 				<enabled>true</enabled>
