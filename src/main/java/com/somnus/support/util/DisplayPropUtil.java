@@ -11,8 +11,7 @@ public class DisplayPropUtil {
 	public static Properties getDisplayProp() throws Exception {
 		if (displayColumn == null) {
 			displayColumn = new Properties();
-			displayColumn.load(DisplayPropUtil.class.getClassLoader()
-					.getResourceAsStream("display/display_column.properties"));
+			displayColumn.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("display/display_column.properties"));
 
 		}
 
@@ -22,8 +21,7 @@ public class DisplayPropUtil {
 	public static Properties getDisplaySelectProp() throws Exception {
 		if (displaySelect == null) {
 			displaySelect = new Properties();
-			displaySelect.load(DisplayPropUtil.class.getClassLoader()
-					.getResourceAsStream("display/display_select.properties"));
+			displaySelect.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("display/display_select.properties"));
 
 		}
 
